@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { ProjectCoverImage } from "@/components/ui/ProjectCoverImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
@@ -43,9 +44,14 @@ export function ProjectsSection() {
                   href={`/projects/${project.slug}`}
                   className="flex h-full flex-col overflow-hidden border border-border transition-colors hover:border-neutral-500 focus-visible:focus-ring"
                 >
-                  <div className="project-card-visual relative min-h-[160px] flex-1 overflow-hidden">
-                    <div className="absolute inset-0 flex items-end p-4">
-                      <p className="text-label text-neutral-300">{project.period}</p>
+                  <div className="project-card-visual relative min-h-[160px] flex-1 overflow-hidden bg-neutral-900">
+                    <ProjectCoverImage
+                      src={project.coverImage}
+                      alt={title}
+                      priority={index === 0}
+                    />
+                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-transparent to-transparent p-4">
+                      <p className="text-label text-neutral-100">{project.period}</p>
                     </div>
                     <div className="absolute inset-0 bg-background/20 opacity-0 transition-opacity group-hover:opacity-100" />
                   </div>

@@ -92,6 +92,8 @@ export interface Project {
   summaryKr: string;
   summaryEn: string;
   result: string;
+  /** public/images/projects/* — Cover Image in content.md */
+  coverImage?: string;
   detail: ProjectDetail;
 }
 

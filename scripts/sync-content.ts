@@ -121,6 +121,7 @@ function parseProjectBlocks(section: string): SiteContent["projects"] {
       summaryKr: map.get("Summary KR") ?? "",
       summaryEn: map.get("Summary EN") ?? "",
       result: map.get("Result") ?? "",
+      coverImage: map.get("Cover Image")?.trim() || undefined,
       detail: {
         problemKr: parseBulletField(psrBlock, "Problem KR"),
         problemEn: parseBulletField(psrBlock, "Problem EN"),

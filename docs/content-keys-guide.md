@@ -92,7 +92,28 @@ npm run dev
 2. `scripts/sync-content.ts`의 `EXPECTED_COUNTS.projects` 값을 5로 올린다.
 3. `npm run content:sync` → `/projects/new-project-title` SSG 페이지 자동 생성.
 
-### 4.4 프로젝트 상세 URL (slug)
+### 4.4 프로젝트 카드 썸네일
+
+1. 이미지 파일을 `public/images/projects/`에 저장한다. (jpg · webp · png, 가로 1600px 이상 권장)
+2. `docs/content.md` §9 해당 프로젝트 표에 경로를 추가한다:
+
+```markdown
+| Cover Image | /images/projects/c-proj-001.jpg |
+```
+
+3. `npm run content:sync` 후 dev/build로 확인한다.
+
+| 프로젝트 ID | 권장 파일명 |
+|---|---|
+| C-PROJ-001 | `public/images/projects/c-proj-001.jpg` |
+| C-PROJ-002 | `public/images/projects/c-proj-002.jpg` |
+| C-PROJ-003 | `public/images/projects/c-proj-003.jpg` |
+| C-PROJ-004 | `public/images/projects/c-proj-004.jpg` |
+
+- **Cover Image** 행이 비어 있거나 파일이 없으면 회색 그라데이션 placeholder가 표시된다.
+- 호버 시 흑백 → 컬러, 살짝 확대된다.
+
+### 4.5 프로젝트 상세 URL (slug)
 
 **수정 위치:** `<!-- @slug: samsung-pyeongtaek-campus-masterplan -->`
 

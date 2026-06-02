@@ -183,6 +183,7 @@ This archive records the possibilities of space, environment, and everyday life.
 | Role | 기획설계, 계획설계, 마스터플랜 지원 |
 | Keywords | Campus Masterplan, Industrial Complex, Landscape, Circulation, Workplace |
 | Tools | CAD, 3D Modeling, BIM, Diagram, Presentation |
+| Cover Image | /images/projects/c-proj-001.jpg |
 | Summary KR | 대규모 산업단지를 하나의 도시처럼 바라보고, 업무환경과 보행·조경·커뮤니티 공간을 통합적으로 계획한 프로젝트입니다. |
 | Summary EN | A campus masterplan project that approached a large industrial complex as an urban environment, integrating workplace, circulation, landscape, and community spaces. |
 | Result | 약 1년 3개월 수행, 포트폴리오 기준 5개 이상 세부 존 계획 정리 |
@@ -212,6 +213,7 @@ This archive records the possibilities of space, environment, and everyday life.
 | Role | 기획설계, 계획설계 |
 | Keywords | R&D Campus, Headquarters, Workplace, Masterplan, Future Office |
 | Tools | CAD, 3D Modeling, Diagram, Rendering, Presentation |
+| Cover Image | /images/projects/c-proj-002.jpg |
 | Summary KR | 기존 캠퍼스 맥락 안에서 연구, 협업, 휴식, 이동이 자연스럽게 연결되는 미래형 업무환경을 계획한 프로젝트입니다. |
 | Summary EN | A future workplace project that connected research, collaboration, rest, and movement within an existing campus context. |
 | Result | 약 1년 8개월 수행, R&D Cluster 및 HeadQuarter R7 등 복수 프로젝트 참여 |
@@ -241,6 +243,7 @@ This archive records the possibilities of space, environment, and everyday life.
 | Role | 현상설계 참여 |
 | Keywords | Headquarters, R&D, Creative Office, Community, Green |
 | Tools | Mass Study, Diagram, 3D Modeling, Rendering, Presentation |
+| Cover Image | /images/projects/c-proj-003.jpg |
 | Summary KR | 기업의 정체성과 창의적인 업무문화를 공간으로 구현하기 위한 사옥 현상설계 프로젝트입니다. |
 | Summary EN | A headquarters competition project exploring how corporate identity and creative work culture can be translated into space. |
 | Result | 약 2개월 현상설계 수행 |
@@ -270,6 +273,7 @@ This archive records the possibilities of space, environment, and everyday life.
 | Role | Research Assistant |
 | Keywords | Sports Academy, Operation Strategy, Education Program, Public Project, Research Support |
 | Tools | 자료조사, 사례 검토, 운영계획 정리, 문서 작성, 보고서 작성 지원 |
+| Cover Image | /images/projects/c-proj-004.jpg |
 | Summary KR | K-스포츠 아카데미의 운영 체계와 실행 방안을 수립하기 위한 연구·운영 지원 프로젝트입니다. |
 | Summary EN | A research and operation support project for establishing the operation strategy of the K-Sports Academy. |
 | Result | 총 10개월 예정 |

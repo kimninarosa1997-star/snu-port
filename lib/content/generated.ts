@@ -152,6 +152,7 @@ export const siteContent = {
       summaryKr: "대규모 산업단지를 하나의 도시처럼 바라보고, 업무환경과 보행·조경·커뮤니티 공간을 통합적으로 계획한 프로젝트입니다.",
       summaryEn: "A campus masterplan project that approached a large industrial complex as an urban environment, integrating workplace, circulation, landscape, and community spaces.",
       result: "약 1년 3개월 수행, 포트폴리오 기준 5개 이상 세부 존 계획 정리",
+      coverImage: "/images/projects/c-proj-001.jpg",
       detail: {
         problemKr: "대규모 산업단지 안에서 업무시설, 생산시설, 공원, 보행동선, 차량동선이 복합적으로 얽혀 있었습니다. 건물 단위의 설계만으로는 임직원에게 좋은 환경을 제공하기 어려웠습니다.",
         problemEn: "The campus required more than individual building design, as workplace, production, landscape, pedestrian flow, and vehicle circulation were closely intertwined.",
@@ -186,6 +187,7 @@ export const siteContent = {
       summaryKr: "기존 캠퍼스 맥락 안에서 연구, 협업, 휴식, 이동이 자연스럽게 연결되는 미래형 업무환경을 계획한 프로젝트입니다.",
       summaryEn: "A future workplace project that connected research, collaboration, rest, and movement within an existing campus context.",
       result: "약 1년 8개월 수행, R&D Cluster 및 HeadQuarter R7 등 복수 프로젝트 참여",
+      coverImage: "/images/projects/c-proj-002.jpg",
       detail: {
         problemKr: "기존 캠퍼스 안에 새로운 R&D 업무환경과 본사 기능을 담아야 했습니다. 단순한 사무공간이 아니라 연구와 협업, 휴식이 이어지는 공간 체계가 필요했습니다.",
         problemEn: "The project needed to integrate new R&D and headquarters functions into an existing campus.",
@@ -220,6 +222,7 @@ export const siteContent = {
       summaryKr: "기업의 정체성과 창의적인 업무문화를 공간으로 구현하기 위한 사옥 현상설계 프로젝트입니다.",
       summaryEn: "A headquarters competition project exploring how corporate identity and creative work culture can be translated into space.",
       result: "약 2개월 현상설계 수행",
+      coverImage: "/images/projects/c-proj-003.jpg",
       detail: {
         problemKr: "기업의 성장성과 연구 중심의 정체성을 담으면서도 구성원이 머물고 소통할 수 있는 사옥 공간이 필요했습니다.",
         problemEn: "The headquarters needed to express the company’s research-driven identity while supporting communication and everyday work culture.",
@@ -254,6 +257,7 @@ export const siteContent = {
       summaryKr: "K-스포츠 아카데미의 운영 체계와 실행 방안을 수립하기 위한 연구·운영 지원 프로젝트입니다.",
       summaryEn: "A research and operation support project for establishing the operation strategy of the K-Sports Academy.",
       result: "총 10개월 예정",
+      coverImage: "/images/projects/c-proj-004.jpg",
       detail: {
         problemKr: "K-스포츠 아카데미가 안정적으로 운영되기 위해서는 교육 프로그램뿐 아니라 운영 구조, 참여 대상, 실행 일정, 관리 방식에 대한 구체적인 계획이 필요했습니다.",
         problemEn: "The academy required a clear operation strategy beyond curriculum planning, including structure, target users, schedule, and management system.",
