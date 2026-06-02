@@ -1,10 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { ProfileImage } from "@/components/ui/ProfileImage";
-import { siteContent, localized, uiStrings } from "@/lib/content";
+import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
+
+/** Replace with `/images/hero-city.jpg` after adding a local asset */
+const HERO_CITY_SRC =
+  "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=2400&q=85";
 
 export function HeroSection() {
   const { locale } = useLanguage();
@@ -20,51 +24,54 @@ export function HeroSection() {
 
   const supporting = pickLocale(locale, hero.supportingKr, hero.supportingEn);
   const tagline = pickLocale(locale, hero.oneLineKr, hero.oneLineEn);
-  const profileAlt =
-    locale === "ko"
-      ? uiStrings.about.profileAlt.kr(meta.nameKr)
-      : uiStrings.about.profileAlt.en(meta.name);
-
-  const heroWords =
-    locale === "ko"
-      ? ["김", "진경", "도시", "설계"]
-      : ["Jinkyung", "Kim", "Urban", "Designer"];
 
   return (
     <section
       id="home"
       aria-labelledby="hero-heading"
-      className="band-dark min-h-[min(100svh,900px)] section-py"
+      className="relative min-h-svh w-full overflow-hidden bg-neutral-950"
     >
-      <div className="mx-auto w-full max-w-content layout-gutter">
-        <div className="hero-enter grid items-center gap-8 lg:grid-cols-[1fr_auto_1fr] lg:gap-4">
-          <div className="order-2 flex flex-col gap-0 lg:order-1 lg:text-right">
-            <span className="text-hero-stack leading-none">{heroWords[0]}</span>
-            <span className="text-hero-stack leading-none lg:ml-auto">{heroWords[2]}</span>
-          </div>
+      <Image
+        src={HERO_CITY_SRC}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+        aria-hidden="true"
+      />
 
-          <div className="hero-image-enter order-1 mx-auto w-full max-w-[280px] lg:order-2 lg:max-w-[320px]">
-            <ProfileImage
-              alt={profileAlt}
-              fallbackCaption={localized(locale, uiStrings.profile.fallbackCaption)}
-              className="aspect-square max-w-none border-neutral-800"
-              square
-            />
-          </div>
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/85"
+        aria-hidden="true"
+      />
 
-          <div className="order-3 flex flex-col gap-0 lg:order-3">
-            <span className="text-hero-stack leading-none">{heroWords[1]}</span>
-            <span className="text-hero-stack leading-none">{heroWords[3]}</span>
-          </div>
+      <div className="relative z-10 flex min-h-svh flex-col justify-end pb-[clamp(2rem,8vh,5rem)] pt-[calc(var(--header-height)+2rem)] layout-gutter">
+        <div className="w-full overflow-hidden">
+          <p
+            className="hero-text-drift-lr text-display-xl whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
+            aria-hidden="true"
+          >
+            Architect
+          </p>
         </div>
 
-        <div className="hero-enter mx-auto mt-12 max-w-prose lg:mt-16">
-          <p className="text-label text-muted">
+        <div className="mt-2 w-full overflow-hidden sm:mt-4">
+          <p
+            className="hero-text-drift-rl text-display-xl whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
+            aria-hidden="true"
+          >
+            Jinkyung Kim
+          </p>
+        </div>
+
+        <div className="hero-enter mx-auto mt-10 w-full max-w-prose lg:mt-14">
+          <h1 id="hero-heading" className="sr-only">
+            Architect Jinkyung Kim — {tagline}
+          </h1>
+          <p className="text-label text-neutral-300">
             {locale === "ko" ? `Hey, ${meta.nameKr} here.` : `Hey, ${meta.name} here.`}
           </p>
-          <h1 id="hero-heading" className="sr-only">
-            {meta.name} — {tagline}
-          </h1>
           <p className="mt-4 text-body-l leading-relaxed text-neutral-100">{supporting}</p>
           <p className="mt-3 font-display text-[length:var(--text-editorial)] italic text-foreground">
             {tagline}
