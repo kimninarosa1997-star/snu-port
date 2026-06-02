@@ -58,6 +58,3 @@ docs/             # 원본 마크다운 문서
 사이트 문구·경력·스킬은 `lib/portfolio-data.ts`에서 수정합니다.  
 원본 이력서 마크다운은 `docs/snu-jkk-portfolio.md`에 있습니다.
 
-## 프로필 이미지
-
-히어로 프로필 사진은 `components/Hero.tsx`의 `Image` `src`를 본인 사진 경로(예: `/images/profile.jpg`)로 바꾸고, `public/images/`에 파일을 넣으면 됩니다.

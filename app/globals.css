@@ -10,13 +10,17 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+}
+
+[id] {
+  scroll-margin-top: 5rem;
 }
 
 ::selection {

@@ -4,18 +4,8 @@ export function Footer() {
   const email = portfolio.contact.email;
 
   return (
-    <footer id="contact" className="relative overflow-hidden border-t border-neutral-900">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80)",
-        }}
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black/70" />
-
-      <div className="relative mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+    <footer id="contact" className="border-t border-neutral-900 bg-black">
+      <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <a
           href={`mailto:${email}`}
           className="block break-all text-[clamp(1.75rem,8vw,5.5rem)] font-black uppercase leading-none tracking-tighter transition-opacity hover:opacity-80"
