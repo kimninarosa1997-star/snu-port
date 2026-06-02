@@ -16,52 +16,53 @@ export function Hero() {
   }, []);
 
   return (
-    <section
-      id="top"
-      className="relative min-h-screen overflow-hidden px-6 pb-20 pt-28 md:px-10 md:pt-32"
-    >
-      <div className="relative mx-auto flex min-h-[min(72vh,640px)] max-w-7xl flex-col items-center justify-center">
-        <div className="hero-stage relative flex h-[min(58vh,520px)] w-full items-center justify-center">
-          <div className="hero-image-reveal absolute inset-[8%] md:inset-[10%]">
-            <div className="relative h-full w-full overflow-hidden rounded-sm">
+    <section id="top" className="relative min-h-screen overflow-hidden">
+      <div className="relative mx-auto max-w-7xl px-6 md:px-10">
+        <div className="hero-visual relative min-h-[min(82vh,720px)] overflow-hidden">
+          <div className="hero-image-reveal absolute inset-0 z-0">
+            <div className="relative h-full w-full">
               <Image
                 src={CITY_IMAGE}
                 alt="도시 스카이라인"
                 fill
                 priority
                 className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 1200px"
+                sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/55" />
             </div>
           </div>
 
-          <h1
-            className="hero-name-pan pointer-events-none relative z-10 whitespace-nowrap text-[clamp(2.75rem,11vw,7.5rem)] font-black uppercase leading-none tracking-tighter text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]"
-            aria-label={portfolio.nameEn}
-          >
-            JinKyung Kim
-          </h1>
+          <div className="relative z-10 flex h-full min-h-[inherit] flex-col items-center justify-between pt-20 pb-10 md:pt-24 md:pb-14">
+            <div className="hero-stage flex w-full flex-1 items-center justify-center">
+              <h1
+                className="hero-name-pan pointer-events-none whitespace-nowrap text-[clamp(2.75rem,11vw,7.5rem)] font-black uppercase leading-none tracking-tighter text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
+                aria-label={portfolio.nameEn}
+              >
+                JinKyung Kim
+              </h1>
+            </div>
+
+            <div className="w-full max-w-3xl shrink-0 text-center">
+              <p className="text-[clamp(0.65rem,2vw,0.95rem)] font-bold tracking-[0.35em] text-white/90 md:tracking-[0.45em]">
+                {portfolio.title}
+              </p>
+              <p className="mt-2 text-[clamp(0.55rem,1.4vw,0.8rem)] font-medium tracking-[0.18em] text-neutral-300">
+                {portfolio.subtitle}
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="relative z-10 mt-10 w-full max-w-3xl text-center">
-          <p className="text-[clamp(0.65rem,2vw,0.95rem)] font-bold tracking-[0.35em] text-white/80 md:tracking-[0.45em]">
-            {portfolio.title}
-          </p>
-          <p className="mt-2 text-[clamp(0.55rem,1.4vw,0.8rem)] font-medium tracking-[0.18em] text-neutral-500">
-            {portfolio.subtitle}
-          </p>
-        </div>
-      </div>
-
-      <div className="relative z-10 mx-auto mt-14 w-full max-w-5xl">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr] md:gap-16">
-          <p className="text-lg leading-relaxed text-neutral-200 md:text-xl">
-            {portfolio.intro}
-          </p>
-          <p className="text-sm leading-relaxed text-neutral-500 md:text-base md:pt-2">
-            {portfolio.philosophy}
-          </p>
+        <div className="relative z-10 mt-14 pb-20 md:mt-16 md:pb-24">
+          <div className="grid gap-10 md:grid-cols-[1.4fr_1fr] md:gap-16">
+            <p className="text-lg leading-relaxed text-neutral-200 md:text-xl">
+              {portfolio.intro}
+            </p>
+            <p className="text-sm leading-relaxed text-neutral-500 md:text-base md:pt-2">
+              {portfolio.philosophy}
+            </p>
+          </div>
         </div>
       </div>
     </section>
