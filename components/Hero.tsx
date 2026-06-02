@@ -48,8 +48,11 @@ export function Hero() {
             </h1>
           </div>
 
-          <div className="w-full shrink-0 overflow-hidden px-4 text-center md:px-6">
-            <p className="text-[clamp(0.55rem,1.6vw,0.85rem)] font-medium tracking-[0.22em] text-neutral-300 md:tracking-[0.28em]">
+          <div className="w-full shrink-0 space-y-2 overflow-hidden px-4 text-center md:px-6">
+            <p className="text-[clamp(0.65rem,1.8vw,0.95rem)] font-semibold tracking-[0.35em] text-neutral-200 md:tracking-[0.45em]">
+              {portfolio.title}
+            </p>
+            <p className="text-[clamp(0.55rem,1.6vw,0.85rem)] font-medium tracking-[0.22em] text-neutral-400 md:tracking-[0.28em]">
               {portfolio.subtitle}
             </p>
           </div>
