@@ -36,7 +36,7 @@ export function AboutSection() {
         className="band-muted section-py"
       >
         <div className="mx-auto max-w-content layout-gutter">
-          <h2 id="about-heading" className="text-center text-headline">
+          <h2 id="about-heading" className="text-center text-headline-editorial">
             A <span className="italic">little</span> about me.
           </h2>
 
@@ -76,7 +76,7 @@ export function AboutSection() {
           <div className="grid gap-8 md:grid-cols-3">
             {strengths.map((strength) => (
               <article key={strength.id} className="border-t border-border pt-6">
-                <h4 className="font-display text-[length:var(--text-title)] font-medium text-foreground">
+                <h4 className="text-subhead font-medium text-foreground">
                   {strength.title}.
                 </h4>
                 <p className="mt-3 text-body leading-relaxed text-neutral-100">

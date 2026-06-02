@@ -28,7 +28,7 @@ export function SkillsSection() {
         <div className="mt-16 hidden gap-10 lg:grid lg:grid-cols-4">
           {skillGroups.map((group) => (
             <div key={group.id}>
-              <h3 className="font-display text-[length:var(--text-title)] font-medium text-[var(--color-band-light-ink)]">
+              <h3 className="text-subhead font-medium text-[var(--color-band-light-ink)]">
                 {group.title}.
               </h3>
               <ul className="mt-6 flex flex-col gap-2">
@@ -49,7 +49,7 @@ export function SkillsSection() {
         <div className="mt-16 hidden gap-8 sm:grid sm:grid-cols-2 lg:hidden">
           {skillGroups.map((group) => (
             <div key={group.id}>
-              <h3 className="font-display text-[length:var(--text-title)] font-medium">
+              <h3 className="text-subhead font-medium">
                 {group.title}.
               </h3>
               <ul className="mt-6 flex flex-wrap gap-2">
@@ -73,7 +73,7 @@ export function SkillsSection() {
               <div key={group.id} className="border-t border-neutral-800/20">
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between py-4 text-left font-display text-[length:var(--text-title)] focus-visible:focus-ring"
+                  className="text-subhead flex w-full items-center justify-between py-4 text-left focus-visible:focus-ring"
                   aria-expanded={isOpen}
                   onClick={() => setOpenGroupId(isOpen ? null : group.id)}
                 >

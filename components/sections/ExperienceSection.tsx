@@ -19,7 +19,7 @@ export function ExperienceSection() {
 
         <div className="mt-16 grid gap-16 lg:grid-cols-2">
           <div>
-            <h3 className="font-display text-[length:var(--text-title)] font-medium text-foreground">
+            <h3 className="text-subhead font-medium text-foreground">
               {localized(locale, uiStrings.experience.work)}.
             </h3>
             <ol className="timeline-list mt-8 space-y-10">
@@ -36,7 +36,7 @@ export function ExperienceSection() {
           </div>
 
           <div>
-            <h3 className="font-display text-[length:var(--text-title)] font-medium text-foreground">
+            <h3 className="text-subhead font-medium text-foreground">
               {localized(locale, uiStrings.experience.courses)}.
             </h3>
             <ul className="mt-8 space-y-6">
