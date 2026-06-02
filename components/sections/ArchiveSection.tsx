@@ -5,7 +5,7 @@ import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale, splitParagraphs } from "@/lib/content/helpers";
 
 const NEWS_ACCENTS = [
-  "bg-primary",
+  "bg-deep-blue",
   "bg-neutral-800",
   "bg-neutral-300",
 ] as const;

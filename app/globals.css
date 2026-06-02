@@ -27,6 +27,7 @@
 
   --color-primary: oklch(0.55 0.18 25);
   --color-primary-dim: oklch(0.55 0.18 25 / 0.14);
+  --color-deep-blue: oklch(0.30 0.11 255);
   --color-on-primary: oklch(1 0 0);
 
   --color-success: oklch(0.74 0.13 150);
@@ -178,6 +179,7 @@
   --color-border-strong: var(--color-border-strong);
   --color-primary: var(--color-primary);
   --color-primary-dim: var(--color-primary-dim);
+  --color-deep-blue: var(--color-deep-blue);
   --color-on-primary: var(--color-on-primary);
   --color-surface: var(--color-surface-raised);
   --color-surface-overlay: var(--color-surface-overlay);
