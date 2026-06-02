@@ -130,4 +130,12 @@ git ls-files | Select-String "\.env"
 npx vercel --prod
 ```
 
-환경 변수가 필요해지면 Vercel 대시보드에만 설정하고, 저장소에는 `.env.example`(값 없음)만 두는 것을 권장합니다.
+환경 변수가 필요해지면 Vercel 대시보드에만 설정하고, 저장소에는 [`.env.example`](.env.example)(값 없음)을 참고한다.
+
+| 변수 | 필수 | 설명 |
+|------|------|------|
+| `NEXT_PUBLIC_SITE_URL` | 커스텀 도메인 사용 시 | canonical·OG·sitemap 절대 URL |
+| `NEXT_PUBLIC_FORMSPREE_FORM_ID` | 선택 | 설정 시 Contact 섹션에 문의 폼 표시 |
+| `@vercel/analytics` | — | Vercel 대시보드 → Analytics → Enable (env 불필요) |
+
+보안 헤더는 루트 [`vercel.json`](vercel.json)에 정의되어 있다.
