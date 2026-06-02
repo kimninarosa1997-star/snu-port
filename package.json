@@ -6,9 +6,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "node node_modules/next/dist/bin/next dev",
+    "dev": "node scripts/dev-safe.mjs",
     "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
-    "dev:clean": "npm run clean && npm run dev",
+    "dev:clean": "node scripts/dev-safe.mjs --clean",
     "content:sync": "node node_modules/tsx/dist/cli.mjs scripts/sync-content.ts",
     "prebuild": "npm run content:sync",
     "build": "node node_modules/next/dist/bin/next build",
