@@ -1,31 +1,31 @@
-# Design System — NOIR/288 · Jinkyung Kim Portfolio
+# Design System — EDITORIAL · Jinkyung Kim Portfolio
 
-> 시네마틱 모노크롬 디자인 시스템. 싱글 페이지 포트폴리오(`docs/ia-wireframe.md`) 구현 계약.  
+> 에디토리얼 모노크롬 디자인 시스템. 싱글 페이지 포트폴리오(`docs/ia-wireframe.md`) 구현 계약.  
 > **파일:** `docs/design-system.md`  
-> **브랜드 무드:** 미니멀 · 신뢰 · 테크 · 시네마틱 · 모뉴멘탈  
-> **기본 테마:** 다크 우선(캔버스 = 시네마 블랙). 라이트 모드는 토글·`prefers-color-scheme`로 지원.
+> **브랜드 무드:** 미니멀 · 대담 · 에디토리얼 · B/W 대비  
+> **기본 테마:** 다크 우선(캔버스 = `#000`). 라이트·다크 토글 지원.  
+> **1차 레퍼런스:** [Darren Harroff Portfolio](https://darrenharroff.webflow.io/)
 
 ---
 
 ## 0. How to use this file
 
-UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오프한다. 스타일시트가 아니라 **결정 계약**이다.
+UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오프한다.
 
 **3대 원칙**
 
-1. **Black is the canvas.** 인터페이스는 어둠 속에 있고, 빛은 절제한다.
-2. **One voice in type.** 모뉴멘탈 디스플레이 + 조용한 유틸리티. 중간 톤이 소리치지 않는다.
-3. **Subtract until it breaks, then add one back.** 절제가 브랜드다.
+1. **Black & white first.** 순수 흑백 캔버스. 컬러는 포인트(≤5%)만.
+2. **Two voices in type.** Hero = **Oswald** · 섹션 = **Playfair** · UI = **Inter**.
+3. **Band rhythm.** `band-dark` / `band-light` / `band-muted` 교차.
 
 **레퍼런스 & 차용 포인트**
 
 | URL | 차용 포인트 |
 |:---|:---|
-| [linear.app](https://linear.app) | 다크 캔버스·1px 헤어라인·느린 ease-out 모션 |
-| [rauno.me](https://rauno.me) | 싱글 페이지 스크롤 리듬·모노크롬 타이포 절제 |
-| [oma.com](https://www.oma.com) | 에디토리얼 여백·모뉴멘탈 헤드라인·이미지 풀블리드 |
-| [vercel.com/design](https://vercel.com/design) | 토큰 기반 시스템·테크 신뢰감·라벨형 내비 |
-| [britishdesignfund.com](https://www.britishdesignfund.com) | 그리드·카드 헤어라인·캡션 메타 계층 |
+| [darrenharroff.webflow.io](https://darrenharroff.webflow.io/) | 스택 Hero + 프로필, masonry Projects, Skills 흰 밴드, marquee CTA/Footer |
+| [linear.app](https://linear.app) | 1px 헤어라인·느린 ease-out |
+| [oma.com](https://www.oma.com) | 에디토리얼 여백·serif 본문 |
+| [vercel.com/design](https://vercel.com/design) | 토큰 기반 시스템·라벨형 내비 |
 
 ---
 
@@ -33,12 +33,11 @@ UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오�
 
 | Principle | Practice |
 |:---|:---|
-| **Cinematic** | 풀블리드 블랙, 넉넉한 네거티브 스페이스, 타이틀 카드처럼 등장 |
-| **Monochrome austerity** | 기본은 그레이스케일. 컬러는 이벤트(≤5% 화면) |
-| **Monumental** | Hero `display-xl`은 건축물처럼 크게 — 와이어프레임 §4 Hero |
-| **Engineered calm** | 8px 그리드, 느린 모션, 바운스 없음 |
-| **Edge-to-edge** | 박스 안 박스 대신 헤어라인·풀폭 밴드 |
-| **Trust arc** | Hero → About → Projects → … → Contact 신뢰 축 (`ia-wireframe` §2) |
+| **Editorial contrast** | 순수 `#000` / `#FFF` 밴드 교차, serif + condensed sans 대비 |
+| **Stacked hero** | 프로필 중앙 + Oswald 4단 스택(이름·역할) |
+| **Masonry proof** | Projects 비대칭 12열 그리드, 카드 → `/projects/[slug]` |
+| **Marquee rhythm** | 섹션 헤더·CTA·Footer에 수평 ticker (prefers-reduced-motion 대응) |
+| **Trust arc** | Hero → Projects → Skills → CTA → About → Experience → Archive → Contact |
 
 ---
 
@@ -68,9 +67,13 @@ UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오�
   --color-neutral-100: oklch(0.92 0.004 250);  /* #E4E4E7 body */
   --color-neutral-050: oklch(0.97 0.004 250);  /* #F4F4F5 headings */
 
-  /* Accent — signal amber, ≤5% screen */
-  --color-primary:       oklch(0.78 0.14 75);   /* #D4AF50 approx */
-  --color-primary-dim:   oklch(0.78 0.14 75 / 0.16);
+  /* Section bands */
+  --color-band-light: oklch(1 0 0);
+  --color-band-light-ink: oklch(0 0 0);
+  --color-band-muted: oklch(0.94 0 0);
+  --color-band-muted-ink: oklch(0.12 0 0);
+  /* Accent — warm signal, ≤5% screen */
+  --color-primary:       oklch(0.55 0.18 25);
   --color-on-primary:    oklch(0.14 0.006 250);
 
   /* Semantic */
@@ -124,9 +127,9 @@ UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오�
 
 ```css
 :root {
-  --font-display: "Söhne Breit", "Neue Haas Grotesk Display", "Helvetica Neue", system-ui, sans-serif;
-  --font-text:    "Söhne", "Inter Tight", Helvetica, system-ui, sans-serif;
-  --font-mono:    "Söhne Mono", "Berkeley Mono", ui-monospace, monospace;
+  --font-hero: "Oswald", "Arial Narrow", system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-text: "Inter", system-ui, sans-serif;
 
   /* Size / line-height pairs */
   --text-display-xl:  clamp(4.5rem, 18vw, 18rem);   /* Hero — 288px @1440 */
@@ -161,10 +164,10 @@ UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오�
 
 | Token | Desktop | Weight | Tracking | Case | Use (IA) |
 |:---|:---|:---|:---|:---|:---|
-| `display-xl` | `--text-display-xl` | 600 | -0.02em | UPPER | `#home` Hero 한 줄 |
-| `display-l` | `--text-display-l` | 600 | -0.02em | UPPER | 섹션 오프너 |
-| `display-m` | `--text-display-m` | 600 | -0.015em | UPPER | Statement |
-| `headline` | 48px | 500 | -0.01em | Sentence | §18 섹션 타이틀 |
+| `hero-stack` | `--text-hero-stack` | 700 | -0.01em | UPPER | `#home` 4단 이름·역할 |
+| `display-xl` | `--text-display-xl` | 700 | -0.01em | UPPER | Footer 장식 타이포 |
+| `headline` | clamp 2–3.5rem | 600 | -0.01em | Sentence | 섹션 h2 (Playfair) |
+| `editorial` | clamp 1.5–2.25rem | 600 | -0.01em | Sentence | About 중앙 본문 |
 | `title` | 28px | 500 | 0 | Sentence | 카드·타임라인 제목 |
 | `body-l` | 20px | 400 | 0 | Sentence | Hero 서브카피 |
 | `body` | 16px | 400 | 0 | Sentence | About 본문 |
@@ -321,18 +324,29 @@ UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오�
 
 - 중첩 박스·큰 radius·좌측 accent stripe **금지** (§8)
 
-### 4.3 Nav (Header + mobile drawer)
+### 4.7 Marquee (ticker)
 
-| Part | Default | Scrolled | Active section | Mobile drawer |
-|:---|:---|:---|:---|:---|
-| **Bar** | transparent over Hero | `--color-surface-overlay` + bottom hairline | — | full viewport overlay `--color-canvas` |
-| **Logo `[JK]`** | 36×36, 1px border `--color-border`, `label` | 동일 | — | 동일 |
-| **Links** | `label`, `--color-neutral-300` | — | `--color-neutral-050` | stack, `--space-4` gap |
-| **Lang toggle** | `label`, pill 없음, active = `--color-neutral-050` | — | — | footer of drawer |
-| **Focus** | underline or `--shadow-focus` | | | trap focus, Esc close |
+| Part | Spec |
+|:---|:---|
+| **Root** | `overflow-hidden`, `prefers-reduced-motion` 시 정적 중앙 정렬 |
+| **Track** | `marquee-scroll` 28s/40s linear infinite |
+| **Use** | Projects/Skills 섹션 헤더, CTA 밴드, Contact/Footer 이메일 유도 |
 
-- 7 앵커: Home … Contact (`ia-wireframe` §17)
-- `scroll-margin-top: var(--scroll-margin-top)`
+### 4.8 Section bands
+
+| Class | Background | Text | Sections |
+|:---|:---|:---|:---|
+| `band-dark` | `--color-canvas` | `--color-ink` | Hero, Projects, Experience, Contact |
+| `band-light` | `--color-band-light` | `--color-band-light-ink` | Skills, Archive |
+| `band-muted` | `--color-band-muted` | `--color-band-muted-ink` | About (personal statement) |
+
+### 4.9 Nav (Header)
+
+| Part | Spec |
+|:---|:---|
+| **Desktop** | `Projects · Skills · About · Contact` (4링크, · 구분) |
+| **Mobile** | 7링크 풀 드로어 |
+| **Logo** | `JK` text label (박스 border 제거) |
 
 ### 4.4 Section
 
@@ -446,14 +460,15 @@ UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오�
 
 | Section | Components | Tokens |
 |:---|:---|:---|
-| `#home` | Section, Button×2, Badge(keywords) | `display-xl`, `--duration-hero` |
-| `#about` | Section, Card×3, Badge×4, media | `body`, `--space-8` grid |
-| `#projects` | Section, Card×4, expand panel, Button | Card expanded state |
-| `#skills` | Section, Badge groups; mobile accordion | 4-col → 2 → accordion |
-| `#experience` | Section, timeline, lists | 2-col desktop |
-| `#archive` | Section, timeline, Badge type | left rule |
-| `#contact` | Section, Button Accent, copy | `mailto` a11y name |
-| Global | Nav, Footer | Nav scrolled, `--header-height` |
+| `#home` | Hero stack, ProfileImage(square), intro | `text-hero-stack`, `text-editorial` |
+| `#projects` | Marquee, masonry grid, project links | `band-dark`, 12-col spans |
+| `#skills` | Marquee, 4-col groups | `band-light`, Playfair h3 |
+| CTA band | Marquee → mailto | `band-dark`, full-width |
+| `#about` | Editorial center + strengths/education | `band-muted` + `band-dark` |
+| `#experience` | Timeline 2-col | `band-dark` |
+| `#archive` | Timeline | `band-light` |
+| `#contact` | Email CTA + Footer marquee | `band-dark` |
+| Global | Nav (4+mobile 7), Theme/Lang toggle | `--header-height` 64px |
 
 ---
 
@@ -474,10 +489,10 @@ UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오�
 | 0.1 | — | NOIR/288 초안 |
 | 0.2 | 2026-06-02 | 포트폴리오 토큰·컴포넌트 상태·Stitch Map·WCAG·8px 스페이스·와이어프레임 정렬 |
 | 0.3 | 2026-06-02 | QA P1 — Nav link WCAG `--color-neutral-300` (`review-log.md` C-05) |
-| 0.4 | 2026-06-02 | QA P2 — H1·핸드오프 문구를 파일명 `design-system.md`와 통일 |
+| 0.5 | 2026-06-02 | EDITORIAL 리디자인 — Darren Harroff 레퍼런스, Oswald/Playfair, section bands, marquee, masonry Projects, 스크롤 순서 변경 |
 
 **관련:** `docs/ia-wireframe.md`, `docs/content.md`
 
 ---
 
-_NOIR/288 — Jinkyung Kim Portfolio. 시네마틱 모노크롬 미학 참고; 특정 자동차/타 브랜드와 무관._
+_EDITORIAL — Jinkyung Kim Portfolio. [Darren Harroff](https://darrenharroff.webflow.io/) 에디토리얼 B/W 무드 차용._

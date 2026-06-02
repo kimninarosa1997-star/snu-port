@@ -15,32 +15,35 @@ export function ArchiveSection() {
   const intro = pickLocale(locale, archiveIntro.kr, archiveIntro.en);
 
   return (
-    <section id="archive" aria-labelledby="archive-heading" className="section-py">
-      <div className="mx-auto max-w-content px-6 md:px-10">
+    <section id="archive" aria-labelledby="archive-heading" className="band-light section-py">
+      <div className="mx-auto max-w-content layout-gutter">
         <SectionHeading
           meta={sectionMeta}
           locale={locale}
           headingId="archive-heading"
+          variant="light"
         />
 
-        <div className="mt-10 max-w-[42rem] space-y-4 text-[length:var(--text-body-l)] leading-relaxed text-neutral-100">
+        <div className="mt-10 max-w-prose space-y-4 text-body-l text-[var(--color-band-light-muted)]">
           {splitParagraphs(intro).map((paragraph) => (
             <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}
         </div>
 
-        <ol className="mt-16 space-y-10 border-l border-border pl-6">
+        <ol className="mt-16 space-y-10 border-l border-neutral-800/20 pl-6">
           {archive.map((item) => (
             <li key={item.id} className="relative">
-              <span className="absolute -left-[calc(0.5rem+1px)] top-1.5 h-2 w-2 bg-primary/40" />
-              <span className="inline-block bg-primary/15 px-2 py-1 text-label text-primary">
+              <span className="absolute -left-[calc(0.5rem+1px)] top-1.5 h-2 w-2 bg-[var(--color-band-light-muted)]" />
+              <span className="inline-block border border-neutral-800/20 px-2 py-1 text-label text-[var(--color-band-light-muted)]">
                 {item.type}
               </span>
-              <p className="mt-3 text-[length:var(--text-title)] font-medium text-foreground">
+              <p className="mt-3 text-title font-medium text-[var(--color-band-light-ink)]">
                 {item.title}
               </p>
-              <p className="mt-1 text-caption text-neutral-300">{item.period}</p>
-              <p className="mt-3 text-[length:var(--text-body)] leading-relaxed text-neutral-100">
+              <p className="mt-1 text-caption text-[var(--color-band-light-muted)]">
+                {item.period}
+              </p>
+              <p className="mt-3 text-body leading-relaxed text-[var(--color-band-light-muted)]">
                 {pickLocale(locale, item.descriptionKr, item.descriptionEn)}
               </p>
             </li>

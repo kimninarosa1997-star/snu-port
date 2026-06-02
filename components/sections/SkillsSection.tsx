@@ -15,23 +15,27 @@ export function SkillsSection() {
   if (!sectionMeta) return null;
 
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="section-py">
-      <div className="mx-auto max-w-content px-6 md:px-10">
+    <section id="skills" aria-labelledby="skills-heading" className="band-light section-py">
+      <div className="mx-auto max-w-content layout-gutter">
         <SectionHeading
           meta={sectionMeta}
           locale={locale}
           headingId="skills-heading"
+          variant="light"
+          marqueeKey="skills"
         />
 
-        <div className="mt-16 hidden gap-6 lg:grid lg:grid-cols-4">
+        <div className="mt-16 hidden gap-10 lg:grid lg:grid-cols-4">
           {skillGroups.map((group) => (
-            <div key={group.id} className="border-t border-border pt-6">
-              <h3 className="text-label text-muted">{group.title}</h3>
+            <div key={group.id}>
+              <h3 className="font-display text-[length:var(--text-title)] font-medium text-[var(--color-band-light-ink)]">
+                {group.title}.
+              </h3>
               <ul className="mt-6 flex flex-col gap-2">
                 {group.skills.map((skill) => (
                   <li
                     key={skill.id}
-                    className="border border-border px-3 py-2 text-label text-neutral-300"
+                    className="border border-neutral-800/20 px-3 py-2 text-label text-[var(--color-band-light-muted)]"
                     title={pickLocale(locale, skill.descriptionKr, skill.descriptionEn)}
                   >
                     {skill.name}
@@ -42,15 +46,17 @@ export function SkillsSection() {
           ))}
         </div>
 
-        <div className="mt-16 hidden gap-6 sm:grid sm:grid-cols-2 lg:hidden">
+        <div className="mt-16 hidden gap-8 sm:grid sm:grid-cols-2 lg:hidden">
           {skillGroups.map((group) => (
-            <div key={group.id} className="border-t border-border pt-6">
-              <h3 className="text-label text-muted">{group.title}</h3>
+            <div key={group.id}>
+              <h3 className="font-display text-[length:var(--text-title)] font-medium">
+                {group.title}.
+              </h3>
               <ul className="mt-6 flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <li
                     key={skill.id}
-                    className="border border-border px-3 py-2 text-label text-neutral-300"
+                    className="border border-neutral-800/20 px-3 py-2 text-label text-[var(--color-band-light-muted)]"
                   >
                     {skill.name}
                   </li>
@@ -64,10 +70,10 @@ export function SkillsSection() {
           {skillGroups.map((group) => {
             const isOpen = openGroupId === group.id;
             return (
-              <div key={group.id} className="border-t border-border">
+              <div key={group.id} className="border-t border-neutral-800/20">
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between py-4 text-left text-label text-foreground focus-visible:focus-ring"
+                  className="flex w-full items-center justify-between py-4 text-left font-display text-[length:var(--text-title)] focus-visible:focus-ring"
                   aria-expanded={isOpen}
                   onClick={() => setOpenGroupId(isOpen ? null : group.id)}
                 >
@@ -79,7 +85,7 @@ export function SkillsSection() {
                     {group.skills.map((skill) => (
                       <li
                         key={skill.id}
-                        className="border border-border px-3 py-2 text-label text-neutral-300"
+                        className="border border-neutral-800/20 px-3 py-2 text-label text-[var(--color-band-light-muted)]"
                       >
                         {skill.name}
                       </li>

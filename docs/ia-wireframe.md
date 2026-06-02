@@ -17,21 +17,15 @@ Portfolio (Single Page)
 │   ├── Header — 로고(이름), 앵커 Nav, 언어 토글(KR/EN), 모바일 메뉴
 │   └── Footer — 브랜드 문장, ©, 보조 링크(선택: Archive 앵커)
 │
-├── #home — Hero (내비 라벨: Home)
+├── #home — Hero (스택형 타이포 + 프로필 + 소개)
 │
-├── #about — About
-│   ├── Profile (사진 + 소개)
-│   ├── Strengths (핵심 강점 3)
-│   ├── Research Interests (관심분야 4)
-│   └── Education (학력 타임라인)
+├── #projects — Selected Projects (masonry → /projects/[slug])
 │
-├── #projects — Selected Projects
-│   ├── Project List (카드 × 4)
-│   └── Project Detail (인라인 확장 / 모달) [v1: 동일 페이지]
-│       ├── C-PROJ-001 … C-PROJ-004
+├── #skills — Skills (band-light)
 │
-├── #skills — Skills
-│   └── Skill Groups (Design · Viz · Research · BIM)
+├── [CTA Marquee Band] — mailto 협업 유도
+│
+├── #about — About (band-muted editorial + strengths/education)
 │
 ├── #experience — Experience & Proof
 │   ├── Work Experience
@@ -59,17 +53,18 @@ Portfolio (Single Page)
 
 | 순서 | 섹션 ID | 내비 라벨 | 섹션 목적 (디자이너 의도) | 사용자가 얻는 것 |
 |:---:|:---|:---|:---|:---|
-| 0 | — | — | **글로벌:** 어디서든 섹션 이동·언어 전환 | 길 잃지 않고 원하는 정보로 바로 이동 |
-| 1 | `#home` | Home | **도착:** 정체성·키워드·첫인상 확립 | "누구인지, 무엇을 하는지" 5초 안에 파악 |
-| 2 | `#about` | About | **신뢰 1:** 배경·관점·연구 방향 제시 | 실무↔연구 연결 스토리, 협업 적합성 판단 |
-| 3 | `#projects` | Projects | **신뢰 2:** 대표 산출물·문제해결 구조 증명 | 포트폴리오 깊이, 역할·성과·도구 확인 |
-| 4 | `#skills` | Skills | **신뢰 3:** 실행 역량(툴·방법) 가시화 | 프로젝트에 필요한 스킬 매칭 |
-| 5 | `#experience` | Experience | **신뢰 4:** 경력·수상·교육으로 검증 | 기간·기관·성과의 객관적 근거 |
-| 6 | `#archive` | Archive | **신뢰 5:** 사고의 확장·지속 학습 기록 | 공모·학회·교환 등 맥락 있는 이력 |
-| 7 | `#contact` | Contact | **전환:** 협업·문의 장벽 최소화 | 이메일 한 번으로 연락 경로 확보 |
+| 0 | — | — | **글로벌:** 어디서든 섹션 이동·언어·테마 전환 | 길 잃지 않고 원하는 정보로 바로 이동 |
+| 1 | `#home` | Home | **도착:** 스택형 Hero + 프로필 + 소개 | "누구인지" 즉시 파악 |
+| 2 | `#projects` | Projects | **증거 1:** masonry 대표 프로젝트 | 포트폴리오 깊이, 상세 페이지 진입 |
+| 3 | `#skills` | Skills | **증거 2:** 흰 밴드 역량 4그룹 | 스킬 매칭 |
+| 4 | — | — | **CTA 밴드:** marquee → mailto | 협업 유도 |
+| 5 | `#about` | About | **신뢰:** 에디토리얼 소개 + 강점·학력 | 배경·관점 이해 |
+| 6 | `#experience` | Experience | **검증:** 경력·수상·교육 | 객관적 근거 |
+| 7 | `#archive` | Archive | **확장:** 학습·활동 기록 | 지속 성장 이미지 |
+| 8 | `#contact` | Contact | **전환:** 이메일 + Footer marquee | 연락 경로 |
 
-**스크롤 원칙:** Hero → 신뢰 축적(About → Projects → Skills → Experience → Archive) → Contact.  
-Projects가 핵심 CTA(`Projects`)의 착지점이므로 About 직후에 배치해 **“정체성 → 증거”** 흐름을 유지한다.
+**스크롤 원칙 (v0.5 EDITORIAL):** Hero → **Projects 먼저** (Darren Harroff 레퍼런스) → Skills → CTA → About → Experience → Archive → Contact.  
+데스크톱 Header는 `Projects · Skills · About · Contact` 4링크; 모바일은 7링크 전체.
 
 ---
 

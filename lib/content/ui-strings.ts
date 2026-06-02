@@ -59,6 +59,27 @@ export const uiStrings = {
   profile: {
     fallbackCaption: { kr: "C-REQ-001 · 프로필", en: "C-REQ-001 · Profile" },
   },
+  ctaBand: {
+    sectionAria: { kr: "협업 문의", en: "Collaboration inquiry" },
+    label: {
+      kr: "함께 일하고 싶으신가요? · 이메일 보내기 · 버튼입니다",
+      en: "Want to work together? · Click to email · It's a button, I promise",
+    },
+  },
+  marquee: {
+    projects: {
+      kr: ["최근 프로젝트", "도시·건축 설계", "마스터플랜 & 연구"],
+      en: ["Recent projects", "Urban & architecture", "Masterplan & research"],
+    },
+    skills: {
+      kr: ["나의 역량", "잘하는 일", "설계 · 분석 · 시각화"],
+      en: ["My skills", "Things I'm great at", "Design · research · viz"],
+    },
+    footer: {
+      kr: ["함께 일해요", "이메일 보내기", "협업 제안 환영", "프로젝트 이야기"],
+      en: ["Let's work together", "Drop me a line", "Open to collaboration", "Tell me about your project"],
+    },
+  },
 } as const;
 
 export type UiStrings = typeof uiStrings;

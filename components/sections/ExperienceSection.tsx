@@ -13,35 +13,23 @@ export function ExperienceSection() {
   if (!sectionMeta) return null;
 
   return (
-    <section
-      id="experience"
-      aria-labelledby="experience-heading"
-      className="section-py bg-neutral-900"
-    >
-      <div className="mx-auto max-w-content px-6 md:px-10">
-        <SectionHeading
-          meta={sectionMeta}
-          locale={locale}
-          headingId="experience-heading"
-        />
+    <section id="experience" aria-labelledby="experience-heading" className="band-dark section-py">
+      <div className="mx-auto max-w-content layout-gutter">
+        <SectionHeading meta={sectionMeta} locale={locale} headingId="experience-heading" />
 
         <div className="mt-16 grid gap-16 lg:grid-cols-2">
           <div>
-            <h3 className="text-label text-muted">
-              {localized(locale, uiStrings.experience.work)}
+            <h3 className="font-display text-[length:var(--text-title)] font-medium text-foreground">
+              {localized(locale, uiStrings.experience.work)}.
             </h3>
             <ol className="mt-8 space-y-10 border-l border-border pl-6">
               {experience.map((item) => (
                 <li key={item.id} className="relative">
                   <span className="absolute -left-[calc(0.5rem+1px)] top-1.5 h-2 w-2 bg-neutral-300" />
                   <p className="text-caption text-neutral-300">{item.period}</p>
-                  <p className="mt-1 text-[length:var(--text-title)] font-medium text-foreground">
-                    {item.organization}
-                  </p>
+                  <p className="mt-1 text-title font-medium text-foreground">{item.organization}</p>
                   <p className="mt-1 text-caption text-neutral-300">{item.role}</p>
-                  <p className="mt-4 text-[length:var(--text-body)] leading-relaxed text-neutral-100">
-                    {item.result}
-                  </p>
+                  <p className="mt-4 text-body leading-relaxed text-neutral-100">{item.result}</p>
                 </li>
               ))}
             </ol>
@@ -49,38 +37,34 @@ export function ExperienceSection() {
 
           <div className="space-y-16">
             <div>
-              <h3 className="text-label text-muted">
-                {localized(locale, uiStrings.experience.awards)}
+              <h3 className="font-display text-[length:var(--text-title)] font-medium text-foreground">
+                {localized(locale, uiStrings.experience.awards)}.
               </h3>
               <ul className="mt-8 space-y-6">
                 {awards.map((award) => (
                   <li key={award.id} className="border-b border-border pb-6 last:border-0">
                     <p className="text-caption text-neutral-300">{award.year}</p>
-                    <p className="mt-1 text-[length:var(--text-body)] font-medium text-foreground">
+                    <p className="mt-1 text-body font-medium text-foreground">
                       {pickLocale(locale, award.titleKr, award.titleEn)}
                     </p>
-                    <p className="mt-1 text-caption text-neutral-300">
-                      {award.organization}
-                    </p>
+                    <p className="mt-1 text-caption text-neutral-300">{award.organization}</p>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h3 className="text-label text-muted">
-                {localized(locale, uiStrings.experience.courses)}
+              <h3 className="font-display text-[length:var(--text-title)] font-medium text-foreground">
+                {localized(locale, uiStrings.experience.courses)}.
               </h3>
               <ul className="mt-8 space-y-6">
                 {courses.map((course) => (
                   <li key={course.id} className="border-b border-border pb-6 last:border-0">
                     <p className="text-caption text-neutral-300">{course.year}</p>
-                    <p className="mt-1 text-[length:var(--text-body)] font-medium text-foreground">
+                    <p className="mt-1 text-body font-medium text-foreground">
                       {pickLocale(locale, course.titleKr, course.titleEn)}
                     </p>
-                    <p className="mt-1 text-caption text-neutral-300">
-                      {course.institution}
-                    </p>
+                    <p className="mt-1 text-caption text-neutral-300">{course.institution}</p>
                   </li>
                 ))}
               </ul>

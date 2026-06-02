@@ -1,27 +1,34 @@
 "use client";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { Marquee } from "@/components/ui/Marquee";
 import { localizedFn, siteContent, uiStrings } from "@/lib/content";
 
 export function Footer() {
   const { locale } = useLanguage();
-  const { footer, contact, meta } = siteContent;
+  const { contact, footer, meta } = siteContent;
+  const footerMarquee =
+    locale === "ko" ? uiStrings.marquee.footer.kr : uiStrings.marquee.footer.en;
 
   return (
-    <footer className="section-py border-t border-border bg-background">
-      <div className="mx-auto max-w-content px-6 md:px-10">
+    <footer className="band-dark border-t border-border">
+      <div className="mx-auto max-w-content px-6 py-8 md:px-10">
         <p className="text-label text-muted">{footer}</p>
-        <p className="mt-4 text-sm text-muted">
-          {meta.nameKr} · {meta.positionKr}
-        </p>
-        <a
-          href={`mailto:${contact.email}`}
-          aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
-          className="mt-8 inline-block text-label text-foreground underline-offset-4 transition-opacity hover:underline focus-visible:focus-ring"
-        >
-          {contact.email}
-        </a>
       </div>
+      <a
+        href={`mailto:${contact.email}`}
+        className="block border-t border-border py-5 transition-opacity hover:opacity-80 focus-visible:focus-ring"
+        aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
+      >
+        <Marquee
+          items={Array.from({ length: 8 }, (_, i) => footerMarquee[i % footerMarquee.length]!)}
+          className="text-label uppercase tracking-[var(--tracking-label)] text-muted"
+          speed="slow"
+        />
+      </a>
+      <p className="sr-only">
+        {meta.nameKr} · {meta.positionKr}
+      </p>
     </footer>
   );
 }

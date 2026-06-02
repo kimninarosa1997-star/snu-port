@@ -1,11 +1,11 @@
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ArchiveSection } from "@/components/sections/ArchiveSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { CtaMarqueeBand } from "@/components/sections/CtaMarqueeBand";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
-import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SkipLink } from "@/components/layout/SkipLink";
 
@@ -16,14 +16,14 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <HeroSection />
-        <AboutSection />
         <ProjectsSection />
         <SkillsSection />
+        <CtaMarqueeBand />
+        <AboutSection />
         <ExperienceSection />
         <ArchiveSection />
         <ContactSection />
       </main>
-      <Footer />
     </>
   );
 }

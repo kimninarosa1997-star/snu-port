@@ -10,16 +10,24 @@ type ProfileImageProps = {
   alt: string;
   fallbackCaption?: string;
   className?: string;
+  square?: boolean;
 };
 
-export function ProfileImage({ alt, fallbackCaption, className = "" }: ProfileImageProps) {
+export function ProfileImage({
+  alt,
+  fallbackCaption,
+  className = "",
+  square = false,
+}: ProfileImageProps) {
   const profileSrc = siteContent.assets.profileImage;
   const [src, setSrc] = useState<string>(profileSrc);
   const isFallback = src === FALLBACK_SRC;
 
   return (
     <div
-      className={`relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden border border-border bg-neutral-900 lg:mx-0 ${className}`}
+      className={`relative mx-auto w-full overflow-hidden border border-border bg-neutral-900 lg:mx-0 ${
+        square ? "aspect-square max-w-none" : "aspect-[3/4] max-w-xs"
+      } ${className}`}
     >
       <Image
         src={src}

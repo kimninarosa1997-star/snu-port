@@ -23,9 +23,9 @@ export function ProjectPageView({ project }: ProjectPageViewProps) {
     <>
       <SkipLink />
       <Header />
-      <main id="main-content" className="pt-[var(--header-height)]">
+      <main id="main-content" className="band-dark pt-[var(--header-height)]">
         <article className="section-py">
-          <div className="mx-auto max-w-content px-6 md:px-10">
+          <div className="mx-auto max-w-content layout-gutter">
             <Link
               href="/#projects"
               className="inline-flex min-h-11 items-center text-label uppercase tracking-[var(--tracking-label)] text-muted transition-colors hover:text-foreground focus-visible:focus-ring"
@@ -35,7 +35,7 @@ export function ProjectPageView({ project }: ProjectPageViewProps) {
 
             <header className="mt-10 max-w-[42rem]">
               <p className="text-caption text-neutral-300">{project.period}</p>
-              <h1 className="mt-4 text-[length:var(--text-headline)] font-medium leading-[var(--text-headline-lh)] tracking-tight text-foreground">
+              <h1 className="mt-4 text-headline text-foreground">
                 {title}
               </h1>
               <p className="mt-2 text-caption text-neutral-300">

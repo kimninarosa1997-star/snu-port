@@ -7,15 +7,20 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { localized, siteContent, uiStrings } from "@/lib/content";
 import { scrollToSection } from "@/lib/scroll";
 
+const PRIMARY_NAV = ["projects", "skills", "about", "contact"] as const;
+
 export function Header() {
   const { locale } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { navigation, hero } = siteContent;
-  const contactHref = hero.ctaSecondary.href;
+  const { navigation } = siteContent;
+
+  const navItems = navigation.filter((item) =>
+    PRIMARY_NAV.includes(item.sectionId as (typeof PRIMARY_NAV)[number]),
+  );
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -32,55 +37,51 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-transparent transition-[background-color,border-color] duration-[var(--duration-base)] ease-[var(--ease-standard)] ${
-        scrolled ? "border-border bg-surface-overlay" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color] duration-[var(--duration-base)] ${
+        scrolled ? "border-b border-border bg-surface-overlay" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[var(--header-height)] max-w-content items-center justify-between gap-4 px-6 md:px-10">
+      <div className="mx-auto flex h-[var(--header-height)] max-w-content items-center justify-between gap-4 layout-gutter">
         <a
           href="#home"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection("#home");
           }}
-          className="flex h-9 w-9 shrink-0 items-center justify-center border border-border text-label text-foreground transition-colors hover:border-foreground focus-visible:focus-ring"
+          className="text-label uppercase tracking-[var(--tracking-label)] text-foreground transition-opacity hover:opacity-70 focus-visible:focus-ring"
           aria-label={siteContent.meta.name}
         >
           JK
         </a>
 
         <nav
-          className="hidden min-w-0 flex-1 items-center justify-center gap-6 text-label text-muted lg:flex"
+          className="hidden items-center gap-1 text-label text-muted lg:flex"
           aria-label={localized(locale, uiStrings.a11y.primaryNav)}
         >
-          {navigation.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(item.href);
-              }}
-              className="uppercase tracking-[var(--tracking-label)] transition-colors hover:text-foreground focus-visible:focus-ring"
-            >
-              {item.label}
-            </a>
+          {navItems.map((item, index) => (
+            <span key={item.href} className="inline-flex items-center">
+              {index > 0 ? (
+                <span className="mx-2 text-neutral-700" aria-hidden="true">
+                  ·
+                </span>
+              ) : null}
+              <a
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
+                className="uppercase tracking-[var(--tracking-label)] transition-colors hover:text-foreground focus-visible:focus-ring"
+              >
+                {item.label}
+              </a>
+            </span>
           ))}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-2">
           <ThemeToggle />
           <LangToggle />
-          <a
-            href={contactHref}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection(contactHref);
-            }}
-            className="hidden min-h-11 items-center justify-center border border-border px-4 py-2 text-label uppercase tracking-[var(--tracking-label)] text-foreground transition-colors hover:border-foreground focus-visible:focus-ring lg:inline-flex"
-          >
-            {localized(locale, uiStrings.header.contactCta)}
-          </a>
           <button
             type="button"
             className="border border-border px-3 py-2 text-label uppercase tracking-[var(--tracking-label)] text-foreground lg:hidden focus-visible:focus-ring"
@@ -99,7 +100,7 @@ export function Header() {
           className="fixed inset-0 top-[var(--header-height)] z-40 bg-canvas px-6 py-8 shadow-[var(--shadow-elevated)] lg:hidden"
         >
           <nav
-            className="flex flex-col gap-8 text-label uppercase tracking-[var(--tracking-label)] text-muted"
+            className="flex flex-col gap-6 text-label uppercase tracking-[var(--tracking-label)] text-muted"
             aria-label={localized(locale, uiStrings.a11y.mobileNav)}
           >
             {navigation.map((item) => (
@@ -117,10 +118,6 @@ export function Header() {
               </a>
             ))}
           </nav>
-          <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-border pt-8">
-            <ThemeToggle />
-            <LangToggle />
-          </div>
         </div>
       ) : null}
     </header>

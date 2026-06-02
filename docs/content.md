@@ -63,10 +63,10 @@
 
 | Section | Content IDs | Purpose | Display Content |
 |---|---|---|---|
-| Hero | §4 One-line·Supporting Copy, C-OPT-006 | 정체성과 방향성을 첫 화면에서 명확하게 전달 | One-line Identity, 보조 문구, 키워드 Badge, CTA(Projects·Contact) *(§6 Core Message: Hero v1 미노출)* |
-| About | C-REQ-001, C-REQ-003, C-REQ-004, C-REC-001, C-REC-002, C-STR-001~003, C-INT-001~004, C-EDU-001, C-EDU-002 | 개인의 배경, 관점, 연구 관심 소개 | 프로필 사진, 자기소개 KR/EN, 강점 3, 관심분야 4, 학력 2 |
-| Projects | C-REC-005, C-PROJ-001~004 | 주요 실무 및 연구 프로젝트 아카이브 | 대표 프로젝트 4개 + P→S→R 상세 |
-| Skills | C-OPT-005 *(legacy/SEO)*, C-SKL-001~015 | 설계·분석·시각화 역량 제시 | 4 Skill Group + 스킬 태그 *(UI: C-SKL-* only)* |
+| Hero | §4 One-line·Supporting Copy, C-REQ-001 | 정체성·첫인상 | Oswald 스택 + 중앙 프로필 + Playfair tagline |
+| Projects | C-REC-005, C-PROJ-001~004 | 대표 산출물 | masonry 4카드 → `/projects/[slug]` |
+| Skills | C-SKL-* | 역량 | band-light 4열 |
+| About | C-REQ-001, C-REC-001~002, C-STR-*, C-INT-*, C-EDU-* | 신뢰·배경 | band-muted editorial + 상세 |
 | Experience | C-REC-003, C-REC-004, C-EXP-001~003, C-AWD-001~005, C-CERT-001~003 | 경력과 검증 이력 제시 | 실무·연구 타임라인, 수상, 교육 |
 | Archive | §14 Introduction, C-ARC-001~007 | 사고의 확장·지속 학습 기록 | 아카이브 타임라인 7건 |
 | Contact | C-REQ-002, C-CON-001~006, C-OPT-001 | 협업과 네트워킹 유도 | Contact Copy, 이메일(mailto), SNS(준비 중) |
