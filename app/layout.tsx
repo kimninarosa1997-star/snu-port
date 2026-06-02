@@ -1,4 +1,4 @@
-import { LanguageProvider } from "@/components/providers/LanguageProvider";
+import { Providers } from "@/components/providers/Providers";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildSiteMetadata } from "@/lib/seo";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -19,6 +19,8 @@ const playfair = Playfair_Display({
 
 export const metadata = buildSiteMetadata();
 
+const themeInitScript = `(function(){try{var t=sessionStorage.getItem("snu-port-theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t}else if(window.matchMedia("(prefers-color-scheme: light)").matches){document.documentElement.dataset.theme="light"}}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,11 +30,15 @@ export default function RootLayout({
     <html
       lang="ko"
       data-theme="dark"
+      suppressHydrationWarning
       className={`${inter.variable} ${playfair.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="antialiased bg-background text-foreground">
         <JsonLd />
-        <LanguageProvider>{children}</LanguageProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -10,6 +10,14 @@ export const uiStrings = {
     menuButton: { kr: "메뉴", en: "Menu" },
     heroKeywords: { kr: "관심 키워드", en: "Keywords" },
   },
+  theme: {
+    toggle: { kr: "테마 전환", en: "Toggle theme" },
+    light: { kr: "Light", en: "Light" },
+    dark: { kr: "Dark", en: "Dark" },
+  },
+  header: {
+    contactCta: { kr: "Contact", en: "Contact" },
+  },
   about: {
     readMore: { kr: "더 보기", en: "Read more" },
     showLess: { kr: "접기", en: "Show less" },
@@ -44,6 +52,9 @@ export const uiStrings = {
       kr: (name: string) => `이메일로 ${name}에게 문의`,
       en: (name: string) => `Contact ${name} by email`,
     },
+    copyEmail: { kr: "이메일 복사", en: "Copy email" },
+    copySuccess: { kr: "복사됨", en: "Copied" },
+    instagramPending: { kr: "Instagram · 추가 예정", en: "Instagram · Coming soon" },
   },
   profile: {
     fallbackCaption: { kr: "C-REQ-001 · 프로필", en: "C-REQ-001 · Profile" },

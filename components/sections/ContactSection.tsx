@@ -1,21 +1,31 @@
 "use client";
 
+import { useState } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { siteContent, localizedFn, uiStrings } from "@/lib/content";
+import { localized, localizedFn, siteContent, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale, splitParagraphs } from "@/lib/content/helpers";
 
 export function ContactSection() {
   const { locale } = useLanguage();
+  const [copied, setCopied] = useState(false);
   const sectionMeta = getSectionMeta(siteContent, "contact");
   const { contact } = siteContent;
 
   if (!sectionMeta) return null;
 
   const copy = pickLocale(locale, contact.copyKr, contact.copyEn);
-  const publicFields = contact.fields.filter(
-    (field) => !field.isPrivate && field.id !== "C-CON-001" && field.id !== "C-CON-002",
-  );
+  const instagramField = contact.fields.find((field) => field.id === "C-CON-006");
+
+  async function handleCopyEmail() {
+    try {
+      await navigator.clipboard.writeText(contact.email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  }
 
   return (
     <section id="contact" aria-labelledby="contact-heading" className="section-py bg-neutral-900">
@@ -35,22 +45,33 @@ export function ContactSection() {
           </div>
 
           <div className="lg:pt-16">
-            <a
-              href={`mailto:${contact.email}`}
-              aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
-              className="inline-flex w-full items-center justify-center bg-primary px-8 py-4 text-label uppercase tracking-[var(--tracking-label)] text-on-primary transition-opacity hover:opacity-95 focus-visible:focus-ring sm:w-auto"
-            >
-              {contact.email}
-            </a>
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <a
+                href={`mailto:${contact.email}`}
+                aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
+                className="inline-flex min-h-11 w-full items-center justify-center bg-primary px-8 py-4 text-label uppercase tracking-[var(--tracking-label)] text-on-primary transition-opacity hover:opacity-95 focus-visible:focus-ring sm:w-auto"
+              >
+                {contact.email}
+              </a>
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="inline-flex min-h-11 w-full items-center justify-center border border-border px-6 py-3 text-label uppercase tracking-[var(--tracking-label)] text-foreground transition-colors hover:border-foreground focus-visible:focus-ring sm:w-auto"
+                aria-live="polite"
+              >
+                {copied
+                  ? localized(locale, uiStrings.contact.copySuccess)
+                  : localized(locale, uiStrings.contact.copyEmail)}
+              </button>
+            </div>
 
-            {publicFields.length > 0 ? (
-              <ul className="mt-8 space-y-3 text-caption text-neutral-300">
-                {publicFields.map((field) => (
-                  <li key={field.id}>
-                    {field.item}: {field.content}
-                  </li>
-                ))}
-              </ul>
+            {instagramField ? (
+              <p
+                className="mt-8 text-caption text-neutral-300"
+                aria-disabled="true"
+              >
+                {localized(locale, uiStrings.contact.instagramPending)}
+              </p>
             ) : null}
           </div>
         </div>

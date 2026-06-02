@@ -249,8 +249,8 @@ components/*             ← import only, literal string 금지
 
 - [x] M3-01 ArchiveSection
 - [x] M3-02 ContactSection
-- [ ] M3-03 Contact P2 (clipboard, Instagram, Ghost CTA)
-- [ ] M3-04 ThemeToggle
+- [x] M3-03 Contact P2 (clipboard, Instagram, Ghost CTA)
+- [x] M3-04 ThemeToggle
 - [x] M3-05 Header scrolled state
 - [x] M3-06 Footer copy
 - [x] M3-07 섹션 aria-labelledby
@@ -324,4 +324,4 @@ components/*             ← import only, literal string 금지
 
 ---
 
-**다음 액션:** M4-03~04 Lighthouse 감사, M3-04 ThemeToggle, Launch Go/No-Go (M4-10).
+**다음 액션:** M4-03~04 Lighthouse 감사, M4-06 Vercel 배포, M4-10 Launch Go/No-Go.
