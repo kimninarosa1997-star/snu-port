@@ -44,6 +44,8 @@
   --font-text: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SF Mono", monospace;
 
+  --text-hero-title: clamp(2.25rem, 9vw, 5.5rem);
+  --text-hero-title-lh: 0.92;
   --text-hero-stack: clamp(3.5rem, 11vw, 9rem);
   --text-hero-stack-lh: 0.88;
   --text-display-xl: clamp(4rem, 16vw, 14rem);
@@ -313,6 +315,15 @@ body {
   color: oklch(0.45 0 0);
 }
 
+@utility text-hero-title {
+  font-family: var(--font-hero);
+  font-size: var(--text-hero-title);
+  line-height: var(--text-hero-title-lh);
+  font-weight: var(--weight-hero);
+  letter-spacing: var(--tracking-hero);
+  text-transform: uppercase;
+}
+
 @utility text-hero-stack {
   font-family: var(--font-hero);
   font-size: var(--text-hero-stack);
@@ -504,20 +515,20 @@ body {
 @keyframes hero-drift-lr {
   0%,
   100% {
-    transform: translateX(-8vw);
+    transform: translateX(-5vw);
   }
   50% {
-    transform: translateX(8vw);
+    transform: translateX(5vw);
   }
 }
 
 @keyframes hero-drift-rl {
   0%,
   100% {
-    transform: translateX(8vw);
+    transform: translateX(5vw);
   }
   50% {
-    transform: translateX(-8vw);
+    transform: translateX(-5vw);
   }
 }
 

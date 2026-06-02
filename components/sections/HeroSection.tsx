@@ -49,7 +49,7 @@ export function HeroSection() {
       <div className="relative z-10 flex min-h-svh flex-col justify-end pb-[clamp(2rem,8vh,5rem)] pt-[calc(var(--header-height)+2rem)] layout-gutter">
         <div className="w-full overflow-hidden">
           <p
-            className="hero-text-drift-lr text-display-xl whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
+            className="hero-text-drift-lr text-hero-title whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
             aria-hidden="true"
           >
             Architect
@@ -58,7 +58,7 @@ export function HeroSection() {
 
         <div className="mt-2 w-full overflow-hidden sm:mt-4">
           <p
-            className="hero-text-drift-rl text-display-xl whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
+            className="hero-text-drift-rl text-hero-title whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
             aria-hidden="true"
           >
             Jinkyung Kim
