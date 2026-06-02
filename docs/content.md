@@ -390,6 +390,10 @@ This archive records the possibilities of space, environment, and everyday life.
 | C-EXP-001 | Gansam Architects & Partners / 간삼종합건축사사무소 | Architectural Design, Masterplan, Headquarters Design | 2020/10 ~ 2024/02 | 대규모 캠퍼스와 사옥 프로젝트에서 건축, 도시, 조경, 교통, 업무환경을 통합적으로 검토해야 했습니다. | 삼성전자 평택캠퍼스, 수원 디지털시티, 광교 사옥 등 복수 프로젝트에서 기획·계획·실시설계 업무를 수행했습니다. | 약 3년 4개월 동안 대형 업무시설과 캠퍼스 프로젝트를 경험하며 실무 설계 역량을 축적했습니다. |
 | C-EXP-002 | Academic Research Experience / 학부 연구생 | Research, Analysis, Paper Writing, Administration | 2018/12 ~ 2020/01 | 건축설계 평가와 도시·건축 데이터를 연구하기 위해 설계와 데이터 분석을 연결하는 접근이 필요했습니다. | Machine Learning Based Urban Data Model and Visualization Platform 등 연구개발, 논문 작성, 국제학술대회 발표, 연구비 정산을 수행했습니다. | 프랑스 INTE 2018 국제학술대회에서 Crowdsourced Design Evaluation Methodology 관련 발표를 진행했습니다. |
 | C-EXP-003 | CASE Architects / CASE 건축사무소 | Internship, Model Making, 3D Printer Support | 2017/08 ~ 2017/09, 2019 | 건축설계 과정에서 클라이언트와 팀이 공간을 직관적으로 이해할 수 있는 모형과 시각자료가 필요했습니다. | 3D Printer를 활용한 모형 제작과 3D 모델링, 도면 작성 업무를 수행했습니다. | 설계안을 물리적·시각적으로 전달하는 제작 역량을 강화했습니다. |
+| C-EXP-005 | INTE 2018 International Conference | Conference | 2018 | 국제 학술대회에서 설계 평가 연구를 발표할 기회 | Crowdsourced Design Evaluation Methodology 관련 연구 발표 | 프랑스 파리 INTE 2018 · Presented research on crowdsourced design evaluation methodology in Paris, France |
+| C-EXP-006 | DIAS International Winter Workshop | International Workshop | 2020 | 국제 워크숍을 통해 설계 관점을 확장할 필요 | How we will live together 주제로 제노아에서 참여 | 이탈리아 제노아 국제 워크숍 · Participated in Genoa, Italy under the theme “How we will live together.” |
+| C-EXP-007 | Chu Hai College, Hong Kong | Exchange Student / 교환학생 | 2017 ~ 2018 | 고밀도 도시 환경에서의 건축과 생활 관계를 직접 경험할 필요 | 홍콩 건축학과 교환학생으로 학업 및 생활 | 고밀도 도시와 생활환경의 관계를 경험 · Studied architecture in Hong Kong |
+| C-EXP-008 | University of Victoria | Exchange · Language Program / 교환·어학 | 2020 | 해외 어학·교환 프로그램 참여 | English Language Centre 어학연수 과정 참여 | 캐나다 어학연수, 코로나로 조기 귀국 · Participated in an English language program in Canada, ended early due to COVID-19 |
 
 ---
 
@@ -466,10 +470,6 @@ It traces how competitions, workshops, conferences, exchange programs, and resea
 | ID | Type | Title | Period | Description KR | Description EN |
 |---|---|---|---|---|---|
 | C-ARC-001 | Academic Research | 도시·건축 데이터 연구 | 2018/12 ~ 2020/01 | 도시 및 건축 데이터를 기반으로 설계 평가와 시각화 방법론을 탐구했습니다. | Explored design evaluation and visualization methods based on urban and architectural data. |
-| C-ARC-002 | Conference | INTE 2018 International Conference | 2018 | 프랑스 파리에서 Crowdsourced Design Evaluation Methodology 관련 주제로 발표했습니다. | Presented research on crowdsourced design evaluation methodology in Paris, France. |
-| C-ARC-003 | Workshop | DIAS International Winter Workshop | 2020 | 이탈리아 제노아에서 How we will live together를 주제로 국제 워크숍에 참여했습니다. | Participated in an international workshop in Genoa, Italy, under the theme “How we will live together.” |
-| C-ARC-004 | Exchange | Chu Hai College, Hong Kong | 2017 ~ 2018 | 홍콩에서 건축학과 교환학생으로 생활하며 고밀도 도시와 생활환경의 관계를 경험했습니다. | Studied architecture in Hong Kong and experienced the relationship between high-density urban form and everyday life. |
-| C-ARC-005 | Exchange | University of Victoria | 2020 | 캐나다 어학연수 과정에 참여했으나 코로나로 인해 조기 귀국했습니다. | Participated in an English language program in Canada, which ended early due to COVID-19. |
 | C-ARC-006 | Volunteer | Habitat 활동 | 2016 ~ 2021 | 해비타트 동아리 활동과 정기 후원을 통해 건축의 사회적 역할을 고민했습니다. | Reflected on the social role of architecture through Habitat volunteer activities and regular support. |
 | C-ARC-007 | Mentoring | Archi-Tree 고등학생 멘토링 | 2019 | 건축학과 생활과 설계 과정을 멘티에게 소개하고 조언했습니다. | Mentored high school students by introducing architectural education and design studio processes. |
 
