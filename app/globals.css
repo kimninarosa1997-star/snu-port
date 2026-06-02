@@ -41,7 +41,17 @@ body {
   }
 }
 
-@keyframes hero-name-pan {
+@keyframes hero-pan-left {
+  0%,
+  100% {
+    transform: translateX(clamp(1.5rem, 14vw, 9rem));
+  }
+  50% {
+    transform: translateX(calc(-1 * clamp(1.5rem, 14vw, 9rem)));
+  }
+}
+
+@keyframes hero-pan-right {
   0%,
   100% {
     transform: translateX(calc(-1 * clamp(1.5rem, 14vw, 9rem)));
@@ -55,8 +65,12 @@ body {
   animation: hero-image-reveal 2.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.hero-name-pan {
-  animation: hero-name-pan 5.5s ease-in-out infinite;
+.hero-pan-left {
+  animation: hero-pan-left 5.5s ease-in-out infinite;
+}
+
+.hero-pan-right {
+  animation: hero-pan-right 5.5s ease-in-out infinite;
 }
 
 .about-marquee {
@@ -113,7 +127,8 @@ body {
     transform: none;
   }
 
-  .hero-name-pan {
+  .hero-pan-left,
+  .hero-pan-right {
     animation: none;
     transform: none;
   }

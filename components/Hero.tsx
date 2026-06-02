@@ -34,20 +34,23 @@ export function Hero() {
           </div>
 
           <div className="relative z-10 flex h-full min-h-[inherit] flex-col items-center justify-between pt-20 pb-10 md:pt-24 md:pb-14">
-            <div className="hero-stage flex w-full flex-1 items-center justify-center">
+            <div className="hero-stage flex w-full flex-1 flex-col items-center justify-center gap-1 overflow-hidden md:gap-2">
+              <p
+                className="hero-pan-left pointer-events-none whitespace-nowrap font-serif text-[clamp(2rem,8vw,5rem)] font-normal italic leading-none tracking-tight text-white/95 drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
+                aria-hidden
+              >
+                Architect
+              </p>
               <h1
-                className="hero-name-pan pointer-events-none whitespace-nowrap text-[clamp(2.75rem,11vw,7.5rem)] font-black uppercase leading-none tracking-tighter text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
-                aria-label={portfolio.nameEn}
+                className="hero-pan-right pointer-events-none whitespace-nowrap text-[clamp(2.75rem,11vw,7.5rem)] font-black uppercase leading-none tracking-tighter text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
+                aria-label={`${portfolio.nameEn}, Architect`}
               >
                 JinKyung Kim
               </h1>
             </div>
 
             <div className="w-full max-w-3xl shrink-0 text-center">
-              <p className="text-[clamp(0.65rem,2vw,0.95rem)] font-bold tracking-[0.35em] text-white/90 md:tracking-[0.45em]">
-                {portfolio.title}
-              </p>
-              <p className="mt-2 text-[clamp(0.55rem,1.4vw,0.8rem)] font-medium tracking-[0.18em] text-neutral-300">
+              <p className="text-[clamp(0.55rem,1.4vw,0.8rem)] font-medium tracking-[0.18em] text-neutral-300">
                 {portfolio.subtitle}
               </p>
             </div>
