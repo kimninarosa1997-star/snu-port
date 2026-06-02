@@ -4,6 +4,18 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { siteContent, localized, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
 
+function OrganizationLabel({ text }: { text: string }) {
+  const parts = text.split(/\s*\/\s*/);
+  if (parts.length === 1) return text;
+
+  return parts.map((part, index) => (
+    <span key={`${part.slice(0, 12)}-${index}`}>
+      {index > 0 ? <br /> : null}
+      {part}
+    </span>
+  ));
+}
+
 export function ExperienceSection() {
   const { locale } = useLanguage();
   const sectionMeta = getSectionMeta(siteContent, "experience");
@@ -30,7 +42,9 @@ export function ExperienceSection() {
                 <li key={item.id}>
                   <span className="timeline-dot" aria-hidden="true" />
                   <p className="text-caption text-muted">{item.period}</p>
-                  <p className="mt-1 text-title font-bold text-foreground">{item.organization}</p>
+                  <p className="mt-1 text-title font-bold leading-snug text-foreground">
+                    <OrganizationLabel text={item.organization} />
+                  </p>
                   <p className="mt-1 text-caption text-muted">{item.role}</p>
                   <p className="mt-4 text-body leading-relaxed text-muted">{item.result}</p>
                 </li>
