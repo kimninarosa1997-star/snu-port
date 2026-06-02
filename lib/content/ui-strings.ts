@@ -40,7 +40,6 @@ export const uiStrings = {
     keywords: { kr: "키워드", en: "Keywords" },
     getInTouch: { kr: "협업 문의", en: "Get in touch" },
     moreProjects: { kr: "다른 프로젝트", en: "More projects" },
-    studentWorks: { kr: "대학 시절 프로젝트", en: "University Projects" },
     role: { kr: "역할", en: "Role" },
     contactLink: { kr: "문의하기", en: "Contact" },
   },

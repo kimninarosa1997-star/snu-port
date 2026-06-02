@@ -4,10 +4,10 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { ProjectFloatCard } from "@/components/projects/ProjectFloatCard";
 import { Marquee } from "@/components/ui/Marquee";
 import { ScrollParallax } from "@/components/ui/ScrollParallax";
-import { localized, siteContent, uiStrings } from "@/lib/content";
+import { siteContent, uiStrings } from "@/lib/content";
 import { getSectionMeta } from "@/lib/content/helpers";
 
-const FEATURED_FLOAT_LAYOUT = [
+const FLOAT_LAYOUT = [
   {
     item: "md:ml-0 md:mr-auto md:w-[min(100%,540px)] lg:w-[min(54%,580px)]",
     caption: "text-left",
@@ -28,38 +28,34 @@ const FEATURED_FLOAT_LAYOUT = [
     caption: "text-right",
     delay: 340,
   },
-] as const;
-
-const STUDENT_FLOAT_LAYOUT = [
   {
     item: "md:ml-[14%] md:mr-auto md:mt-16 md:w-[min(100%,300px)] lg:w-[min(34%,320px)]",
     caption: "text-left",
-    delay: 80,
+    delay: 420,
   },
   {
     item: "md:ml-auto md:mr-[10%] md:mt-4 md:w-[min(100%,280px)] lg:w-[min(32%,300px)]",
     caption: "text-right",
-    delay: 180,
+    delay: 500,
   },
   {
     item: "md:ml-[4%] md:mr-auto md:mt-10 md:w-[min(100%,290px)] lg:w-[min(33%,310px)]",
     caption: "text-left md:pl-1",
-    delay: 260,
+    delay: 580,
   },
 ] as const;
 
-const FEATURED_PARALLAX = [0.18, -0.12, 0.14, -0.1] as const;
-const STUDENT_PARALLAX = [0.1, -0.08, 0.09] as const;
+const FLOAT_PARALLAX = [0.18, -0.12, 0.14, -0.1, 0.1, -0.08, 0.09] as const;
 
 export function ProjectsSection() {
   const { locale } = useLanguage();
   const sectionMeta = getSectionMeta(siteContent, "projects");
   const { projects } = siteContent;
+  const displayProjects = projects.filter(
+    (project) => project.scale === "featured" || project.scale === "student",
+  );
 
   if (!sectionMeta) return null;
-
-  const featuredProjects = projects.filter((project) => (project.scale ?? "featured") === "featured");
-  const studentProjects = projects.filter((project) => project.scale === "student");
 
   const marqueeItems =
     locale === "ko" ? uiStrings.marquee.projects.kr : uiStrings.marquee.projects.en;
@@ -90,9 +86,10 @@ export function ProjectsSection() {
           </ScrollParallax>
 
           <div className="projects-float-canvas relative z-10 flex flex-col gap-16 md:gap-0">
-            {featuredProjects.map((project, index) => {
-              const layout = FEATURED_FLOAT_LAYOUT[index] ?? FEATURED_FLOAT_LAYOUT[0];
-              const parallaxSpeed = FEATURED_PARALLAX[index] ?? FEATURED_PARALLAX[0];
+            {displayProjects.map((project, index) => {
+              const layout = FLOAT_LAYOUT[index] ?? FLOAT_LAYOUT[0];
+              const parallaxSpeed = FLOAT_PARALLAX[index] ?? FLOAT_PARALLAX[0];
+              const variant = project.scale ?? "featured";
 
               return (
                 <ProjectFloatCard
@@ -101,37 +98,11 @@ export function ProjectsSection() {
                   layout={layout}
                   parallaxSpeed={parallaxSpeed}
                   locale={locale}
-                  variant="featured"
+                  variant={variant}
                   delayMs={layout.delay}
                 />
               );
             })}
-
-            {studentProjects.length > 0 ? (
-              <div className="projects-float-student mt-8 md:mt-4">
-                <p className="text-subhead font-medium text-muted md:ml-[4%]">
-                  {localized(locale, uiStrings.projects.studentWorks)}.
-                </p>
-                <div className="mt-10 flex flex-col gap-12 md:mt-8 md:gap-0">
-                  {studentProjects.map((project, index) => {
-                    const layout = STUDENT_FLOAT_LAYOUT[index] ?? STUDENT_FLOAT_LAYOUT[0];
-                    const parallaxSpeed = STUDENT_PARALLAX[index] ?? STUDENT_PARALLAX[0];
-
-                    return (
-                      <ProjectFloatCard
-                        key={project.id}
-                        project={project}
-                        layout={layout}
-                        parallaxSpeed={parallaxSpeed}
-                        locale={locale}
-                        variant="student"
-                        delayMs={layout.delay}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>

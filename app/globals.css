@@ -780,11 +780,6 @@ body {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
-.projects-float-student {
-  position: relative;
-  z-index: 1;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal {
     opacity: 1;
