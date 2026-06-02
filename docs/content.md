@@ -288,7 +288,7 @@ This archive records the possibilities of space, environment, and everyday life.
 
 ---
 
-## Project 05. Downtown Vacant Lot Regeneration Studio
+## Project 05. Ttobagi Healing Center
 <!-- @id: C-PROJ-005 -->
 <!-- @slug: downtown-vacant-lot-regeneration-studio -->
 
@@ -296,8 +296,8 @@ This archive records the possibilities of space, environment, and everyday life.
 |---|---|
 | ID | C-PROJ-005 |
 | Scale | student |
-| Project KR | 도심 유휴 부지 재생 스튜디오 |
-| Project EN | Downtown Vacant Lot Regeneration Studio |
+| Project KR | 또바기 치유소 |
+| Project EN | Ttobagi Healing Center |
 | Period | 2019/03 ~ 2019/06 |
 | Organization | Dankook University · Architecture Studio |
 | Role | 설계 스튜디오 |
@@ -319,7 +319,7 @@ This archive records the possibilities of space, environment, and everyday life.
 
 ---
 
-## Project 06. Hillside Housing Community Studio
+## Project 06. Rooftop Hanuibaram House
 <!-- @id: C-PROJ-006 -->
 <!-- @slug: hillside-housing-community-studio -->
 
@@ -327,8 +327,8 @@ This archive records the possibilities of space, environment, and everyday life.
 |---|---|
 | ID | C-PROJ-006 |
 | Scale | student |
-| Project KR | 경사지 공동주택 단지 스튜디오 |
-| Project EN | Hillside Housing Community Studio |
+| Project KR | 옥탑방 하늬바람집 |
+| Project EN | Rooftop Hanuibaram House |
 | Period | 2018/09 ~ 2018/12 |
 | Organization | Dankook University · Architecture Studio |
 | Role | 설계 스튜디오 |
@@ -350,7 +350,7 @@ This archive records the possibilities of space, environment, and everyday life.
 
 ---
 
-## Project 07. Riverside Cultural Pavilion Studio
+## Project 07. Living in a Monument
 <!-- @id: C-PROJ-007 -->
 <!-- @slug: riverside-cultural-pavilion-studio -->
 
@@ -358,8 +358,8 @@ This archive records the possibilities of space, environment, and everyday life.
 |---|---|
 | ID | C-PROJ-007 |
 | Scale | student |
-| Project KR | 하천변 문화·휴게 파빌리온 스튜디오 |
-| Project EN | Riverside Cultural Pavilion Studio |
+| Project KR | Living in a Monument |
+| Project EN | Living in a Monument |
 | Period | 2020/03 ~ 2020/06 |
 | Organization | Dankook University · Architecture Studio |
 | Role | 설계 스튜디오 |

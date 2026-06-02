@@ -266,8 +266,8 @@ export const siteContent = {
     {
       id: "C-PROJ-007",
       slug: "riverside-cultural-pavilion-studio",
-      titleKr: "하천변 문화·휴게 파빌리온 스튜디오",
-      titleEn: "Riverside Cultural Pavilion Studio",
+      titleKr: "Living in a Monument",
+      titleEn: "Living in a Monument",
       period: "2020/03 ~ 2020/06",
       organization: "Dankook University · Architecture Studio",
       role: "설계 스튜디오",
@@ -300,8 +300,8 @@ export const siteContent = {
     {
       id: "C-PROJ-005",
       slug: "downtown-vacant-lot-regeneration-studio",
-      titleKr: "도심 유휴 부지 재생 스튜디오",
-      titleEn: "Downtown Vacant Lot Regeneration Studio",
+      titleKr: "또바기 치유소",
+      titleEn: "Ttobagi Healing Center",
       period: "2019/03 ~ 2019/06",
       organization: "Dankook University · Architecture Studio",
       role: "설계 스튜디오",
@@ -334,8 +334,8 @@ export const siteContent = {
     {
       id: "C-PROJ-006",
       slug: "hillside-housing-community-studio",
-      titleKr: "경사지 공동주택 단지 스튜디오",
-      titleEn: "Hillside Housing Community Studio",
+      titleKr: "옥탑방 하늬바람집",
+      titleEn: "Rooftop Hanuibaram House",
       period: "2018/09 ~ 2018/12",
       organization: "Dankook University · Architecture Studio",
       role: "설계 스튜디오",
