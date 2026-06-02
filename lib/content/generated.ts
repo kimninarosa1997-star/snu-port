@@ -559,22 +559,6 @@ export const siteContent = {
   awards: [],
   courses: [
     {
-      id: "C-CERT-001",
-      year: "2019",
-      titleKr: "BIM 4차산업 혁신선도 대학 특강",
-      titleEn: "BIM Practical Course",
-      institution: "Related institution",
-      description: "Revit, Navisworks, Tekla, T5D 등 BIM 프로그램 및 현장 활용 교육",
-    },
-    {
-      id: "C-CERT-002",
-      year: "2019",
-      titleKr: "3D Printer 교육 및 실습",
-      titleEn: "3D Printer Training",
-      institution: "Related institution",
-      description: "3D Printer 산업, 제작 과정, 전용 3D 툴 실습",
-    },
-    {
       id: "C-CERT-003",
       year: "2020",
       titleKr: "English Language Centre",
@@ -595,6 +579,22 @@ export const siteContent = {
       period: "2018/12 ~ 2020/01",
       descriptionKr: "도시 및 건축 데이터를 기반으로 설계 평가와 시각화 방법론을 탐구했습니다.",
       descriptionEn: "Explored design evaluation and visualization methods based on urban and architectural data.",
+    },
+    {
+      id: "C-ARC-008",
+      type: "Course",
+      title: "BIM 4차산업 혁신선도 대학 특강",
+      period: "2019",
+      descriptionKr: "Revit, Navisworks, Tekla, T5D 등 BIM 프로그램 및 현장 활용 교육",
+      descriptionEn: "BIM practical training covering Revit, Navisworks, Tekla, T5D and on-site application",
+    },
+    {
+      id: "C-ARC-009",
+      type: "Course",
+      title: "3D Printer 교육 및 실습",
+      period: "2019",
+      descriptionKr: "3D Printer 산업, 제작 과정, 전용 3D 툴 실습",
+      descriptionEn: "Training on 3D printer industry, fabrication process, and dedicated 3D tools",
     },
     {
       id: "C-ARC-006",

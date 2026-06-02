@@ -448,8 +448,6 @@ This archive records the possibilities of space, environment, and everyday life.
 
 | ID | Year | Course KR | Course EN | Institution | Description |
 |---|---|---|---|---|---|
-| C-CERT-001 | 2019 | BIM 4차산업 혁신선도 대학 특강 | BIM Practical Course | Related institution | Revit, Navisworks, Tekla, T5D 등 BIM 프로그램 및 현장 활용 교육 |
-| C-CERT-002 | 2019 | 3D Printer 교육 및 실습 | 3D Printer Training | Related institution | 3D Printer 산업, 제작 과정, 전용 3D 툴 실습 |
 | C-CERT-003 | 2020 | English Language Centre | English Language Centre | University of Victoria | 캐나다 어학연수 과정, 코로나로 인한 조기 귀국 |
 
 ---
@@ -470,6 +468,8 @@ It traces how competitions, workshops, conferences, exchange programs, and resea
 | ID | Type | Title | Period | Description KR | Description EN |
 |---|---|---|---|---|---|
 | C-ARC-001 | Academic Research | 도시·건축 데이터 연구 | 2018/12 ~ 2020/01 | 도시 및 건축 데이터를 기반으로 설계 평가와 시각화 방법론을 탐구했습니다. | Explored design evaluation and visualization methods based on urban and architectural data. |
+| C-ARC-008 | Course | BIM 4차산업 혁신선도 대학 특강 | 2019 | Revit, Navisworks, Tekla, T5D 등 BIM 프로그램 및 현장 활용 교육 | BIM practical training covering Revit, Navisworks, Tekla, T5D and on-site application |
+| C-ARC-009 | Course | 3D Printer 교육 및 실습 | 2019 | 3D Printer 산업, 제작 과정, 전용 3D 툴 실습 | Training on 3D printer industry, fabrication process, and dedicated 3D tools |
 | C-ARC-006 | Volunteer | Habitat 활동 | 2016 ~ 2021 | 해비타트 동아리 활동과 정기 후원을 통해 건축의 사회적 역할을 고민했습니다. | Reflected on the social role of architecture through Habitat volunteer activities and regular support. |
 | C-ARC-007 | Mentoring | Archi-Tree 고등학생 멘토링 | 2019 | 건축학과 생활과 설계 과정을 멘티에게 소개하고 조언했습니다. | Mentored high school students by introducing architectural education and design studio processes. |
 
