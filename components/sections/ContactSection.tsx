@@ -29,7 +29,7 @@ export function ContactSection() {
   return (
     <section id="contact" aria-labelledby="contact-heading" className="studio-section border-t border-border bg-background">
       <div className="mx-auto max-w-content layout-gutter section-py">
-        <header className="border-b border-border pb-8 md:pb-10">
+        <header className="pb-8 md:pb-10">
           <h2 id="contact-heading" className="text-studio-section-title">
             {pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn)}
           </h2>

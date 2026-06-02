@@ -48,7 +48,7 @@ export function ExperienceSection() {
   return (
     <section id="experience" aria-labelledby="experience-heading" className="studio-section border-t border-border bg-background section-py">
       <div className="mx-auto max-w-content layout-gutter">
-        <header className="border-b border-border pb-8 md:pb-10">
+        <header className="pb-8 md:pb-10">
           <h2 id="experience-heading" className="text-studio-section-title">
             {pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn)}
           </h2>

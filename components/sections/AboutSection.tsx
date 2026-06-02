@@ -36,7 +36,7 @@ export function AboutSection() {
         className="studio-section border-t border-border bg-background section-py"
       >
         <div className="mx-auto max-w-content layout-gutter">
-          <header className="border-b border-border pb-8 md:pb-10">
+          <header className="pb-8 md:pb-10">
             <h2 id="about-heading" className="text-studio-section-title">
               {locale === "ko" ? "About" : "About"}
             </h2>
@@ -88,7 +88,7 @@ export function AboutSection() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {strengths.map((strength) => (
-              <article key={strength.id} className="border-t border-border pt-6">
+              <article key={strength.id}>
                 <h4 className="text-subhead font-bold text-foreground">
                   {strength.title}
                 </h4>
