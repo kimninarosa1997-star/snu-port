@@ -34,7 +34,7 @@ export function ProfileImage({
         alt={alt}
         fill
         unoptimized={profileSrc.startsWith("/")}
-        className={`object-cover ${isFallback ? "opacity-80" : ""}`}
+        className={isFallback ? "object-cover opacity-80" : "object-cover grayscale-0"}
         sizes="(max-width: 768px) 320px, 320px"
         onError={() => {
           if (src !== FALLBACK_SRC) setSrc(FALLBACK_SRC);
