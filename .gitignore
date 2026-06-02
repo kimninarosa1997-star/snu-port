@@ -22,7 +22,14 @@
 .cursor/
 .DS_Store
 *.pem
+
+# lighthouse (local audit artifacts; may contain URLs)
 lighthouse-report.json
+lighthouse-prod.json
+lighthouse-*.json
+
+# broken/partial installs (local recovery only)
+node_modules_broken/
 
 # debug
 npm-debug.log*
