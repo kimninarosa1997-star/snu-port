@@ -1,15 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { ProjectFloatCard } from "@/components/projects/ProjectFloatCard";
 import { Marquee } from "@/components/ui/Marquee";
-import { ProjectCoverImage } from "@/components/ui/ProjectCoverImage";
 import { ScrollParallax } from "@/components/ui/ScrollParallax";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { siteContent, uiStrings } from "@/lib/content";
-import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
+import { localized, siteContent, uiStrings } from "@/lib/content";
+import { getSectionMeta } from "@/lib/content/helpers";
 
-const PROJECT_FLOAT_LAYOUT = [
+const FEATURED_FLOAT_LAYOUT = [
   {
     item: "md:ml-0 md:mr-auto md:w-[min(100%,540px)] lg:w-[min(54%,580px)]",
     caption: "text-left",
@@ -32,7 +30,26 @@ const PROJECT_FLOAT_LAYOUT = [
   },
 ] as const;
 
-const PROJECT_PARALLAX = [0.18, -0.12, 0.14, -0.1] as const;
+const STUDENT_FLOAT_LAYOUT = [
+  {
+    item: "md:ml-[14%] md:mr-auto md:mt-16 md:w-[min(100%,300px)] lg:w-[min(34%,320px)]",
+    caption: "text-left",
+    delay: 80,
+  },
+  {
+    item: "md:ml-auto md:mr-[10%] md:mt-4 md:w-[min(100%,280px)] lg:w-[min(32%,300px)]",
+    caption: "text-right",
+    delay: 180,
+  },
+  {
+    item: "md:ml-[4%] md:mr-auto md:mt-10 md:w-[min(100%,290px)] lg:w-[min(33%,310px)]",
+    caption: "text-left md:pl-1",
+    delay: 260,
+  },
+] as const;
+
+const FEATURED_PARALLAX = [0.18, -0.12, 0.14, -0.1] as const;
+const STUDENT_PARALLAX = [0.1, -0.08, 0.09] as const;
 
 export function ProjectsSection() {
   const { locale } = useLanguage();
@@ -41,7 +58,9 @@ export function ProjectsSection() {
 
   if (!sectionMeta) return null;
 
-  const title = pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn);
+  const featuredProjects = projects.filter((project) => (project.scale ?? "featured") === "featured");
+  const studentProjects = projects.filter((project) => project.scale === "student");
+
   const marqueeItems =
     locale === "ko" ? uiStrings.marquee.projects.kr : uiStrings.marquee.projects.en;
   const bgLabel = uiStrings.marquee.projects.en.join(" · ").toUpperCase();
@@ -56,7 +75,7 @@ export function ProjectsSection() {
             speed="slow"
           />
           <h2 id="projects-heading" className="sr-only">
-            {title}
+            {locale === "ko" ? sectionMeta.titleKr : sectionMeta.titleEn}
           </h2>
         </header>
 
@@ -71,50 +90,48 @@ export function ProjectsSection() {
           </ScrollParallax>
 
           <div className="projects-float-canvas relative z-10 flex flex-col gap-16 md:gap-0">
-            {projects.map((project, index) => {
-              const layout = PROJECT_FLOAT_LAYOUT[index] ?? PROJECT_FLOAT_LAYOUT[0];
-              const parallaxSpeed = PROJECT_PARALLAX[index] ?? PROJECT_PARALLAX[0];
-              const projectTitle = pickLocale(locale, project.titleKr, project.titleEn);
-              const summary = pickLocale(locale, project.summaryKr, project.summaryEn);
+            {featuredProjects.map((project, index) => {
+              const layout = FEATURED_FLOAT_LAYOUT[index] ?? FEATURED_FLOAT_LAYOUT[0];
+              const parallaxSpeed = FEATURED_PARALLAX[index] ?? FEATURED_PARALLAX[0];
 
               return (
-                <ScrollReveal
+                <ProjectFloatCard
                   key={project.id}
-                  className={`projects-float-item ${layout.item}`}
+                  project={project}
+                  layout={layout}
+                  parallaxSpeed={parallaxSpeed}
+                  locale={locale}
+                  variant="featured"
                   delayMs={layout.delay}
-                >
-                  <article className="group">
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="block focus-visible:focus-ring"
-                    >
-                      <ScrollParallax speed={parallaxSpeed}>
-                        <div className="project-float-visual relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_24px_64px_rgba(0,0,0,0.45)]">
-                          <ProjectCoverImage
-                            src={project.coverImage}
-                            alt={projectTitle}
-                            priority={index === 0}
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
-                        </div>
-                      </ScrollParallax>
-
-                      <div className={`project-float-caption mt-5 max-w-[36rem] ${layout.caption}`}>
-                        <p className="text-label text-muted">{project.period}</p>
-                        <h3 className="mt-2 font-hero text-[clamp(1.25rem,2.8vw,2rem)] font-semibold uppercase leading-tight tracking-[0.02em] text-foreground">
-                          {projectTitle}
-                        </h3>
-                        <p className="mt-1 text-caption text-neutral-400">{project.organization}</p>
-                        <p className="mt-3 text-body leading-relaxed text-neutral-200">{summary}</p>
-                        <p className="mt-4 text-label text-muted transition-colors group-hover:text-neutral-200">
-                          {locale === "ko" ? "프로젝트 보기 →" : "View project →"}
-                        </p>
-                      </div>
-                    </Link>
-                  </article>
-                </ScrollReveal>
+                />
               );
             })}
+
+            {studentProjects.length > 0 ? (
+              <div className="projects-float-student mt-8 md:mt-4">
+                <p className="text-subhead font-medium text-muted md:ml-[4%]">
+                  {localized(locale, uiStrings.projects.studentWorks)}.
+                </p>
+                <div className="mt-10 flex flex-col gap-12 md:mt-8 md:gap-0">
+                  {studentProjects.map((project, index) => {
+                    const layout = STUDENT_FLOAT_LAYOUT[index] ?? STUDENT_FLOAT_LAYOUT[0];
+                    const parallaxSpeed = STUDENT_PARALLAX[index] ?? STUDENT_PARALLAX[0];
+
+                    return (
+                      <ProjectFloatCard
+                        key={project.id}
+                        project={project}
+                        layout={layout}
+                        parallaxSpeed={parallaxSpeed}
+                        locale={locale}
+                        variant="student"
+                        delayMs={layout.delay}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

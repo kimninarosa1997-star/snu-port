@@ -79,6 +79,8 @@ export interface ProjectDetail {
   resultEn: string;
 }
 
+export type ProjectScale = "featured" | "student";
+
 export interface Project {
   id: ContentId;
   slug: string;
@@ -92,6 +94,8 @@ export interface Project {
   summaryKr: string;
   summaryEn: string;
   result: string;
+  /** featured = 대표 실무·연구 / student = 대학 시절 */
+  scale?: ProjectScale;
   /** public/images/projects/* — Cover Image in content.md */
   coverImage?: string;
   detail: ProjectDetail;

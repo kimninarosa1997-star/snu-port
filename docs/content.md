@@ -64,7 +64,7 @@
 | Section | Content IDs | Purpose | Display Content |
 |---|---|---|---|
 | Hero | §4 One-line·Supporting Copy, C-REQ-001 | 정체성·첫인상 | Oswald 스택 + 중앙 프로필 + Playfair tagline |
-| Projects | C-REC-005, C-PROJ-001~004 | 대표 산출물 | masonry 4카드 → `/projects/[slug]` |
+| Projects | C-REC-005, C-PROJ-001~007 | 대표 산출물 + 대학 프로젝트 | floating cards → `/projects/[slug]` |
 | Skills | C-SKL-* | 역량 | band-light 4열 |
 | About | C-REQ-001, C-REC-001~002, C-STR-*, C-INT-*, C-EDU-001~002 | 신뢰·배경 | band-muted editorial + KIRA 자격·학력 |
 | Experience | C-REC-003, C-REC-004, C-EXP-001~003, C-CERT-001~003 | 경력과 검증 이력 제시 | 실무·연구 타임라인, 교육 |
@@ -286,6 +286,99 @@ This archive records the possibilities of space, environment, and everyday life.
 - Problem EN: The academy required a clear operation strategy beyond curriculum planning, including structure, target users, schedule, and management system.
 - Solution EN: As a research assistant, the work supports case studies, document organization, and report preparation.
 - Result EN: The project contributes to building foundational materials and practical strategies for the academy’s operation.
+
+---
+
+## Project 05. Downtown Vacant Lot Regeneration Studio
+<!-- @id: C-PROJ-005 -->
+<!-- @slug: downtown-vacant-lot-regeneration-studio -->
+
+| Item | Content |
+|---|---|
+| ID | C-PROJ-005 |
+| Scale | student |
+| Project KR | 도심 유휴 부지 재생 스튜디오 |
+| Project EN | Downtown Vacant Lot Regeneration Studio |
+| Period | 2019/03 ~ 2019/06 |
+| Organization | Dankook University · Architecture Studio |
+| Role | 설계 스튜디오 |
+| Keywords | Urban Regeneration, Vacant Lot, Public Space, Studio |
+| Tools | Rhino, AutoCAD, Photoshop, Physical Model |
+| Cover Image | /images/projects/c-proj-stu-001.png |
+| Summary KR | 도심 속 방치된 부지를 공공성과 일상성을 회복하는 공간으로 재해석한 학부 스튜디오 프로젝트입니다. |
+| Summary EN | An undergraduate studio project reimagining an abandoned downtown parcel as everyday public space. |
+| Result | 학부 설계 스튜디오 우수작 선정 |
+
+### Problem → Solution → Result
+
+- Problem KR: 도심 유휴 부지가 주변 거리와 단절되어 보행과 커뮤니티 활동이 약화되어 있었습니다.
+- Solution KR: 보행축, 소규모 공원, 커뮤니티 프로그램을 연결하는 재생 전략을 제안했습니다.
+- Result KR: 부지의 공공성과 주변 맥락을 연결하는 설계 대안을 정리했습니다.
+- Problem EN: The vacant lot was disconnected from surrounding streets and daily activity.
+- Solution EN: The proposal linked pedestrian routes, small parks, and community programs.
+- Result EN: The studio deliverable articulated a regeneration strategy grounded in local context.
+
+---
+
+## Project 06. Hillside Housing Community Studio
+<!-- @id: C-PROJ-006 -->
+<!-- @slug: hillside-housing-community-studio -->
+
+| Item | Content |
+|---|---|
+| ID | C-PROJ-006 |
+| Scale | student |
+| Project KR | 경사지 공동주택 단지 스튜디오 |
+| Project EN | Hillside Housing Community Studio |
+| Period | 2018/09 ~ 2018/12 |
+| Organization | Dankook University · Architecture Studio |
+| Role | 설계 스튜디오 |
+| Keywords | Housing, Community, Topography, Courtyard |
+| Tools | Rhino, Revit, V-Ray, Diagram |
+| Cover Image | /images/projects/c-proj-stu-002.png |
+| Summary KR | 경사지를 활용해 공동주택과 마당·보행체계를 결합한 주거 공동체를 설계한 프로젝트입니다. |
+| Summary EN | A studio project combining hillside housing with courtyards and pedestrian circulation. |
+| Result | 주거·공용·조경을 통합한 공동체형 주거안 제안 |
+
+### Problem → Solution → Result
+
+- Problem KR: 경사지 입지에서 주거 밀도와 공용 공간, 보행 접근성을 동시에 확보하기 어려웠습니다.
+- Solution KR: 단계형 동선과 중정, 공용 마당을 중심으로 주거 블록을 배치했습니다.
+- Result KR: 지형을 활용한 공동체형 주거 구조를 제안했습니다.
+- Problem EN: The hillside site made it difficult to balance density, shared space, and walkability.
+- Solution EN: Stepped circulation, courtyards, and shared yards organized the housing blocks.
+- Result EN: The project proposed a community-oriented housing structure adapted to topography.
+
+---
+
+## Project 07. Riverside Cultural Pavilion Studio
+<!-- @id: C-PROJ-007 -->
+<!-- @slug: riverside-cultural-pavilion-studio -->
+
+| Item | Content |
+|---|---|
+| ID | C-PROJ-007 |
+| Scale | student |
+| Project KR | 하천변 문화·휴게 파빌리온 스튜디오 |
+| Project EN | Riverside Cultural Pavilion Studio |
+| Period | 2020/03 ~ 2020/06 |
+| Organization | Dankook University · Architecture Studio |
+| Role | 설계 스튜디오 |
+| Keywords | Pavilion, Riverside, Culture, Landscape |
+| Tools | Rhino, Grasshopper, Illustrator, Model |
+| Cover Image | /images/projects/c-proj-stu-003.png |
+| Summary KR | 하천과 도시의 경계에 문화·휴게 프로그램을 담은 소규모 파빌리온을 설계한 프로젝트입니다. |
+| Summary EN | A studio project designing a small pavilion for culture and rest along an urban riverfront. |
+| Result | 하천 경관과 도시 프로그램을 연결하는 파빌리온 제안 |
+
+### Problem → Solution → Result
+
+- Problem KR: 하천변 공간이 경관 자원은 풍부하지만, 시민이 머무를 수 있는 프로그램이 부족했습니다.
+- Solution KR: 경관을 따라 이어지는 파빌리온과 개방형 플랫폼을 제안했습니다.
+- Result KR: 하천과 도시 생활을 잇는 소규모 문화·휴게 거점을 설계했습니다.
+- Problem EN: The riverfront had strong landscape value but lacked programs for staying and gathering.
+- Solution EN: A pavilion and open platforms were proposed along the river edge.
+- Result EN: The design offered a small cultural and resting node connecting river and city life.
 
 ---
 

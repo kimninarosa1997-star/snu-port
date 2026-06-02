@@ -758,6 +758,23 @@ body {
   .project-float-caption {
     padding-bottom: clamp(3rem, 7vh, 5rem);
   }
+
+  .projects-float-item--student {
+    padding-bottom: clamp(2rem, 5vh, 3.5rem);
+  }
+
+  .projects-float-item--student .project-float-caption {
+    padding-bottom: clamp(2rem, 5vh, 3rem);
+  }
+}
+
+.project-float-visual--student {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.projects-float-student {
+  position: relative;
+  z-index: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {

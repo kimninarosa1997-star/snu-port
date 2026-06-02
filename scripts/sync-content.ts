@@ -121,6 +121,7 @@ function parseProjectBlocks(section: string): SiteContent["projects"] {
       summaryKr: map.get("Summary KR") ?? "",
       summaryEn: map.get("Summary EN") ?? "",
       result: map.get("Result") ?? "",
+      scale: map.get("Scale") === "student" ? "student" : "featured",
       coverImage: map.get("Cover Image")?.trim() || undefined,
       detail: {
         problemKr: parseBulletField(psrBlock, "Problem KR"),
@@ -210,7 +211,7 @@ function parseHeroCtas(heroSection: string): {
 }
 
 const EXPECTED_COUNTS = {
-  projects: 4,
+  projects: 7,
   strengths: 3,
   education: 2,
   experience: 3,
