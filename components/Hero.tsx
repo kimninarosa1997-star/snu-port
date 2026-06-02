@@ -33,19 +33,21 @@ export function Hero() {
         </div>
 
         <div className="relative z-10 flex h-full min-h-[inherit] w-full flex-col items-stretch justify-between pt-20 pb-10 md:pt-24 md:pb-14">
-          <div className="hero-stage flex w-full flex-1 flex-col items-center justify-center gap-1 overflow-hidden md:gap-2">
-            <p
-              className="hero-pan-left pointer-events-none whitespace-nowrap font-serif text-[clamp(2.25rem,10vw,6rem)] font-normal italic leading-none tracking-tight text-white/95 drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
-              aria-hidden
-            >
-              Architect
-            </p>
-            <h1
-              className="hero-pan-right pointer-events-none whitespace-nowrap text-[clamp(2.75rem,12vw,8rem)] font-black uppercase leading-none tracking-tighter text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
-              aria-label={`${portfolio.nameEn}, Architect`}
-            >
-              JinKyung Kim
-            </h1>
+          <div className="hero-stage flex w-full flex-1 items-center overflow-hidden">
+            <div className="hero-text-settle flex flex-col items-end gap-1 md:gap-2">
+              <p
+                className="pointer-events-none whitespace-nowrap font-serif text-[clamp(2.25rem,10vw,6rem)] font-normal italic leading-none tracking-tight text-white/95 drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
+                aria-hidden
+              >
+                Architect
+              </p>
+              <h1
+                className="pointer-events-none whitespace-nowrap text-[clamp(2.75rem,12vw,8rem)] font-black uppercase leading-none tracking-tighter text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
+                aria-label={`${portfolio.nameEn}, Architect`}
+              >
+                JinKyung Kim
+              </h1>
+            </div>
           </div>
 
           <div className="w-full shrink-0 space-y-2 overflow-hidden px-4 text-center md:px-6">

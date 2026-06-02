@@ -25,39 +25,21 @@ body {
 
 @keyframes hero-image-reveal {
   0% {
-    clip-path: inset(12% 50% 12% 50%);
-    opacity: 0.35;
-    transform: scale(1.06);
-  }
-  45% {
-    clip-path: inset(4% 8% 4% 8%);
-    opacity: 0.85;
-    transform: scale(1.02);
+    clip-path: inset(10% 50% 10% 50%);
+    opacity: 0.5;
   }
   100% {
     clip-path: inset(0 0 0 0);
     opacity: 1;
-    transform: scale(1);
   }
 }
 
-@keyframes hero-pan-left {
-  0%,
+@keyframes hero-text-settle {
+  0% {
+    transform: translateX(calc(-50vw + 50%));
+  }
   100% {
-    transform: translateX(calc(50vw - 50% - 1rem));
-  }
-  50% {
-    transform: translateX(calc(-50vw + 50% + 1rem));
-  }
-}
-
-@keyframes hero-pan-right {
-  0%,
-  100% {
-    transform: translateX(calc(-50vw + 50% + 1rem));
-  }
-  50% {
-    transform: translateX(calc(50vw - 50% - 1rem));
+    transform: translateX(calc(50vw - 100% - 1.5rem));
   }
 }
 
@@ -66,15 +48,12 @@ body {
 }
 
 .hero-image-reveal {
-  animation: hero-image-reveal 2.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: hero-image-reveal 3s linear forwards;
 }
 
-.hero-pan-left {
-  animation: hero-pan-left 5.5s ease-in-out infinite;
-}
-
-.hero-pan-right {
-  animation: hero-pan-right 5.5s ease-in-out infinite;
+.hero-text-settle {
+  animation: hero-text-settle 5s cubic-bezier(0.08, 0.82, 0.17, 1) forwards;
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -82,13 +61,11 @@ body {
     animation: none;
     clip-path: inset(0 0 0 0);
     opacity: 1;
-    transform: none;
   }
 
-  .hero-pan-left,
-  .hero-pan-right {
+  .hero-text-settle {
     animation: none;
-    transform: none;
+    transform: translateX(calc(50vw - 100% - 1.5rem));
   }
 }
 
