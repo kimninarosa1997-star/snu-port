@@ -37,7 +37,7 @@ export function ArchiveSection() {
 
         <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {archive.map((item, index) => (
-            <li key={item.id} className="studio-news-card border-t border-border pt-6">
+            <li key={item.id} className="studio-news-card pt-6">
               <div
                 className={`h-28 ${NEWS_ACCENTS[index % NEWS_ACCENTS.length]} ${index % NEWS_ACCENTS.length === 2 ? "text-neutral-950" : ""}`}
                 aria-hidden="true"
