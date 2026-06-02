@@ -80,7 +80,7 @@ export function AboutSection() {
         </div>
       </section>
 
-      <section aria-labelledby="about-details-heading" className="studio-section border-t border-border bg-background section-py">
+      <section aria-labelledby="about-details-heading" className="studio-section bg-background section-py">
         <div className="mx-auto max-w-content layout-gutter">
           <h3 id="about-details-heading" className="sr-only">
             {pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn)}
