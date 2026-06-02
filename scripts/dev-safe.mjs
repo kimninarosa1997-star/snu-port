@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { setTimeout as delay } from "node:timers/promises";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const PORTS = [3000, 3001, 3002];
+const PORTS = [3000, 3001, 3002, 3003];
 const shouldClean = process.argv.includes("--clean");
 
 function killDevPorts() {
