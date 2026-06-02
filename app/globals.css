@@ -739,6 +739,10 @@ body {
   padding-top: clamp(4rem, 14vw, 10rem);
 }
 
+.projects-float-row {
+  padding-bottom: clamp(2rem, 5vh, 3.5rem);
+}
+
 .projects-float-item {
   position: relative;
   isolation: isolate;
@@ -759,6 +763,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  .projects-float-row {
+    padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
+  }
+
   .projects-float-item {
     padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
   }

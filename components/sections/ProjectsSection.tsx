@@ -7,7 +7,14 @@ import { ScrollParallax } from "@/components/ui/ScrollParallax";
 import { siteContent, uiStrings } from "@/lib/content";
 import { getSectionMeta } from "@/lib/content/helpers";
 
-const FLOAT_LAYOUT = [
+type FloatCardLayout = {
+  item: string;
+  caption: string;
+  delay: number;
+  aspect?: string;
+};
+
+const FEATURED_LAYOUT: FloatCardLayout[] = [
   {
     item: "md:ml-0 md:mr-auto md:w-[min(100%,540px)] lg:w-[min(54%,580px)]",
     caption: "text-left",
@@ -28,32 +35,46 @@ const FLOAT_LAYOUT = [
     caption: "text-right",
     delay: 340,
   },
-  {
-    item: "md:ml-[14%] md:mr-auto md:mt-16 md:w-[min(100%,300px)] lg:w-[min(34%,320px)]",
-    caption: "text-left",
-    delay: 420,
-  },
-  {
-    item: "md:ml-auto md:mr-[10%] md:mt-4 md:w-[min(100%,280px)] lg:w-[min(32%,300px)]",
-    caption: "text-right",
-    delay: 500,
-  },
-  {
-    item: "md:ml-[4%] md:mr-auto md:mt-10 md:w-[min(100%,290px)] lg:w-[min(33%,310px)]",
-    caption: "text-left md:pl-1",
-    delay: 580,
-  },
-] as const;
+];
 
-const FLOAT_PARALLAX = [0.18, -0.12, 0.14, -0.1, 0.1, -0.08, 0.09] as const;
+/** 대표 카드 반대편 빈 공간 — 높이·너비·오프셋을 건마다 다르게 */
+const STUDENT_SIDE_LAYOUT: FloatCardLayout[] = [
+  {
+    item: "ml-auto mr-[3%] w-[min(88%,300px)] md:absolute md:right-[1%] md:top-[clamp(2.5rem,12vh,8rem)] md:ml-0 md:mr-0 md:w-[min(36%,290px)] lg:w-[min(34%,310px)] md:z-20",
+    caption: "text-right",
+    delay: 220,
+    aspect: "aspect-[4/5]",
+  },
+  {
+    item: "ml-[5%] w-[min(84%,280px)] md:absolute md:left-[3%] md:top-[clamp(1rem,6vh,4.5rem)] md:ml-0 md:w-[min(32%,265px)] lg:w-[min(30%,285px)] md:z-20",
+    caption: "text-left",
+    delay: 320,
+    aspect: "aspect-[3/4]",
+  },
+  {
+    item: "ml-auto mr-[8%] w-[min(82%,275px)] md:absolute md:right-[7%] md:top-[clamp(4rem,20vh,11rem)] md:ml-0 md:mr-0 md:w-[min(33%,280px)] lg:w-[min(31%,300px)] md:z-20",
+    caption: "text-right md:pr-2",
+    delay: 420,
+    aspect: "aspect-[5/6]",
+  },
+];
+
+const FEATURED_PARALLAX = [0.18, -0.12, 0.14, -0.1] as const;
+const STUDENT_PARALLAX = [0.14, -0.1, 0.12] as const;
+
+const ROW_MIN_HEIGHT = [
+  "md:min-h-[clamp(480px,68vh,720px)]",
+  "md:min-h-[clamp(540px,74vh,780px)]",
+  "md:min-h-[clamp(500px,70vh,740px)]",
+  "md:min-h-[clamp(460px,64vh,680px)]",
+] as const;
 
 export function ProjectsSection() {
   const { locale } = useLanguage();
   const sectionMeta = getSectionMeta(siteContent, "projects");
   const { projects } = siteContent;
-  const displayProjects = projects.filter(
-    (project) => project.scale === "featured" || project.scale === "student",
-  );
+  const featuredProjects = projects.filter((project) => (project.scale ?? "featured") === "featured");
+  const studentProjects = projects.filter((project) => project.scale === "student");
 
   if (!sectionMeta) return null;
 
@@ -86,21 +107,37 @@ export function ProjectsSection() {
           </ScrollParallax>
 
           <div className="projects-float-canvas relative z-10 flex flex-col gap-16 md:gap-0">
-            {displayProjects.map((project, index) => {
-              const layout = FLOAT_LAYOUT[index] ?? FLOAT_LAYOUT[0];
-              const parallaxSpeed = FLOAT_PARALLAX[index] ?? FLOAT_PARALLAX[0];
-              const variant = project.scale ?? "featured";
+            {featuredProjects.map((project, index) => {
+              const layout = FEATURED_LAYOUT[index] ?? FEATURED_LAYOUT[0];
+              const student = studentProjects[index];
+              const studentLayout = STUDENT_SIDE_LAYOUT[index];
+              const rowHeight = ROW_MIN_HEIGHT[index] ?? ROW_MIN_HEIGHT[0];
 
               return (
-                <ProjectFloatCard
+                <div
                   key={project.id}
-                  project={project}
-                  layout={layout}
-                  parallaxSpeed={parallaxSpeed}
-                  locale={locale}
-                  variant={variant}
-                  delayMs={layout.delay}
-                />
+                  className={`projects-float-row relative flex flex-col gap-10 md:block ${rowHeight}`}
+                >
+                  <ProjectFloatCard
+                    project={project}
+                    layout={layout}
+                    parallaxSpeed={FEATURED_PARALLAX[index] ?? FEATURED_PARALLAX[0]}
+                    locale={locale}
+                    variant="featured"
+                    delayMs={layout.delay}
+                  />
+
+                  {student && studentLayout ? (
+                    <ProjectFloatCard
+                      project={student}
+                      layout={studentLayout}
+                      parallaxSpeed={STUDENT_PARALLAX[index] ?? STUDENT_PARALLAX[0]}
+                      locale={locale}
+                      variant="student"
+                      delayMs={studentLayout.delay}
+                    />
+                  ) : null}
+                </div>
               );
             })}
           </div>

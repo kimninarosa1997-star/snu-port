@@ -9,7 +9,7 @@ import { pickLocale } from "@/lib/content/helpers";
 
 type ProjectFloatCardProps = {
   project: Project;
-  layout: { item: string; caption: string };
+  layout: { item: string; caption: string; aspect?: string };
   parallaxSpeed: number;
   locale: "ko" | "en";
   variant: ProjectScale;
@@ -27,6 +27,7 @@ export function ProjectFloatCard({
   const projectTitle = pickLocale(locale, project.titleKr, project.titleEn);
   const summary = pickLocale(locale, project.summaryKr, project.summaryEn);
   const isStudent = variant === "student";
+  const aspectClass = layout.aspect ?? (isStudent ? "aspect-[5/4]" : "aspect-[4/3]");
 
   return (
     <ScrollReveal className={`projects-float-item ${layout.item}`} delayMs={delayMs}>
@@ -34,8 +35,8 @@ export function ProjectFloatCard({
         <Link href={`/projects/${project.slug}`} className="block focus-visible:focus-ring">
           <ScrollParallax speed={parallaxSpeed}>
             <div
-              className={`project-float-visual relative overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_24px_64px_rgba(0,0,0,0.45)] ${
-                isStudent ? "project-float-visual--student aspect-[5/4]" : "aspect-[4/3]"
+              className={`project-float-visual relative overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_24px_64px_rgba(0,0,0,0.45)] ${aspectClass} ${
+                isStudent ? "project-float-visual--student" : ""
               }`}
             >
               <ProjectCoverImage src={project.coverImage} alt={projectTitle} />
