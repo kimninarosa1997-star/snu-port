@@ -16,43 +16,46 @@ type FloatCardLayout = {
 
 const FEATURED_LAYOUT: FloatCardLayout[] = [
   {
-    item: "md:ml-0 md:mr-auto md:w-[min(100%,540px)] lg:w-[min(54%,580px)]",
+    item: "relative z-[3] md:ml-0 md:mr-auto md:w-[min(100%,540px)] lg:w-[min(48%,520px)]",
     caption: "text-left",
     delay: 0,
   },
   {
-    item: "md:ml-auto md:mr-[3%] md:mt-10 md:w-[min(100%,480px)] lg:w-[min(46%,500px)]",
+    item: "relative z-[3] md:ml-auto md:mr-[3%] md:mt-10 md:w-[min(100%,480px)] lg:w-[min(46%,480px)]",
     caption: "text-right md:pr-1",
     delay: 140,
   },
   {
-    item: "md:ml-[7%] md:mr-auto md:mt-6 md:w-[min(100%,460px)] lg:w-[min(44%,480px)]",
+    item: "relative z-[3] md:ml-[7%] md:mr-auto md:mt-6 md:w-[min(100%,460px)] lg:w-[min(44%,460px)]",
     caption: "text-left md:pl-2",
     delay: 240,
   },
   {
-    item: "md:ml-auto md:mr-0 md:mt-12 md:w-[min(100%,520px)] lg:w-[min(50%,540px)]",
+    item: "relative z-[3] md:ml-auto md:mr-0 md:mt-12 md:w-[min(100%,520px)] lg:w-[min(46%,500px)]",
     caption: "text-right",
     delay: 340,
   },
 ];
 
-/** 대표 카드 반대편 빈 공간 — 높이·너비·오프셋을 건마다 다르게 */
+/** lg 이상: 대표 카드 반대편 빈 공간 / md~lg: 대표 아래 스택 */
 const STUDENT_SIDE_LAYOUT: FloatCardLayout[] = [
   {
-    item: "ml-auto mr-[3%] w-[min(88%,300px)] md:absolute md:right-[1%] md:top-[clamp(2.5rem,12vh,8rem)] md:ml-0 md:mr-0 md:w-[min(36%,290px)] lg:w-[min(34%,310px)] md:z-20",
+    item:
+      "relative z-[2] ml-auto mr-[3%] mt-6 w-[min(88%,300px)] lg:absolute lg:right-[2%] lg:top-[clamp(2.5rem,12vh,8rem)] lg:mt-0 lg:mr-0 lg:w-[min(32%,300px)] xl:w-[min(30%,320px)]",
     caption: "text-right",
     delay: 220,
     aspect: "aspect-[4/5]",
   },
   {
-    item: "ml-[5%] w-[min(84%,280px)] md:absolute md:left-[3%] md:top-[clamp(1rem,6vh,4.5rem)] md:ml-0 md:w-[min(32%,265px)] lg:w-[min(30%,285px)] md:z-20",
+    item:
+      "relative z-[2] ml-[5%] mt-8 w-[min(84%,280px)] lg:absolute lg:left-[4%] lg:top-[clamp(1rem,6vh,4.5rem)] lg:mt-0 lg:ml-0 lg:w-[min(30%,270px)] xl:w-[min(28%,290px)]",
     caption: "text-left",
     delay: 320,
     aspect: "aspect-[3/4]",
   },
   {
-    item: "ml-auto mr-[8%] w-[min(82%,275px)] md:absolute md:right-[7%] md:top-[clamp(4rem,20vh,11rem)] md:ml-0 md:mr-0 md:w-[min(33%,280px)] lg:w-[min(31%,300px)] md:z-20",
+    item:
+      "relative z-[2] ml-auto mr-[8%] mt-6 w-[min(82%,275px)] lg:absolute lg:right-[6%] lg:top-[clamp(4rem,20vh,11rem)] lg:mt-0 lg:mr-0 lg:w-[min(31%,285px)] xl:w-[min(29%,300px)]",
     caption: "text-right md:pr-2",
     delay: 420,
     aspect: "aspect-[5/6]",
@@ -63,10 +66,10 @@ const FEATURED_PARALLAX = [0.18, -0.12, 0.14, -0.1] as const;
 const STUDENT_PARALLAX = [0.14, -0.1, 0.12] as const;
 
 const ROW_MIN_HEIGHT = [
-  "md:min-h-[clamp(480px,68vh,720px)]",
-  "md:min-h-[clamp(540px,74vh,780px)]",
-  "md:min-h-[clamp(500px,70vh,740px)]",
-  "md:min-h-[clamp(460px,64vh,680px)]",
+  "lg:min-h-[clamp(480px,68vh,720px)]",
+  "lg:min-h-[clamp(540px,74vh,780px)]",
+  "lg:min-h-[clamp(500px,70vh,740px)]",
+  "lg:min-h-[clamp(460px,64vh,680px)]",
 ] as const;
 
 export function ProjectsSection() {
@@ -109,7 +112,7 @@ export function ProjectsSection() {
               return (
                 <div
                   key={project.id}
-                  className={`projects-float-row relative flex flex-col gap-10 md:block ${rowHeight}`}
+                  className={`projects-float-row relative flex flex-col gap-8 md:gap-10 lg:block ${rowHeight}`}
                 >
                   <ProjectFloatCard
                     project={project}

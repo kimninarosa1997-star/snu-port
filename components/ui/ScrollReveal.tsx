@@ -21,6 +21,17 @@ export function ScrollReveal({ children, className = "", delayMs = 0 }: ScrollRe
       return;
     }
 
+    const revealIfInView = () => {
+      const rect = node.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      return rect.top < viewH * 0.92 && rect.bottom > viewH * 0.08;
+    };
+
+    if (revealIfInView()) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
@@ -28,7 +39,7 @@ export function ScrollReveal({ children, className = "", delayMs = 0 }: ScrollRe
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" },
+      { threshold: 0.05, rootMargin: "0px 0px 4% 0px" },
     );
 
     observer.observe(node);
