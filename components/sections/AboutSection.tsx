@@ -107,7 +107,7 @@ export function AboutSection() {
               {interests.map((interest) => (
                 <li
                   key={interest.id}
-                  className="border border-border px-4 py-3 text-label text-muted"
+                  className="border border-border bg-white/85 px-4 py-3 text-label text-muted backdrop-blur-sm"
                 >
                   {pickLocale(locale, interest.titleKr, interest.titleEn)}
                 </li>
