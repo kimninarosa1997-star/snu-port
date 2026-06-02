@@ -90,7 +90,7 @@ export function AboutSection() {
             {strengths.map((strength) => (
               <article
                 key={strength.id}
-                className="border border-border bg-white/80 p-5 backdrop-blur-sm"
+                className="border border-border p-5"
               >
                 <h4 className="text-subhead font-bold text-foreground">
                   {strength.title}
