@@ -27,15 +27,21 @@ npm start
 
 ## Vercel 배포
 
-1. [Vercel](https://vercel.com/)에 GitHub 저장소를 연결합니다.
-2. Framework Preset: **Next.js** (자동 감지)
-3. Root Directory: 프로젝트 루트
-4. Deploy
+GitHub 저장소 `kimninarosa1997-star/snu-port`가 Vercel 프로젝트에 연결되어 있습니다.
 
-또는 Vercel CLI:
+- **프로덕션 URL**: https://snu-port.vercel.app
+- **자동 배포**: `main` 브랜치에 push하면 Vercel이 빌드·배포합니다.
 
 ```bash
-npx vercel
+git add .
+git commit -m "변경 내용"
+git push origin main
+```
+
+수동 배포가 필요할 때만:
+
+```bash
+npx vercel --prod
 ```
 
 ## 프로젝트 구조
