@@ -9,6 +9,7 @@ const OUTPUT_PATH = join(ROOT, "lib/content/generated.ts");
 
 const NAV_SECTION_IDS: Record<string, string> = {
   Home: "home",
+  Hero: "home",
   About: "about",
   Projects: "projects",
   Skills: "skills",

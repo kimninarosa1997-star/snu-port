@@ -656,7 +656,7 @@ export const siteContent = {
   ],
   sections: [
     {
-      sectionId: "hero",
+      sectionId: "home",
       titleKr: "도시를 읽는 설계자",
       titleEn: "A Designer Who Reads Cities",
       descriptionKr: "건축설계 실무와 도시환경 연구를 연결해 더 나은 삶의 환경을 제안합니다.",

@@ -45,6 +45,8 @@
   --text-caption: 0.8125rem;
   --text-label: 0.75rem;
   --tracking-label: 0.18em;
+  --tracking-display: -0.02em;
+  --tracking-tight: -0.01em;
 
   --space-1: 8px;
   --space-2: 16px;

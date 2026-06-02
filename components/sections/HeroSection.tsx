@@ -3,20 +3,13 @@
 import { useEffect } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { siteContent } from "@/lib/content";
-import { pickLocale } from "@/lib/content/helpers";
-
-function scrollToSection(href: string) {
-  const id = href.slice(1);
-  const target = document.getElementById(id);
-  if (!target) return;
-  window.history.replaceState(null, "", href);
-  target.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
+import { scrollToSection } from "@/lib/scroll";
 
 export function HeroSection() {
   const { locale } = useLanguage();
   const { hero, meta } = siteContent;
-  const sectionMeta = siteContent.sections.find((s) => s.sectionId === "hero");
+  const sectionMeta = getSectionMeta(siteContent, "home");
 
   useEffect(() => {
     history.scrollRestoration = "manual";

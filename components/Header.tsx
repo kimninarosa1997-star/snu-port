@@ -3,14 +3,7 @@
 import { useEffect, useState } from "react";
 import { LangToggle } from "@/components/ui/LangToggle";
 import { siteContent } from "@/lib/content";
-
-function scrollToSection(href: string) {
-  const id = href.slice(1);
-  const target = document.getElementById(id);
-  if (!target) return;
-  window.history.replaceState(null, "", href);
-  target.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+import { scrollToSection } from "@/lib/scroll";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);

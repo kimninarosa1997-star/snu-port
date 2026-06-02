@@ -1,11 +1,13 @@
 import { AboutSection } from "@/components/sections/AboutSection";
+import { ArchiveSection } from "@/components/sections/ArchiveSection";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { CTABanner } from "@/components/CTABanner";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { SkillsSection } from "@/components/sections/SkillsSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SkipLink } from "@/components/layout/SkipLink";
-import { SkillsSection } from "@/components/SkillsSection";
-import { WorkSection } from "@/components/WorkSection";
 
 export default function Home() {
   return (
@@ -15,9 +17,11 @@ export default function Home() {
       <main id="main-content">
         <HeroSection />
         <AboutSection />
-        <WorkSection />
+        <ProjectsSection />
         <SkillsSection />
-        <CTABanner />
+        <ExperienceSection />
+        <ArchiveSection />
+        <ContactSection />
       </main>
       <Footer />
     </>
