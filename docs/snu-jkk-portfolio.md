@@ -50,7 +50,7 @@
 
 | Degree | University | Major | Period |
 |---|---|---|---|
-| Bachelor of Architecture | 홍익대학교 | 건축학 | 2013/03 - 2018/02 |
+| Bachelor of Architecture | 서울대학교 | 건축학 | 2013/03 - 2018/02 |
 | Master of Urban Planning and Real Estate | 서울대학교 | 도시계획 및 부동산학 | 2018/03 - 2020/02 |
 
 ## Languages

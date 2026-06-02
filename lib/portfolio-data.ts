@@ -108,7 +108,7 @@ export const portfolio = {
     },
     {
       degree: "Bachelor of Architecture",
-      university: "홍익대학교",
+      university: "서울대학교",
       major: "건축학",
       period: "2013/03 - 2018/02",
     },
