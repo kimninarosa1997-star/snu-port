@@ -166,6 +166,7 @@
   --breakpoint-lg: 80rem;
 
   --color-background: var(--color-canvas);
+  --color-canvas: var(--color-canvas);
   --color-foreground: var(--color-ink);
   --color-muted: var(--color-ink-muted);
   --color-faint: var(--color-ink-faint);
@@ -262,17 +263,45 @@ body {
   color: var(--color-ink);
 }
 
+.band-dark .text-neutral-100,
+.band-dark .text-body-l,
+.band-dark .text-body {
+  color: var(--color-neutral-100);
+}
+
+.band-dark .text-neutral-300,
+.band-dark .text-caption {
+  color: var(--color-neutral-300);
+}
+
 .band-light {
   background-color: var(--color-band-light);
   color: var(--color-band-light-ink);
 }
 
-.band-light .text-muted {
+.band-light .text-headline,
+.band-light h2,
+.band-light h3,
+.band-light h4 {
+  color: var(--color-band-light-ink);
+}
+
+.band-light .text-muted,
+.band-light .text-caption,
+.band-light .text-body,
+.band-light .text-body-l {
   color: var(--color-band-light-muted);
 }
 
 .band-muted {
   background-color: var(--color-band-muted);
+  color: var(--color-band-muted-ink);
+}
+
+.band-muted .text-headline,
+.band-muted h2,
+.band-muted h3,
+.band-muted p {
   color: var(--color-band-muted-ink);
 }
 

@@ -1,4 +1,7 @@
-import { Marquee } from "@/components/ui/Marquee";import { uiStrings } from "@/lib/content";
+"use client";
+
+import { Marquee } from "@/components/ui/Marquee";
+import { uiStrings } from "@/lib/content";
 import type { SectionTitle } from "@/lib/content/types";
 import { pickLocale } from "@/lib/content/helpers";
 

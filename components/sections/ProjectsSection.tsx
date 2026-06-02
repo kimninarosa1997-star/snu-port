@@ -47,9 +47,9 @@ export function ProjectsSection() {
                     <div className="absolute inset-0 flex items-end p-4">
                       <p className="text-label text-neutral-300">{project.period}</p>
                     </div>
-                    <div className="absolute inset-0 bg-canvas/20 opacity-0 transition-opacity group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-background/20 opacity-0 transition-opacity group-hover:opacity-100" />
                   </div>
-                  <div className="border-t border-border bg-neutral-900 p-4 transition-colors group-hover:bg-neutral-800">
+                  <div className="border-t border-border bg-surface p-4 transition-colors group-hover:bg-neutral-800/80">
                     <h3 className="text-title font-medium text-foreground">{title}</h3>
                     <p className="mt-1 text-caption text-neutral-300">{project.organization}</p>
                     <p className="mt-3 line-clamp-2 text-body text-neutral-100">{summary}</p>

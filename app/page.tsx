@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <SkipLink />
       <Header />
-      <main id="main-content">
+      <main id="main-content" className="relative bg-background">
         <HeroSection />
         <ProjectsSection />
         <SkillsSection />

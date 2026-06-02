@@ -97,7 +97,7 @@ export function Header() {
       {menuOpen ? (
         <div
           id="mobile-nav"
-          className="fixed inset-0 top-[var(--header-height)] z-40 bg-canvas px-6 py-8 shadow-[var(--shadow-elevated)] lg:hidden"
+          className="fixed inset-0 top-[var(--header-height)] z-40 bg-background px-6 py-8 shadow-[var(--shadow-elevated)] lg:hidden"
         >
           <nav
             className="flex flex-col gap-6 text-label uppercase tracking-[var(--tracking-label)] text-muted"
