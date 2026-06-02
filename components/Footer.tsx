@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
         <a
           href={`mailto:${email}`}
-          className="block break-all text-[clamp(1.75rem,8vw,5.5rem)] font-black uppercase leading-none tracking-tighter transition-opacity hover:opacity-80"
+          className="block whitespace-nowrap text-[clamp(0.875rem,3.2vw,2.25rem)] font-black uppercase leading-none tracking-tight transition-opacity hover:opacity-80"
         >
           {email}
         </a>
