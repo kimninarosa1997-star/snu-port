@@ -1,5 +1,6 @@
-import { AboutMarquee } from "@/components/AboutMarquee";
 import { portfolio } from "@/lib/portfolio-data";
+
+const EMPHASIS = ["아름답고", "지속", "가능한"];
 
 export function AboutSection() {
   return (
@@ -17,7 +18,25 @@ export function AboutSection() {
           {portfolio.aboutHighlight}
         </p>
 
-        <AboutMarquee />
+        <blockquote className="mt-20 text-center text-[clamp(1.25rem,3.5vw,2.25rem)] font-light leading-snug text-neutral-300 md:mt-28 md:leading-relaxed">
+          <span className="text-neutral-600">…</span>
+          {portfolio.aboutStatement.split(" ").map((word, i, arr) => {
+            const isEmphasis = EMPHASIS.some((e) => word.includes(e));
+            if (isEmphasis) {
+              return (
+                <strong key={i} className="font-bold text-white">
+                  {word}{" "}
+                </strong>
+              );
+            }
+            return (
+              <span key={i}>
+                {word}
+                {i < arr.length - 1 ? " " : ""}
+              </span>
+            );
+          })}
+        </blockquote>
 
         <div className="mt-24 border-t border-neutral-800 pt-16">
           <h3 className="text-sm font-bold uppercase tracking-[0.3em] text-neutral-500">

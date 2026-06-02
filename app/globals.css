@@ -88,53 +88,7 @@ body {
   animation: hero-pan-right 5.5s ease-in-out infinite;
 }
 
-.about-marquee {
-  overflow: hidden;
-  mask-image: linear-gradient(
-    90deg,
-    transparent,
-    black 8%,
-    black 92%,
-    transparent
-  );
-}
-
-.about-marquee-track {
-  display: flex;
-  width: max-content;
-  animation: about-marquee-scroll 28s linear infinite;
-}
-
-.about-marquee-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes about-marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .about-marquee {
-    mask-image: none;
-  }
-
-  .about-marquee-track {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-  }
-
-  .about-marquee-track > p:last-child {
-    display: none;
-  }
-
   .hero-image-reveal {
     animation: none;
     clip-path: inset(0 0 0 0);
