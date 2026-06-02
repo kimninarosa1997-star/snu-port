@@ -36,6 +36,7 @@
 
   --color-surface-raised: var(--color-neutral-900);
   --color-surface-overlay: oklch(0 0 0 / 0.94);
+  --color-surface-tag: oklch(1 0 0 / 0.8);
   --color-section-alt: oklch(0.09 0 0);
   --color-border: var(--color-neutral-800);
   --color-border-strong: var(--color-neutral-700);
@@ -148,6 +149,7 @@
 
   --color-surface-raised: oklch(0.96 0 0);
   --color-surface-overlay: oklch(1 0 0 / 0.94);
+  --color-surface-tag: oklch(1 0 0 / 0.8);
   --color-section-alt: oklch(0.97 0 0);
   --color-border: oklch(0.88 0 0);
   --color-border-strong: oklch(0.72 0 0);
@@ -183,6 +185,7 @@
   --color-on-primary: var(--color-on-primary);
   --color-surface: var(--color-surface-raised);
   --color-surface-overlay: var(--color-surface-overlay);
+  --color-surface-tag: var(--color-surface-tag);
   --color-section-alt: var(--color-section-alt);
   --color-success: var(--color-success);
   --color-warning: var(--color-warning);
