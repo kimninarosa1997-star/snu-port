@@ -30,11 +30,11 @@ function timelineSortKey(period: string): number {
 export function ExperienceSection() {
   const { locale } = useLanguage();
   const sectionMeta = getSectionMeta(siteContent, "experience");
-  const { experience, courses } = siteContent;
+  const { experience } = siteContent;
 
   if (!sectionMeta) return null;
 
-  const workItems = experience
+  const timelineItems = experience
     .map((item) => ({
       id: item.id,
       period: item.period,
@@ -44,19 +44,6 @@ export function ExperienceSection() {
       sortKey: timelineSortKey(item.period),
     }))
     .sort((a, b) => b.sortKey - a.sortKey);
-
-  const courseItems = courses
-    .map((course) => ({
-      id: course.id,
-      period: course.year,
-      organization: pickLocale(locale, course.titleKr, course.titleEn),
-      role: course.institution,
-      result: course.description,
-      sortKey: timelineSortKey(course.year),
-    }))
-    .sort((a, b) => b.sortKey - a.sortKey);
-
-  const timelineItems = [...workItems, ...courseItems];
 
   return (
     <section id="experience" aria-labelledby="experience-heading" className="studio-section border-t border-border bg-background section-py">

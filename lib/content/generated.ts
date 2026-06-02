@@ -557,16 +557,7 @@ export const siteContent = {
     },
   ],
   awards: [],
-  courses: [
-    {
-      id: "C-CERT-003",
-      year: "2020",
-      titleKr: "English Language Centre",
-      titleEn: "English Language Centre",
-      institution: "University of Victoria",
-      description: "캐나다 어학연수 과정, 코로나로 인한 조기 귀국",
-    },
-  ],
+  courses: [],
   archiveIntro: {
     kr: "Archive는 완성된 결과물만이 아니라, 도시와 건축을 이해하기 위해 지나온 경험을 기록하는 공간입니다.\n공모전, 워크숍, 학회, 교환학생, 연구 경험을 통해 공간을 바라보는 관점이 어떻게 확장되었는지 정리합니다.",
     en: "This archive records not only completed projects, but also the experiences that shaped my way of reading cities and architecture.\nIt traces how competitions, workshops, conferences, exchange programs, and research expanded my perspective on space and environment.",

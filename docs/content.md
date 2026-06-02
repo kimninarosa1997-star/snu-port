@@ -448,7 +448,6 @@ This archive records the possibilities of space, environment, and everyday life.
 
 | ID | Year | Course KR | Course EN | Institution | Description |
 |---|---|---|---|---|---|
-| C-CERT-003 | 2020 | English Language Centre | English Language Centre | University of Victoria | 캐나다 어학연수 과정, 코로나로 인한 조기 귀국 |
 
 ---
 
