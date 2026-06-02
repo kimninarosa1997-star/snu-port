@@ -44,7 +44,7 @@ export function ProjectsSection() {
   const title = pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn);
   const marqueeItems =
     locale === "ko" ? uiStrings.marquee.projects.kr : uiStrings.marquee.projects.en;
-  const bgLabel = marqueeItems.join(" · ").toUpperCase();
+  const bgLabel = uiStrings.marquee.projects.en.join(" · ").toUpperCase();
 
   return (
     <section id="projects" aria-labelledby="projects-heading" className="band-dark section-py overflow-hidden">
@@ -61,7 +61,12 @@ export function ProjectsSection() {
         </header>
 
         <div className="projects-float relative mt-4 pb-8 md:mt-8 md:pb-20">
-          <ScrollParallax speed={0.07} className="projects-float-bg pointer-events-none select-none">
+          <ScrollParallax
+            anchor="parent"
+            speed={0.38}
+            speedX={0.12}
+            className="projects-float-bg pointer-events-none select-none"
+          >
             <p aria-hidden="true">{bgLabel}</p>
           </ScrollParallax>
 
