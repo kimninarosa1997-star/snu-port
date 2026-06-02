@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { siteContent } from "@/lib/content";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,12 +17,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "김진경 | Real Estate & Space Value Strategist",
-  description:
-    "건축과 도시의 맥락을 바탕으로 부동산과 공간의 잠재 가치를 분석하고 전략화하는 공간 가치전략가 포트폴리오",
+  title: `${siteContent.meta.name} | ${siteContent.meta.position}`,
+  description: siteContent.hero.supportingEn,
   openGraph: {
-    title: "김진경 | Space Value Strategist",
-    description: "Real Estate & Space Value Strategist Portfolio",
+    title: `${siteContent.meta.name} | ${siteContent.meta.oneLineEn}`,
+    description: siteContent.hero.supportingEn,
     type: "website",
   },
 };

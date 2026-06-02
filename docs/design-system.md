@@ -1,6 +1,7 @@
-# DESIGN.md — NOIR/288 · Jinkyung Kim Portfolio
+# Design System — NOIR/288 · Jinkyung Kim Portfolio
 
 > 시네마틱 모노크롬 디자인 시스템. 싱글 페이지 포트폴리오(`docs/ia-wireframe.md`) 구현 계약.  
+> **파일:** `docs/design-system.md`  
 > **브랜드 무드:** 미니멀 · 신뢰 · 테크 · 시네마틱 · 모뉴멘탈  
 > **기본 테마:** 다크 우선(캔버스 = 시네마 블랙). 라이트 모드는 토글·`prefers-color-scheme`로 지원.
 
@@ -8,7 +9,7 @@
 
 ## 0. How to use this file
 
-UI 작업 전 _"Build to DESIGN.md + ia-wireframe.md"_ 로 핸드오프한다. 스타일시트가 아니라 **결정 계약**이다.
+UI 작업 전 _"Build to `design-system.md` + `ia-wireframe.md`"_ 로 핸드오프한다. 스타일시트가 아니라 **결정 계약**이다.
 
 **3대 원칙**
 
@@ -326,7 +327,7 @@ UI 작업 전 _"Build to DESIGN.md + ia-wireframe.md"_ 로 핸드오프한다. �
 |:---|:---|:---|:---|:---|
 | **Bar** | transparent over Hero | `--color-surface-overlay` + bottom hairline | — | full viewport overlay `--color-canvas` |
 | **Logo `[JK]`** | 36×36, 1px border `--color-border`, `label` | 동일 | — | 동일 |
-| **Links** | `label`, `--color-neutral-500` | — | `--color-neutral-050` | stack, `--space-4` gap |
+| **Links** | `label`, `--color-neutral-300` | — | `--color-neutral-050` | stack, `--space-4` gap |
 | **Lang toggle** | `label`, pill 없음, active = `--color-neutral-050` | — | — | footer of drawer |
 | **Focus** | underline or `--shadow-focus` | | | trap focus, Esc close |
 
@@ -472,6 +473,8 @@ UI 작업 전 _"Build to DESIGN.md + ia-wireframe.md"_ 로 핸드오프한다. �
 |:---|:---|:---|
 | 0.1 | — | NOIR/288 초안 |
 | 0.2 | 2026-06-02 | 포트폴리오 토큰·컴포넌트 상태·Stitch Map·WCAG·8px 스페이스·와이어프레임 정렬 |
+| 0.3 | 2026-06-02 | QA P1 — Nav link WCAG `--color-neutral-300` (`review-log.md` C-05) |
+| 0.4 | 2026-06-02 | QA P2 — H1·핸드오프 문구를 파일명 `design-system.md`와 통일 |
 
 **관련:** `docs/ia-wireframe.md`, `docs/content.md`
 
