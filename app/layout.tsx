@@ -12,7 +12,7 @@ const inter = Inter({
 
 const oswald = Oswald({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["600", "700"],
   variable: "--font-oswald",
   display: "swap",
 });
@@ -41,6 +41,7 @@ export default function RootLayout({
       className={`${inter.variable} ${oswald.variable} ${playfair.variable}`}
     >
       <head>
+        <link rel="preload" href="/images/hero-city.jpg" as="image" fetchPriority="high" />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="antialiased bg-background text-foreground">

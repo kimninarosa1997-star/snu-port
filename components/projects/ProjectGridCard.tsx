@@ -14,6 +14,7 @@ type ProjectGridCardProps = {
 
 export function ProjectGridCard({ project, locale, aspectClass, readLabel }: ProjectGridCardProps) {
   const projectTitle = pickLocale(locale, project.titleKr, project.titleEn);
+  const summary = pickLocale(locale, project.summaryKr, project.summaryEn);
 
   return (
     <article className="studio-project-card group border-t border-border">
@@ -28,6 +29,7 @@ export function ProjectGridCard({ project, locale, aspectClass, readLabel }: Pro
           <p className="mt-2 text-caption text-muted">
             {project.organization} · {project.period}
           </p>
+          <p className="mt-3 line-clamp-2 text-body text-muted">{summary}</p>
           <p className="mt-4 text-label font-medium uppercase tracking-[var(--tracking-label)] text-muted transition-colors group-hover:text-foreground">
             {readLabel}
           </p>

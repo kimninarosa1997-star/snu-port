@@ -6,6 +6,7 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Marquee } from "@/components/ui/Marquee";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
+import { scrollToSection } from "@/lib/scroll";
 
 const HERO_CITY_IMAGE = "/images/hero-city.jpg";
 
@@ -25,17 +26,23 @@ export function HeroSection() {
 
   const supporting = pickLocale(locale, hero.supportingKr, hero.supportingEn);
   const tagline = pickLocale(locale, hero.oneLineKr, hero.oneLineEn);
+  const { ctaPrimary, ctaSecondary } = hero;
 
   return (
-    <section id="home" aria-labelledby="hero-heading" className="bg-background">
-      <div className="studio-hero-stage">
-        <div className="hero-fullbleed relative h-svh w-full overflow-hidden bg-neutral-950">
+    <section
+      id="home"
+      aria-labelledby="hero-heading"
+      className="flex min-h-[min(100svh,720px)] flex-col bg-background"
+    >
+      <div className="studio-hero-stage relative flex min-h-0 flex-1 flex-col">
+        <div className="hero-fullbleed relative min-h-[38vh] w-full flex-1 overflow-hidden bg-neutral-950 sm:min-h-[42vh]">
           <Image
             src={HERO_CITY_IMAGE}
             alt=""
             fill
             priority
-            unoptimized
+            fetchPriority="high"
+            quality={80}
             sizes="100vw"
             className="object-cover object-center"
           />
@@ -64,17 +71,37 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="border-b border-border">
-        <div className="mx-auto max-w-content layout-gutter py-10 md:py-14">
+      <div className="shrink-0 border-b border-border">
+        <div className="mx-auto flex max-w-content flex-col gap-6 layout-gutter py-8 md:py-10">
           <div className="max-w-prose">
-            <h1 id="hero-heading" className="sr-only">
-              {meta.name} — {tagline}
-            </h1>
-            <p className="text-label text-muted">
+            <h1 id="hero-heading" className="text-label text-muted">
               {locale === "ko" ? `Hey, ${meta.nameKr} here.` : `Hey, ${meta.name} here.`}
-            </p>
+            </h1>
             <p className="mt-4 font-display text-body-l leading-relaxed text-foreground">{supporting}</p>
             <p className="mt-3 text-body font-medium text-muted">{tagline}</p>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href={ctaPrimary.href}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(ctaPrimary.href);
+              }}
+              className="inline-flex min-h-11 w-full items-center justify-center bg-neutral-950 px-7 py-3 text-label uppercase tracking-[var(--tracking-label)] text-neutral-050 transition-colors hover:bg-neutral-800 focus-visible:focus-ring sm:w-auto"
+            >
+              {ctaPrimary.label}
+            </a>
+            <a
+              href={ctaSecondary.href}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(ctaSecondary.href);
+              }}
+              className="inline-flex min-h-11 w-full items-center justify-center border border-border px-7 py-3 text-label uppercase tracking-[var(--tracking-label)] text-foreground transition-colors hover:border-foreground focus-visible:focus-ring sm:w-auto"
+            >
+              {ctaSecondary.label}
+            </a>
           </div>
         </div>
 
