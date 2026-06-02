@@ -6,18 +6,10 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Marquee } from "@/components/ui/Marquee";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
-import { scrollToSection } from "@/lib/scroll";
 
 const HERO_CITY_IMAGE = "/images/hero-city.jpg";
 
 const HERO_KEYWORDS = ["Architecture", "Urban", "Real Estate"] as const;
-
-const HERO_NAV = [
-  { href: "#projects", labelKr: "Work", labelEn: "Work" },
-  { href: "#archive", labelKr: "News", labelEn: "News" },
-  { href: "#about", labelKr: "About", labelEn: "About" },
-  { href: "#contact", labelKr: "Contact", labelEn: "Contact" },
-] as const;
 
 export function HeroSection() {
   const { locale } = useLanguage();
@@ -73,28 +65,8 @@ export function HeroSection() {
       </div>
 
       <div className="border-b border-border">
-        <nav
-          className="mx-auto max-w-content layout-gutter py-10 md:py-14"
-          aria-label={locale === "ko" ? "주요 섹션" : "Primary sections"}
-        >
-          <ul className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-12 md:gap-x-16">
-            {HERO_NAV.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.href);
-                  }}
-                  className="text-studio-nav-link focus-visible:focus-ring"
-                >
-                  {locale === "ko" ? item.labelKr : item.labelEn}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-10 max-w-prose md:mt-12">
+        <div className="mx-auto max-w-content layout-gutter py-10 md:py-14">
+          <div className="max-w-prose">
             <h1 id="hero-heading" className="sr-only">
               {meta.name} — {tagline}
             </h1>
@@ -104,7 +76,7 @@ export function HeroSection() {
             <p className="mt-4 text-body-l leading-relaxed text-foreground">{supporting}</p>
             <p className="mt-3 text-body font-medium text-muted">{tagline}</p>
           </div>
-        </nav>
+        </div>
 
         {sectionMeta ? (
           <p className="sr-only">
