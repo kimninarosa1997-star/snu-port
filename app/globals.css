@@ -612,21 +612,16 @@ body {
 }
 
 @keyframes hero-bg-reveal {
-  0%,
-  14%,
-  86%,
+  0% {
+    transform: translate(-50%, -50%) scale(0.38);
+  }
   100% {
-    transform: translate(-50%, -50%) scale(0.42);
-  }
-  38% {
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-  52% {
     transform: translate(-50%, -50%) scale(1.85);
   }
-  70% {
-    transform: translate(-50%, -50%) scale(0.72);
-  }
+}
+
+.hero-bg-stage {
+  --hero-bg-reveal-duration: 2.8s;
 }
 
 .hero-bg-reveal {
@@ -636,7 +631,7 @@ body {
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%) scale(0.38);
-  animation: hero-bg-reveal var(--hero-stack-duration, 10s) cubic-bezier(0.45, 0.05, 0.2, 1) infinite;
+  animation: hero-bg-reveal var(--hero-bg-reveal-duration) cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   will-change: transform;
 }
 
