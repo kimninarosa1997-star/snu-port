@@ -22,10 +22,10 @@ export function ExperienceSection() {
             <h3 className="font-display text-[length:var(--text-title)] font-medium text-foreground">
               {localized(locale, uiStrings.experience.work)}.
             </h3>
-            <ol className="mt-8 space-y-10 border-l border-border pl-6">
+            <ol className="timeline-list mt-8 space-y-10">
               {experience.map((item) => (
-                <li key={item.id} className="relative">
-                  <span className="absolute -left-[calc(0.5rem+1px)] top-1.5 h-2 w-2 bg-neutral-300" />
+                <li key={item.id}>
+                  <span className="timeline-dot" aria-hidden="true" />
                   <p className="text-caption text-neutral-300">{item.period}</p>
                   <p className="mt-1 text-title font-medium text-foreground">{item.organization}</p>
                   <p className="mt-1 text-caption text-neutral-300">{item.role}</p>

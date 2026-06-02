@@ -30,10 +30,10 @@ export function ArchiveSection() {
           ))}
         </div>
 
-        <ol className="mt-16 space-y-10 border-l border-neutral-800/20 pl-6">
+        <ol className="timeline-list mt-16 space-y-10">
           {archive.map((item) => (
-            <li key={item.id} className="relative">
-              <span className="absolute -left-[calc(0.5rem+1px)] top-1.5 h-2 w-2 bg-[var(--color-band-light-muted)]" />
+            <li key={item.id}>
+              <span className="timeline-dot" aria-hidden="true" />
               <span className="inline-block border border-neutral-800/20 px-2 py-1 text-label text-[var(--color-band-light-muted)]">
                 {item.type}
               </span>
