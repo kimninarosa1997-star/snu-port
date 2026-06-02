@@ -117,14 +117,6 @@ export const siteContent = {
       period: "—",
       note: "대한민국 건축사 등록 · Professional architect registration, Republic of Korea",
     },
-    {
-      id: "C-EDU-002",
-      institution: "서울대학교 환경대학원",
-      major: "환경디자인 / Environmental Design",
-      degree: "석사 재학 / Master's (in progress)",
-      period: "2025/03 ~ Present",
-      note: "환경디자인 석사 과정 재학 · Currently pursuing a master's degree in environmental design",
-    },
   ],
   projects: [
     {
@@ -375,6 +367,15 @@ export const siteContent = {
     },
   ],
   experience: [
+    {
+      id: "C-EXP-004",
+      organization: "Seoul National University Graduate School of Environmental Studies / 서울대학교 환경대학원",
+      role: "Environmental Design · Master's (in progress) / 환경디자인 석사 재학",
+      period: "2025/03 ~ Present",
+      problem: "도시·건축·환경을 연결하는 학술적 기반이 필요했습니다.",
+      solution: "환경디자인 석사 과정에서 도시 재생, 공공공간, 환경 설계를 탐구합니다.",
+      result: "현재 재학 중 · Currently pursuing a master's degree in environmental design",
+    },
     {
       id: "C-EXP-001",
       organization: "Gansam Architects & Partners / 간삼종합건축사사무소",

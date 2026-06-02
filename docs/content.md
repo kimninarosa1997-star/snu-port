@@ -34,7 +34,7 @@
 | C-REQ-001 | Required | Photo | Portfolio profile image available |
 | C-REQ-002 | Required | Contact | Email: kimninarosa97@naver.com / Phone: Private / GitHub: Private / LinkedIn: Private |
 | C-REQ-003 | Required | Education | Dankook University, Architecture (Bachelor), 2016/03 ~ 2021/02 |
-| C-REQ-004 | Required | Current Education | Seoul National University Graduate School of Environmental Studies, Environmental Design — see C-EDU-002, 2025/03 ~ Present |
+| C-REQ-004 | Required | Current Education | Seoul National University Graduate School of Environmental Studies — see C-EXP-004, 2025/03 ~ Present |
 
 ### Recommended / 권장
 
@@ -66,7 +66,7 @@
 | Hero | §4 One-line·Supporting Copy, C-REQ-001 | 정체성·첫인상 | Oswald 스택 + 중앙 프로필 + Playfair tagline |
 | Projects | C-REC-005, C-PROJ-001~007 | 대표 산출물 + 대학 프로젝트 | floating cards → `/projects/[slug]` |
 | Skills | C-SKL-* | 역량 | band-light 4열 |
-| About | C-REQ-001, C-REC-001~002, C-STR-*, C-INT-*, C-EDU-001~002 | 신뢰·배경 | band-muted editorial + KIRA 자격·학력 |
+| About | C-REQ-001, C-REC-001~002, C-STR-*, C-INT-*, C-EDU-001 | 신뢰·배경 | band-muted editorial + KIRA 자격 |
 | Experience | C-REC-003, C-REC-004, C-EXP-001~003, C-CERT-001~003 | 경력과 검증 이력 제시 | 실무·연구 타임라인, 교육 |
 | Archive | §14 Introduction, C-ARC-001~007 | 사고의 확장·지속 학습 기록 | 아카이브 타임라인 7건 |
 | Contact | C-REQ-002, C-CON-001~006, C-OPT-001 | 협업과 네트워킹 유도 | Contact Copy, 이메일(mailto), SNS(준비 중) |
@@ -162,7 +162,6 @@ This archive records the possibilities of space, environment, and everyday life.
 | ID | Institution | Major | Degree | Period | Note |
 |---|---|---|---|---|---|
 | C-EDU-001 | 대한건축사협회 (KIRA) | 건축사 / Registered Architect | 자격 / License | — | 대한민국 건축사 등록 · Professional architect registration, Republic of Korea |
-| C-EDU-002 | 서울대학교 환경대학원 | 환경디자인 / Environmental Design | 석사 재학 / Master's (in progress) | 2025/03 ~ Present | 환경디자인 석사 과정 재학 · Currently pursuing a master's degree in environmental design |
 
 ---
 
@@ -387,6 +386,7 @@ This archive records the possibilities of space, environment, and everyday life.
 
 | ID | Organization | Role | Period | Problem | Solution | Result |
 |---|---|---|---|---|---|---|
+| C-EXP-004 | Seoul National University Graduate School of Environmental Studies / 서울대학교 환경대학원 | Environmental Design · Master's (in progress) / 환경디자인 석사 재학 | 2025/03 ~ Present | 도시·건축·환경을 연결하는 학술적 기반이 필요했습니다. | 환경디자인 석사 과정에서 도시 재생, 공공공간, 환경 설계를 탐구합니다. | 현재 재학 중 · Currently pursuing a master's degree in environmental design |
 | C-EXP-001 | Gansam Architects & Partners / 간삼종합건축사사무소 | Architectural Design, Masterplan, Headquarters Design | 2020/10 ~ 2024/02 | 대규모 캠퍼스와 사옥 프로젝트에서 건축, 도시, 조경, 교통, 업무환경을 통합적으로 검토해야 했습니다. | 삼성전자 평택캠퍼스, 수원 디지털시티, 광교 사옥 등 복수 프로젝트에서 기획·계획·실시설계 업무를 수행했습니다. | 약 3년 4개월 동안 대형 업무시설과 캠퍼스 프로젝트를 경험하며 실무 설계 역량을 축적했습니다. |
 | C-EXP-002 | Academic Research Experience / 학부 연구생 | Research, Analysis, Paper Writing, Administration | 2018/12 ~ 2020/01 | 건축설계 평가와 도시·건축 데이터를 연구하기 위해 설계와 데이터 분석을 연결하는 접근이 필요했습니다. | Machine Learning Based Urban Data Model and Visualization Platform 등 연구개발, 논문 작성, 국제학술대회 발표, 연구비 정산을 수행했습니다. | 프랑스 INTE 2018 국제학술대회에서 Crowdsourced Design Evaluation Methodology 관련 발표를 진행했습니다. |
 | C-EXP-003 | CASE Architects / CASE 건축사무소 | Internship, Model Making, 3D Printer Support | 2017/08 ~ 2017/09, 2019 | 건축설계 과정에서 클라이언트와 팀이 공간을 직관적으로 이해할 수 있는 모형과 시각자료가 필요했습니다. | 3D Printer를 활용한 모형 제작과 3D 모델링, 도면 작성 업무를 수행했습니다. | 설계안을 물리적·시각적으로 전달하는 제작 역량을 강화했습니다. |

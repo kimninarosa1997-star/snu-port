@@ -213,8 +213,8 @@ function parseHeroCtas(heroSection: string): {
 const EXPECTED_COUNTS = {
   projects: 7,
   strengths: 3,
-  education: 2,
-  experience: 3,
+  education: 1,
+  experience: 4,
   skillGroups: 4,
   skills: 15,
   awards: 0,

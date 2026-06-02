@@ -45,7 +45,7 @@ export const uiStrings = {
     contactLink: { kr: "문의하기", en: "Contact" },
   },
   experience: {
-    work: { kr: "경력", en: "Experience" },
+    work: { kr: "경력 · 학업", en: "Career & Study" },
     awards: { kr: "수상", en: "Awards" },
     courses: { kr: "교육·수료", en: "Courses" },
   },
