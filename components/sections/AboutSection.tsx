@@ -55,7 +55,7 @@ export function AboutSection() {
                 <div className="hidden space-y-4 md:block">{bodyParagraphs(fullBody)}</div>
                 <button
                   type="button"
-                  className="mt-4 text-label uppercase tracking-[var(--tracking-label)] text-muted transition-colors hover:text-[var(--color-band-muted-ink)] focus-visible:focus-ring md:hidden"
+                  className="mt-4 text-label uppercase tracking-[var(--tracking-label)] text-muted transition-colors hover:text-foreground focus-visible:focus-ring md:hidden"
                   aria-expanded={expanded}
                   onClick={() => setExpanded((value) => !value)}
                 >
@@ -63,6 +63,17 @@ export function AboutSection() {
                     ? localized(locale, uiStrings.about.showLess)
                     : localized(locale, uiStrings.about.readMore)}
                 </button>
+
+                {education.length > 0 ? (
+                  <div className="mt-8 space-y-1.5">
+                    {education.map((item) => (
+                      <p key={item.id} className="text-caption leading-relaxed text-muted">
+                        {item.institution} · {item.major}
+                        {item.note ? ` · ${item.note}` : null}
+                      </p>
+                    ))}
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>
@@ -102,33 +113,6 @@ export function AboutSection() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="mt-16 border-t border-border pt-12">
-            <h4 className="text-label text-muted">
-              {localized(locale, uiStrings.about.credentials)}
-            </h4>
-            <ol className="mt-8 space-y-8">
-              {education.map((item) => (
-                <li
-                  key={item.id}
-                  className="grid gap-2 border-b border-border pb-8 last:border-0 md:grid-cols-[1fr_auto]"
-                >
-                  <div>
-                    <p className="text-title font-medium text-foreground">{item.institution}</p>
-                    <p className="mt-1 text-caption text-muted">
-                      {item.major} · {item.degree}
-                    </p>
-                    {item.note ? (
-                      <p className="mt-2 text-body text-muted">{item.note}</p>
-                    ) : null}
-                  </div>
-                  {item.period && item.period !== "—" ? (
-                    <p className="text-caption text-muted">{item.period}</p>
-                  ) : null}
-                </li>
-              ))}
-            </ol>
           </div>
         </div>
       </section>
