@@ -43,13 +43,15 @@ export function ProjectFloatCard({
             </div>
           </ScrollParallax>
 
-          <div className={`project-float-caption mt-4 max-w-[36rem] md:mt-5 ${layout.caption}`}>
+          <div className={`project-float-caption mt-4 w-full md:mt-5 ${layout.caption}`}>
             <p className="text-label text-muted">{project.period}</p>
             <h3
-              className={`mt-2 font-hero font-semibold uppercase leading-tight tracking-[0.02em] text-foreground ${
+              className={`project-float-title mt-2 font-hero font-semibold leading-snug tracking-[0.02em] text-foreground ${
+                locale === "en" ? "uppercase" : ""
+              } ${
                 isStudent
                   ? "text-[clamp(1rem,2vw,1.35rem)]"
-                  : "text-[clamp(1.25rem,2.8vw,2rem)]"
+                  : "text-[clamp(1.125rem,2.4vw,1.75rem)]"
               }`}
             >
               {projectTitle}
