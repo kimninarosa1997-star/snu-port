@@ -269,7 +269,7 @@ export const siteContent = {
       titleKr: "Living in a Monument",
       titleEn: "Living in a Monument",
       period: "2020/03 ~ 2020/06",
-      organization: "Dankook University · Architecture Studio",
+      organization: "Architecture Studio",
       role: "설계 스튜디오",
       keywords: [
         "Pavilion",
@@ -303,7 +303,7 @@ export const siteContent = {
       titleKr: "또바기 치유소",
       titleEn: "Ttobagi Healing Center",
       period: "2019/03 ~ 2019/06",
-      organization: "Dankook University · Architecture Studio",
+      organization: "Architecture Studio",
       role: "설계 스튜디오",
       keywords: [
         "Urban Regeneration",
@@ -337,7 +337,7 @@ export const siteContent = {
       titleKr: "옥탑방 하늬바람집",
       titleEn: "Rooftop Hanuibaram House",
       period: "2018/09 ~ 2018/12",
-      organization: "Dankook University · Architecture Studio",
+      organization: "Architecture Studio",
       role: "설계 스튜디오",
       keywords: [
         "Housing",

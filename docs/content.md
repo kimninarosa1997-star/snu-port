@@ -299,7 +299,7 @@ This archive records the possibilities of space, environment, and everyday life.
 | Project KR | 또바기 치유소 |
 | Project EN | Ttobagi Healing Center |
 | Period | 2019/03 ~ 2019/06 |
-| Organization | Dankook University · Architecture Studio |
+| Organization | Architecture Studio |
 | Role | 설계 스튜디오 |
 | Keywords | Urban Regeneration, Vacant Lot, Public Space, Studio |
 | Tools | Rhino, AutoCAD, Photoshop, Physical Model |
@@ -330,7 +330,7 @@ This archive records the possibilities of space, environment, and everyday life.
 | Project KR | 옥탑방 하늬바람집 |
 | Project EN | Rooftop Hanuibaram House |
 | Period | 2018/09 ~ 2018/12 |
-| Organization | Dankook University · Architecture Studio |
+| Organization | Architecture Studio |
 | Role | 설계 스튜디오 |
 | Keywords | Housing, Community, Topography, Courtyard |
 | Tools | Rhino, Revit, V-Ray, Diagram |
@@ -361,7 +361,7 @@ This archive records the possibilities of space, environment, and everyday life.
 | Project KR | Living in a Monument |
 | Project EN | Living in a Monument |
 | Period | 2020/03 ~ 2020/06 |
-| Organization | Dankook University · Architecture Studio |
+| Organization | Architecture Studio |
 | Role | 설계 스튜디오 |
 | Keywords | Pavilion, Riverside, Culture, Landscape |
 | Tools | Rhino, Grasshopper, Illustrator, Model |
