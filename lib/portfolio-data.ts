@@ -49,55 +49,55 @@ export const portfolio = {
     {
       title: "Real Estate Market Analysis",
       description:
-        "Interpreting market trends, supply and demand, and pricing through data and field observation to inform investment and development decisions.",
+        "시장 동향, 수요·공급, 가격 흐름을 데이터와 현장 관찰로 해석하여 투자·개발 의사결정의 기초를 제공합니다.",
       items: [
-        "Market trend analysis",
-        "Feasibility review",
-        "Competitive site comparison",
-        "Risk assessment",
+        "시장 트렌드 분석",
+        "수익성 검토",
+        "경쟁 입지 비교",
+        "리스크 평가",
       ],
     },
     {
       title: "Spatial Value Strategy",
       description:
-        "Connecting architectural and urban context with brand experience to shape spatial potential into actionable strategies.",
+        "건축·도시 맥락과 브랜드 경험을 연결해 공간의 잠재 가치를 전략적으로 설계하고 실행안으로 전환합니다.",
       items: [
-        "Spatial concept planning",
-        "Rebranding strategy",
-        "Revenue model alignment",
-        "Stakeholder collaboration",
+        "공간 콘셉트 기획",
+        "리브랜딩 전략",
+        "수익 모델 연계",
+        "이해관계자 협업",
       ],
     },
     {
       title: "Site & Retail Analysis",
       description:
-        "Evaluating location competitiveness and commercial potential through retail dynamics, accessibility, and surrounding development.",
+        "상권 변화, 접근성, 주변 개발 계획을 종합해 입지 경쟁력과 상업적 가능성을 평가합니다.",
       items: [
-        "Retail district research",
-        "Accessibility analysis",
-        "Target customer definition",
-        "Program planning",
+        "상권 조사",
+        "접근성 분석",
+        "타깃 고객 정의",
+        "프로그램 기획",
       ],
     },
     {
       title: "Architecture & Urban Design",
       description:
-        "Translating spatial strategy into design language through drafting, 3D visualization, and urban planning documentation.",
+        "도면 작성, 3D 시각화, 도시계획 자료 해석을 통해 공간 전략을 구체적인 설계 언어로 전달합니다.",
       items: [
-        "Architectural drafting",
-        "3D modeling",
-        "Urban plan interpretation",
-        "Visualization",
+        "건축 도면 작성",
+        "3D 모델링",
+        "도시계획 해석",
+        "시각화",
       ],
     },
   ],
   skillLevels: [
-    { name: "Real Estate Market Analysis", level: 5 },
-    { name: "Spatial Value Strategy", level: 5 },
-    { name: "Site & Retail Analysis", level: 4 },
-    { name: "Architectural Drafting", level: 4 },
-    { name: "3D Modeling & Visualization", level: 4 },
-    { name: "Urban Planning & Design", level: 4 },
+    { name: "부동산 시장 분석", level: 5 },
+    { name: "공간 가치 전략 수립", level: 5 },
+    { name: "입지 및 상권 분석", level: 4 },
+    { name: "건축 도면 작성", level: 4 },
+    { name: "3D 모델링 및 시각화", level: 4 },
+    { name: "도시계획 수립 및 설계", level: 4 },
   ],
   education: [
     {
