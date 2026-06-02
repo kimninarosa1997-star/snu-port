@@ -23,7 +23,7 @@ export function AboutSection() {
 
   const bodyParagraphs = (text: string) =>
     splitParagraphs(text).map((paragraph) => (
-      <p key={paragraph.slice(0, 24)} className="text-body leading-relaxed text-[var(--color-band-muted-ink)]">
+      <p key={paragraph.slice(0, 24)} className="text-body leading-relaxed text-muted">
         {paragraph}
       </p>
     ));
@@ -33,12 +33,14 @@ export function AboutSection() {
       <section
         id="about"
         aria-labelledby="about-heading"
-        className="band-muted section-py"
+        className="studio-section border-t border-border bg-background section-py"
       >
         <div className="mx-auto max-w-content layout-gutter">
-          <h2 id="about-heading" className="text-center text-headline-editorial">
-            A <span className="italic">little</span> about me.
-          </h2>
+          <header className="border-b border-border pb-8 md:pb-10">
+            <h2 id="about-heading" className="text-studio-section-title">
+              {locale === "ko" ? "About" : "About"}
+            </h2>
+          </header>
 
           <div className="mx-auto mt-12 max-w-[56rem]">
             <div className="grid items-start gap-10 md:grid-cols-[minmax(0,240px)_1fr] md:gap-12 lg:grid-cols-[minmax(0,280px)_1fr]">
@@ -67,7 +69,7 @@ export function AboutSection() {
         </div>
       </section>
 
-      <section aria-labelledby="about-details-heading" className="band-dark section-py">
+      <section aria-labelledby="about-details-heading" className="studio-section border-t border-border bg-background section-py">
         <div className="mx-auto max-w-content layout-gutter">
           <h3 id="about-details-heading" className="sr-only">
             {pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn)}
@@ -76,10 +78,10 @@ export function AboutSection() {
           <div className="grid gap-8 md:grid-cols-3">
             {strengths.map((strength) => (
               <article key={strength.id} className="border-t border-border pt-6">
-                <h4 className="text-subhead font-medium text-foreground">
-                  {strength.title}.
+                <h4 className="text-subhead font-bold text-foreground">
+                  {strength.title}
                 </h4>
-                <p className="mt-3 text-body leading-relaxed text-neutral-100">
+                <p className="mt-3 text-body leading-relaxed text-muted">
                   {pickLocale(locale, strength.descriptionKr, strength.descriptionEn)}
                 </p>
               </article>
@@ -94,7 +96,7 @@ export function AboutSection() {
               {interests.map((interest) => (
                 <li
                   key={interest.id}
-                  className="border border-border px-4 py-3 text-label text-neutral-300"
+                  className="border border-border px-4 py-3 text-label text-muted"
                 >
                   {pickLocale(locale, interest.titleKr, interest.titleEn)}
                 </li>
@@ -114,7 +116,7 @@ export function AboutSection() {
                 >
                   <div>
                     <p className="text-title font-medium text-foreground">{item.institution}</p>
-                    <p className="mt-1 text-caption text-neutral-300">
+                    <p className="mt-1 text-caption text-muted">
                       {item.major} · {item.degree}
                     </p>
                     {item.note ? (
@@ -122,7 +124,7 @@ export function AboutSection() {
                     ) : null}
                   </div>
                   {item.period && item.period !== "—" ? (
-                    <p className="text-caption text-neutral-300">{item.period}</p>
+                    <p className="text-caption text-muted">{item.period}</p>
                   ) : null}
                 </li>
               ))}

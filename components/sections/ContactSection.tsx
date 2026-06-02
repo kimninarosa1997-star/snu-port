@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { Marquee } from "@/components/ui/Marquee";
 import { localized, localizedFn, siteContent, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale, splitParagraphs } from "@/lib/content/helpers";
 
@@ -10,14 +9,12 @@ export function ContactSection() {
   const { locale } = useLanguage();
   const [copied, setCopied] = useState(false);
   const sectionMeta = getSectionMeta(siteContent, "contact");
-  const { contact, meta } = siteContent;
+  const { contact } = siteContent;
 
   if (!sectionMeta) return null;
 
   const copy = pickLocale(locale, contact.copyKr, contact.copyEn);
   const instagramField = contact.fields.find((field) => field.id === "C-CON-006");
-  const footerMarquee =
-    locale === "ko" ? uiStrings.marquee.footer.kr : uiStrings.marquee.footer.en;
 
   async function handleCopyEmail() {
     try {
@@ -30,17 +27,16 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="band-dark">
-      <div className="mx-auto max-w-content section-py layout-gutter">
-        <p className="text-display-m leading-none text-neutral-800" aria-hidden="true">
-          {locale === "ko" ? "함께" : "Let's"}
-        </p>
-        <h2 id="contact-heading" className="text-headline">
-          {pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn)}
-        </h2>
+    <section id="contact" aria-labelledby="contact-heading" className="studio-section border-t border-border bg-background">
+      <div className="mx-auto max-w-content layout-gutter section-py">
+        <header className="border-b border-border pb-8 md:pb-10">
+          <h2 id="contact-heading" className="text-studio-section-title">
+            {pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn)}
+          </h2>
+        </header>
 
         <div className="mt-10 grid gap-12 lg:grid-cols-[3fr_2fr] lg:items-start">
-          <div className="space-y-4 text-body-l leading-relaxed text-neutral-100">
+          <div className="space-y-4 text-body-l leading-relaxed text-foreground">
             {splitParagraphs(copy).map((paragraph) => (
               <p key={paragraph.slice(0, 24)}>{paragraph}</p>
             ))}
@@ -58,7 +54,7 @@ export function ContactSection() {
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="inline-flex min-h-11 w-full items-center justify-center border border-border px-6 py-3 text-label uppercase tracking-[var(--tracking-label)] text-foreground transition-colors hover:border-foreground focus-visible:focus-ring sm:w-auto"
+                className="inline-flex min-h-11 items-center border border-border px-6 py-3 text-label uppercase tracking-[var(--tracking-label)] text-muted transition-colors hover:border-foreground hover:text-foreground focus-visible:focus-ring"
                 aria-live="polite"
               >
                 {copied
@@ -68,29 +64,13 @@ export function ContactSection() {
             </div>
 
             {instagramField ? (
-              <p className="mt-8 text-caption text-neutral-300" aria-disabled="true">
+              <p className="mt-8 text-caption text-muted" aria-disabled="true">
                 {localized(locale, uiStrings.contact.instagramPending)}
               </p>
             ) : null}
           </div>
         </div>
-
-        <p className="mt-16 text-caption text-muted">
-          {meta.nameKr} · {meta.positionKr}
-        </p>
       </div>
-
-      <a
-        href={`mailto:${contact.email}`}
-        className="block border-t border-border py-5 transition-opacity hover:opacity-80 focus-visible:focus-ring"
-        aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
-      >
-        <Marquee
-          items={Array.from({ length: 8 }, (_, i) => footerMarquee[i % footerMarquee.length]!)}
-          className="text-label uppercase tracking-[var(--tracking-label)] text-muted"
-          speed="slow"
-        />
-      </a>
     </section>
   );
 }

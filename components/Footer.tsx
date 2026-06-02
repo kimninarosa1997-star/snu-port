@@ -1,34 +1,33 @@
 "use client";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { Marquee } from "@/components/ui/Marquee";
 import { localizedFn, siteContent, uiStrings } from "@/lib/content";
 
 export function Footer() {
   const { locale } = useLanguage();
   const { contact, footer, meta } = siteContent;
-  const footerMarquee =
-    locale === "ko" ? uiStrings.marquee.footer.kr : uiStrings.marquee.footer.en;
 
   return (
-    <footer className="band-dark border-t border-border">
-      <div className="mx-auto max-w-content px-6 py-8 md:px-10">
-        <p className="text-label text-muted">{footer}</p>
+    <footer className="studio-footer bg-neutral-950 text-neutral-050">
+      <div className="mx-auto max-w-content border-b border-neutral-800 layout-gutter py-10 md:py-12">
+        <p className="max-w-prose text-body text-neutral-300">{footer}</p>
+        <a
+          href={`mailto:${contact.email}`}
+          className="mt-6 inline-block font-bold text-body-l text-neutral-050 transition-opacity hover:opacity-80 focus-visible:focus-ring"
+          aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
+        >
+          {contact.email}
+        </a>
       </div>
-      <a
-        href={`mailto:${contact.email}`}
-        className="block border-t border-border py-5 transition-opacity hover:opacity-80 focus-visible:focus-ring"
-        aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
-      >
-        <Marquee
-          items={Array.from({ length: 8 }, (_, i) => footerMarquee[i % footerMarquee.length]!)}
-          className="text-label uppercase tracking-[var(--tracking-label)] text-muted"
-          speed="slow"
-        />
-      </a>
-      <p className="sr-only">
-        {meta.nameKr} · {meta.positionKr}
-      </p>
+
+      <div className="mx-auto max-w-content overflow-hidden layout-gutter py-8 md:py-10">
+        <p className="studio-footer-name" aria-hidden="true">
+          {meta.name.toUpperCase()}
+        </p>
+        <p className="sr-only">
+          {meta.nameKr} · {meta.positionKr}
+        </p>
+      </div>
     </footer>
   );
 }

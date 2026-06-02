@@ -844,3 +844,50 @@ body {
 [data-theme="light"] .project-card-visual {
   background: linear-gradient(145deg, oklch(0.92 0 0) 0%, oklch(0.82 0 0) 100%);
 }
+
+/* ── A LINE studio layout ── */
+.studio-hero-stage {
+  color: var(--color-on-primary);
+}
+
+.text-studio-nav-link {
+  font-family: var(--font-hero);
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.text-studio-nav-link:hover {
+  opacity: 0.55;
+}
+
+.text-studio-section-title {
+  font-family: var(--font-hero);
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.studio-footer-name {
+  font-family: var(--font-hero);
+  font-size: clamp(3rem, 16vw, 11rem);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  color: oklch(1 0 0);
+  white-space: nowrap;
+}
+
+.studio-project-card [data-next-image] {
+  transition: transform var(--duration-base) var(--ease-cinema);
+}
+
+.studio-project-card:hover [data-next-image],
+.studio-project-card:hover img {
+  transform: scale(1.02);
+}

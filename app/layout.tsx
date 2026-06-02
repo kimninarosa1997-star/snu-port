@@ -26,7 +26,7 @@ const playfair = Playfair_Display({
 
 export const metadata = buildSiteMetadata();
 
-const themeInitScript = `(function(){try{var t=sessionStorage.getItem("snu-port-theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t}else if(window.matchMedia("(prefers-color-scheme: light)").matches){document.documentElement.dataset.theme="light"}}catch(e){}})();`;
+const themeInitScript = `(function(){try{var t=sessionStorage.getItem("snu-port-theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t}else{document.documentElement.dataset.theme="light"}}catch(e){}})();`;
 
 export default function RootLayout({
   children,
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="ko"
-      data-theme="dark"
+      data-theme="light"
       suppressHydrationWarning
       className={`${inter.variable} ${oswald.variable} ${playfair.variable}`}
     >

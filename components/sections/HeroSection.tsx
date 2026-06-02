@@ -5,15 +5,20 @@ import { useEffect } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
+import { scrollToSection } from "@/lib/scroll";
 
-/** Replace with `/images/hero-city.jpg` — urban skyline / streetscape preferred */
-const HERO_CITY_SRC =
-  "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=2400&q=85";
+const HERO_NAV = [
+  { href: "#projects", labelKr: "Work", labelEn: "Work" },
+  { href: "#archive", labelKr: "News", labelEn: "News" },
+  { href: "#about", labelKr: "About", labelEn: "About" },
+  { href: "#contact", labelKr: "Contact", labelEn: "Contact" },
+] as const;
 
 export function HeroSection() {
   const { locale } = useLanguage();
-  const { hero, meta } = siteContent;
+  const { hero, meta, projects } = siteContent;
   const sectionMeta = getSectionMeta(siteContent, "home");
+  const featuredCover = projects.find((p) => (p.scale ?? "featured") === "featured")?.coverImage;
 
   useEffect(() => {
     history.scrollRestoration = "manual";
@@ -26,57 +31,60 @@ export function HeroSection() {
   const tagline = pickLocale(locale, hero.oneLineKr, hero.oneLineEn);
 
   return (
-    <section
-      id="home"
-      aria-labelledby="hero-heading"
-      className="relative min-h-svh w-full overflow-hidden bg-neutral-950"
-    >
-      <div className="hero-bg-stage absolute inset-0 overflow-hidden bg-neutral-950" aria-hidden="true">
-        <div className="hero-bg-reveal">
-          <Image
-            src={HERO_CITY_SRC}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="hero-bg-reveal__img object-center"
-          />
+    <section id="home" aria-labelledby="hero-heading" className="bg-background">
+      <div className="studio-hero-stage bg-primary pt-[var(--header-height)]">
+        <div className="mx-auto flex max-w-content flex-col items-center layout-gutter pb-10 pt-8 md:pb-14 md:pt-12">
+          <div className="relative w-full max-w-4xl overflow-hidden bg-neutral-950 shadow-[0_24px_64px_oklch(0_0_0_/_0.25)] aspect-[16/10]">
+            {featuredCover ? (
+              <Image
+                src={featuredCover}
+                alt=""
+                fill
+                priority
+                unoptimized={featuredCover.startsWith("/")}
+                sizes="(max-width: 1024px) 100vw, 896px"
+                className="object-cover object-center"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-neutral-900" aria-hidden="true" />
+            )}
+          </div>
         </div>
       </div>
 
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/85"
-        aria-hidden="true"
-      />
+      <div className="border-b border-border">
+        <nav
+          className="mx-auto max-w-content layout-gutter py-10 md:py-14"
+          aria-label={locale === "ko" ? "주요 섹션" : "Primary sections"}
+        >
+          <ul className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-12 md:gap-x-16">
+            {HERO_NAV.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
+                  className="text-studio-nav-link focus-visible:focus-ring"
+                >
+                  {locale === "ko" ? item.labelKr : item.labelEn}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-      <div className="relative z-10 flex min-h-svh flex-col layout-gutter">
-        <div className="hero-title-stage pointer-events-none flex flex-1 w-full flex-col items-center justify-center overflow-hidden pt-[var(--header-height)] text-center">
-          <p
-            className="hero-stack-spread-left text-hero-cover-role whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.75)]"
-            aria-hidden="true"
-          >
-            Architect
-          </p>
-          <p
-            className="hero-stack-spread-right -mt-2 whitespace-nowrap text-hero-cover-name text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)] sm:-mt-3"
-            aria-hidden="true"
-          >
-            Jinkyung Kim
-          </p>
-        </div>
-
-        <div className="hero-enter mx-auto w-full max-w-prose pb-[clamp(2rem,8vh,5rem)]">
-          <h1 id="hero-heading" className="sr-only">
-            Architect Jinkyung Kim — {tagline}
-          </h1>
-          <p className="text-label text-neutral-300">
-            {locale === "ko" ? `Hey, ${meta.nameKr} here.` : `Hey, ${meta.name} here.`}
-          </p>
-          <p className="mt-4 text-body-l leading-relaxed text-neutral-100">{supporting}</p>
-          <p className="mt-3 font-display text-[length:var(--text-editorial)] italic text-foreground">
-            {tagline}
-          </p>
-        </div>
+          <div className="mt-10 max-w-prose md:mt-12">
+            <h1 id="hero-heading" className="sr-only">
+              {meta.name} — {tagline}
+            </h1>
+            <p className="text-label text-muted">
+              {locale === "ko" ? `Hey, ${meta.nameKr} here.` : `Hey, ${meta.name} here.`}
+            </p>
+            <p className="mt-4 text-body-l leading-relaxed text-foreground">{supporting}</p>
+            <p className="mt-3 text-body font-medium text-muted">{tagline}</p>
+          </div>
+        </nav>
 
         {sectionMeta ? (
           <p className="sr-only">

@@ -38,7 +38,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color] duration-[var(--duration-base)] ${
-        scrolled ? "border-b border-border bg-surface-overlay" : "bg-transparent"
+        scrolled ? "border-b border-border bg-surface-overlay" : "border-b border-transparent bg-background/80 backdrop-blur-sm"
       }`}
     >
       <div className="mx-auto flex h-[var(--header-height)] max-w-content items-center justify-between gap-4 layout-gutter">

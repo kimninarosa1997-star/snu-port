@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
 
@@ -15,17 +14,15 @@ export function SkillsSection() {
   if (!sectionMeta) return null;
 
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="band-light section-py">
+    <section id="skills" aria-labelledby="skills-heading" className="studio-section border-t border-border bg-background section-py">
       <div className="mx-auto max-w-content layout-gutter">
-        <SectionHeading
-          meta={sectionMeta}
-          locale={locale}
-          headingId="skills-heading"
-          variant="light"
-          marqueeKey="skills"
-        />
+        <header className="border-b border-border pb-8 md:pb-10">
+          <h2 id="skills-heading" className="text-studio-section-title">
+            {pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn)}
+          </h2>
+        </header>
 
-        <div className="mt-16 hidden gap-10 lg:grid lg:grid-cols-4">
+        <div className="mt-12 hidden gap-10 lg:grid lg:grid-cols-4">
           {skillGroups.map((group) => (
             <div key={group.id}>
               <h3 className="text-subhead font-medium text-[var(--color-band-light-ink)]">
