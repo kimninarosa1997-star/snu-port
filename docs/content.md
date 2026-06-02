@@ -162,7 +162,7 @@ This archive records the possibilities of space, environment, and everyday life.
 | ID | Institution | Major | Degree | Period | Note |
 |---|---|---|---|---|---|
 | C-EDU-001 | 대한건축사협회 (KIRA) | 건축사 / Registered Architect | 자격 / License | — | 대한민국 건축사 등록 · Professional architect registration, Republic of Korea |
-| C-EDU-002 | Seoul National University Graduate School of Environmental Studies / 서울대학교 환경대학원 | Environmental Design / 환경디자인 | Master's (in progress) / 석사 재학 | 2025/03 ~ Present | Currently pursuing a master's degree in environmental design |
+| C-EDU-002 | 서울대학교 환경대학원 | 환경디자인 / Environmental Design | 석사 재학 / Master's (in progress) | 2025/03 ~ Present | 환경디자인 석사 과정 재학 · Currently pursuing a master's degree in environmental design |
 
 ---
 

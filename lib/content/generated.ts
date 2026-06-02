@@ -119,11 +119,11 @@ export const siteContent = {
     },
     {
       id: "C-EDU-002",
-      institution: "Seoul National University Graduate School of Environmental Studies / 서울대학교 환경대학원",
-      major: "Environmental Design / 환경디자인",
-      degree: "Master's (in progress) / 석사 재학",
+      institution: "서울대학교 환경대학원",
+      major: "환경디자인 / Environmental Design",
+      degree: "석사 재학 / Master's (in progress)",
       period: "2025/03 ~ Present",
-      note: "Currently pursuing a master's degree in environmental design",
+      note: "환경디자인 석사 과정 재학 · Currently pursuing a master's degree in environmental design",
     },
   ],
   projects: [
