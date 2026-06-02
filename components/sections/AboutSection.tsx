@@ -90,7 +90,7 @@ export function AboutSection() {
             {strengths.map((strength) => (
               <article
                 key={strength.id}
-                className="border border-border bg-white/85 p-5 backdrop-blur-sm"
+                className="border border-border bg-white/80 p-5 backdrop-blur-sm"
               >
                 <h4 className="text-subhead font-bold text-foreground">
                   {strength.title}
@@ -110,7 +110,7 @@ export function AboutSection() {
               {interests.map((interest) => (
                 <li
                   key={interest.id}
-                  className="border border-border bg-white/85 px-4 py-3 text-label text-muted backdrop-blur-sm"
+                  className="border border-border bg-white/80 px-4 py-3 text-label text-muted backdrop-blur-sm"
                 >
                   {pickLocale(locale, interest.titleKr, interest.titleEn)}
                 </li>
