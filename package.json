@@ -6,12 +6,12 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "next dev",
-    "content:sync": "tsx scripts/sync-content.ts",
+    "dev": "node node_modules/next/dist/bin/next dev",
+    "content:sync": "node node_modules/tsx/dist/cli.mjs scripts/sync-content.ts",
     "prebuild": "npm run content:sync",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "node node_modules/next/dist/bin/next build",
+    "start": "node node_modules/next/dist/bin/next start",
+    "lint": "node node_modules/next/dist/bin/next lint --dir ."
   },
   "dependencies": {
     "next": "^15.3.3",
@@ -23,6 +23,8 @@
     "@types/node": "^22.15.29",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "^15.3.3",
     "tailwindcss": "^4.1.8",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"

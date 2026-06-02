@@ -27,7 +27,7 @@
 | `app/globals.css` NOIR/288 토큰 | ✅ 부분 완료 | `@theme` 매핑·라이트 테마 보완 필요 |
 | `SkipLink`, `LangToggle`, `LanguageProvider` | ✅ 존재 | FR-03·FR-04 연동 검증 필요 |
 | `HeroSection`, `AboutSection` | ✅ 존재 | `siteContent` 연동·FR 수용 기준 재검증 |
-| `WorkSection`, `SkillsSection` | ⚠️ 레거시 | `lib/portfolio-data.ts` 의존 — 마이그레이션 대상 |
+| `WorkSection`, `SkillsSection` | ✅ 제거됨 | `components/sections/*` + `siteContent` |
 | Projects / Experience / Archive / Contact 섹션 | ❌ 미구현 | IA 7섹션 중 3섹션 누락 |
 | SEO (`sitemap.ts`, `robots.ts`, `lib/seo.ts`) | ❌ 미구현 | M4 |
 | CI (GitHub Actions) | ❌ 미구현 | NFR-24 |
@@ -155,10 +155,10 @@ components/*             ← import only, literal string 금지
 
 ### 5.2 하위 태스크 체크리스트
 
-- [ ] **M3-C01** 모든 UI 문구를 단일 파일(`ui-strings.ts` 또는 `generated.ui`)로 모으기
-- [ ] **M3-C02** 섹션별 객체화 — `SiteContent` 하위 타입과 Content ID(`C-PROJ-001` 등) 유지
-- [ ] **M3-C03** 하드코딩 문자열 전수 치환 — `portfolio-data.ts`·레거시 `WorkSection`/`Hero.tsx`/`AboutSection.tsx`(루트) 정리
-- [ ] **M3-C04** UI/스타일/동작 불변 회귀 체크 — KR/EN, theme, accordion, mailto, 7 앵커
+- [x] **M3-C01** 모든 UI 문구를 단일 파일(`ui-strings.ts` 또는 `generated.ui`)로 모으기
+- [x] **M3-C02** 섹션별 객체화 — `SiteContent` 하위 타입과 Content ID(`C-PROJ-001` 등) 유지
+- [x] **M3-C03** 하드코딩 문자열 전수 치환 — `portfolio-data.ts`·레거시 `WorkSection`/`Hero.tsx`/`AboutSection.tsx`(루트) 정리
+- [x] **M3-C04** UI/스타일/동작 불변 회귀 체크 — KR/EN, theme, accordion, mailto, 7 앵커
 
 ### 5.3 치환 대상 (레거시)
 
@@ -221,58 +221,58 @@ components/*             ← import only, literal string 금지
 
 - [x] M1-01 부트스트랩·npm 스크립트
 - [x] M1-02 콘텐츠 파서 전 섹션 확장
-- [ ] M1-03 디자인 토큰 `@theme` 완성
-- [ ] M1-04 reduced-motion·focus 토큰
-- [ ] M1-05 Header / Footer / SkipLink
+- [x] M1-03 디자인 토큰 `@theme` 완성
+- [x] M1-04 reduced-motion·focus 토큰
+- [x] M1-05 Header / Footer / SkipLink
 - [ ] M1-06 Button 공통 컴포넌트
 - [ ] M1-07 Badge 공통 컴포넌트
 - [ ] M1-08 Card 공통 컴포넌트
 - [ ] M1-09 Timeline / SectionHeading
-- [ ] M1-10 LangToggle + Provider
-- [ ] M1-11 HeroSection
-- [ ] M1-12 AboutSection
-- [ ] M1-13 **GATE-M1** `npm run build`
+- [x] M1-10 LangToggle + Provider
+- [x] M1-11 HeroSection
+- [x] M1-12 AboutSection
+- [x] M1-13 **GATE-M1** `npm run build`
 
 ### M2 — Projects · Skills · Experience
 
-- [ ] M2-01 ProjectsSection + ProjectCard
-- [ ] M2-02 프로젝트 accordion
-- [ ] M2-03 프로젝트 상세 CTA·메타
-- [ ] M2-04 SkillsSection
-- [ ] M2-05 ExperienceSection
+- [x] M2-01 ProjectsSection + ProjectCard
+- [x] M2-02 프로젝트 accordion
+- [x] M2-03 프로젝트 상세 CTA·메타
+- [x] M2-04 SkillsSection
+- [x] M2-05 ExperienceSection
 - [ ] M2-06 Experience Mobile UX (P2)
-- [ ] M2-07 page.tsx IA 정합
-- [ ] M2-08 이미지 자산·next/image
-- [ ] M2-09 **GATE-M2** `npm run build`
+- [x] M2-07 page.tsx IA 정합
+- [x] M2-08 이미지 자산·next/image
+- [x] M2-09 **GATE-M2** `npm run build`
 
 ### M3 — Archive · Contact · 테마 · 콘텐츠 중앙화
 
-- [ ] M3-01 ArchiveSection
-- [ ] M3-02 ContactSection
+- [x] M3-01 ArchiveSection
+- [x] M3-02 ContactSection
 - [ ] M3-03 Contact P2 (clipboard, Instagram, Ghost CTA)
 - [ ] M3-04 ThemeToggle
-- [ ] M3-05 Header scrolled state
-- [ ] M3-06 Footer copy
-- [ ] M3-07 섹션 aria-labelledby
-- [ ] M3-C01 UI 문구 단일 파일
-- [ ] M3-C02 섹션별 객체화
-- [ ] M3-C03 하드코딩 전수 치환·레거시 삭제
-- [ ] M3-C04 회귀 체크 (UI/스타일/동작 불변)
-- [ ] M3-08 **GATE-M3** `content:sync && build`
+- [x] M3-05 Header scrolled state
+- [x] M3-06 Footer copy
+- [x] M3-07 섹션 aria-labelledby
+- [x] M3-C01 UI 문구 단일 파일
+- [x] M3-C02 섹션별 객체화
+- [x] M3-C03 하드코딩 전수 치환·레거시 삭제
+- [x] M3-C04 회귀 체크 (UI/스타일/동작 불변)
+- [x] M3-08 **GATE-M3** `content:sync && build`
 
 ### M4 — SEO · 품질 · Launch · 문서
 
-- [ ] M4-01 layout metadata·OG
-- [ ] M4-02 sitemap·robots·JSON-LD
+- [x] M4-01 layout metadata·OG
+- [x] M4-02 sitemap·robots·JSON-LD
 - [ ] M4-03 접근성 감사 (Lighthouse a11y ≥ 95)
 - [ ] M4-04 성능 최적화 (Lighthouse perf ≥ 90)
-- [ ] M4-05 GitHub Actions CI
+- [x] M4-05 GitHub Actions CI
 - [ ] M4-06 Vercel 프로덕션 배포
 - [ ] M4-07 Lighthouse CI 리포트
-- [ ] M4-08 **`docs/content-keys-guide.md`** 초보자용 키↔화면 가이드
-- [ ] M4-09 README 갱신
+- [x] M4-08 **`docs/content-keys-guide.md`** 초보자용 키↔화면 가이드
+- [x] M4-09 README 갱신
 - [ ] M4-10 Launch Go/No-Go
-- [ ] M4-11 **GATE-M4** 최종 `npm run build`
+- [x] M4-11 **GATE-M4** 최종 `npm run build`
 
 ---
 
@@ -324,4 +324,4 @@ components/*             ← import only, literal string 금지
 
 ---
 
-**다음 액션:** M1-02(파서 전 섹션 확장) 착수 — 현재 `generated.ts`에 누락된 Projects/Experience/Archive/Contact 필드부터 보완.
+**다음 액션:** M4-03~04 Lighthouse 감사, M3-04 ThemeToggle, Launch Go/No-Go (M4-10).
