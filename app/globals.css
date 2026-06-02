@@ -741,20 +741,22 @@ body {
 
 .projects-float-item {
   position: relative;
-  z-index: 1;
+  isolation: isolate;
+}
+
+.project-float-caption {
+  position: relative;
+  z-index: 2;
+  padding-bottom: clamp(2rem, 5vh, 3.5rem);
 }
 
 @media (min-width: 768px) {
-  .projects-float-item:nth-child(2) {
-    z-index: 2;
+  .projects-float-item {
+    padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
   }
 
-  .projects-float-item:nth-child(3) {
-    z-index: 3;
-  }
-
-  .projects-float-item:nth-child(4) {
-    z-index: 4;
+  .project-float-caption {
+    padding-bottom: clamp(3rem, 7vh, 5rem);
   }
 }
 

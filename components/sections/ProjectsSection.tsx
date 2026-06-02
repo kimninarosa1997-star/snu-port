@@ -16,17 +16,17 @@ const PROJECT_FLOAT_LAYOUT = [
     delay: 0,
   },
   {
-    item: "md:ml-auto md:mr-[3%] md:-mt-[clamp(3rem,8vw,6rem)] md:w-[min(100%,480px)] lg:w-[min(46%,500px)]",
+    item: "md:ml-auto md:mr-[3%] md:mt-10 md:w-[min(100%,480px)] lg:w-[min(46%,500px)]",
     caption: "text-right md:pr-1",
     delay: 140,
   },
   {
-    item: "md:ml-[7%] md:mr-auto md:-mt-[clamp(2rem,5vw,4rem)] md:w-[min(100%,460px)] lg:w-[min(44%,480px)]",
+    item: "md:ml-[7%] md:mr-auto md:mt-6 md:w-[min(100%,460px)] lg:w-[min(44%,480px)]",
     caption: "text-left md:pl-2",
     delay: 240,
   },
   {
-    item: "md:ml-auto md:mr-0 md:-mt-[clamp(2.5rem,6vw,5rem)] md:w-[min(100%,520px)] lg:w-[min(50%,540px)]",
+    item: "md:ml-auto md:mr-0 md:mt-12 md:w-[min(100%,520px)] lg:w-[min(50%,540px)]",
     caption: "text-right",
     delay: 340,
   },
@@ -83,22 +83,23 @@ export function ProjectsSection() {
                   className={`projects-float-item ${layout.item}`}
                   delayMs={layout.delay}
                 >
-                  <ScrollParallax speed={parallaxSpeed}>
-                    <article className="group">
+                  <article className="group">
                     <Link
                       href={`/projects/${project.slug}`}
                       className="block focus-visible:focus-ring"
                     >
-                      <div className="project-float-visual relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_24px_64px_rgba(0,0,0,0.45)]">
-                        <ProjectCoverImage
-                          src={project.coverImage}
-                          alt={projectTitle}
-                          priority={index === 0}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
-                      </div>
+                      <ScrollParallax speed={parallaxSpeed}>
+                        <div className="project-float-visual relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_24px_64px_rgba(0,0,0,0.45)]">
+                          <ProjectCoverImage
+                            src={project.coverImage}
+                            alt={projectTitle}
+                            priority={index === 0}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-100" />
+                        </div>
+                      </ScrollParallax>
 
-                      <div className={`mt-5 max-w-[36rem] ${layout.caption}`}>
+                      <div className={`project-float-caption mt-5 max-w-[36rem] ${layout.caption}`}>
                         <p className="text-label text-muted">{project.period}</p>
                         <h3 className="mt-2 font-hero text-[clamp(1.25rem,2.8vw,2rem)] font-semibold uppercase leading-tight tracking-[0.02em] text-foreground">
                           {projectTitle}
@@ -111,7 +112,6 @@ export function ProjectsSection() {
                       </div>
                     </Link>
                   </article>
-                  </ScrollParallax>
                 </ScrollReveal>
               );
             })}
