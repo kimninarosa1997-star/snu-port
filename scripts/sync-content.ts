@@ -216,7 +216,7 @@ const EXPECTED_COUNTS = {
   experience: 3,
   skillGroups: 4,
   skills: 15,
-  awards: 5,
+  awards: 0,
   courses: 3,
   archive: 7,
   interests: 4,

@@ -67,7 +67,7 @@
 | Projects | C-REC-005, C-PROJ-001~004 | 대표 산출물 | masonry 4카드 → `/projects/[slug]` |
 | Skills | C-SKL-* | 역량 | band-light 4열 |
 | About | C-REQ-001, C-REC-001~002, C-STR-*, C-INT-*, C-EDU-001 | 신뢰·배경 | band-muted editorial + KIRA 자격 |
-| Experience | C-REC-003, C-REC-004, C-EXP-001~003, C-AWD-001~005, C-CERT-001~003 | 경력과 검증 이력 제시 | 실무·연구 타임라인, 수상, 교육 |
+| Experience | C-REC-003, C-REC-004, C-EXP-001~003, C-CERT-001~003 | 경력과 검증 이력 제시 | 실무·연구 타임라인, 교육 |
 | Archive | §14 Introduction, C-ARC-001~007 | 사고의 확장·지속 학습 기록 | 아카이브 타임라인 7건 |
 | Contact | C-REQ-002, C-CON-001~006, C-OPT-001 | 협업과 네트워킹 유도 | Contact Copy, 이메일(mailto), SNS(준비 중) |
 
@@ -343,11 +343,6 @@ This archive records the possibilities of space, environment, and everyday life.
 
 | ID | Year | Award KR | Award EN | Organization | Description |
 |---|---|---|---|---|---|
-| C-AWD-001 | 2018 | 안양시 건축문화상 장려상 | Anyang Architecture Culture Award, Honorable Mention | 안양시 | 박달동 골목길 커뮤니티를 주제로 한 ‘집으로 가는 길’ 프로젝트 |
-| C-AWD-002 | 2018 | 제주시 건축문화상 특선 | Jeju Architecture Culture Award, Special Selection | 한국건축가협회 제주건축가회 | 건입현대아파트 리모델링 예술가 마을 ‘Way Back Home’ 프로젝트 |
-| C-AWD-003 | 2018 | 제13회 전국 공중화장실 공모전 격려상 | National Public Toilet Design Competition, Encouragement Award | 한국화장실협회 | 임진각 평화누리 공중화장실 ‘온새미로’ 프로젝트 |
-| C-AWD-004 | 2019 | 제24회 경기건축문화상 계획부문 입선 | Gyeonggi Architecture Culture Award, Selected Work | 경기건축문화제 추진위원회 | 구미동 하수종말처리장 리모델링 도시농업 공간 ‘Farm for Home’ 프로젝트 |
-| C-AWD-005 | 2021 | 성적 최우등상 | Highest Academic Honors | 단국대학교 | 최우등 졸업 |
 
 ---
 
