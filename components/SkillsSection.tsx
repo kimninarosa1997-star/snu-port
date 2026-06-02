@@ -21,20 +21,28 @@ export function SkillsSection() {
         </h2>
 
         <div className="mt-16 divide-y divide-neutral-800">
-          {portfolio.skills.map((skill) => (
+          {portfolio.skills.map((skill, index) => (
             <div
               key={skill.title}
               className="grid gap-6 py-10 md:grid-cols-2 md:gap-16 md:py-12"
             >
               <div>
-                <h3 className="text-xl font-semibold md:text-2xl">{skill.title}</h3>
+                <p className="text-[0.65rem] font-medium uppercase tracking-[0.4em] text-neutral-600">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-3 font-serif text-[clamp(1.35rem,3vw,2.125rem)] font-normal italic leading-tight tracking-wide text-white">
+                  {skill.title}
+                </h3>
                 <p className="mt-4 text-sm leading-relaxed text-neutral-400 md:text-base">
                   {skill.description}
                 </p>
               </div>
-              <ul className="flex flex-col gap-2 text-sm text-neutral-300 md:text-base md:pt-1">
+              <ul className="flex flex-col gap-2 text-sm text-neutral-300 md:text-base md:pt-8">
                 {skill.items.map((item) => (
-                  <li key={item} className="border-b border-neutral-900 pb-2 last:border-0">
+                  <li
+                    key={item}
+                    className="border-b border-neutral-900 pb-2 font-light tracking-wide last:border-0"
+                  >
                     {item}
                   </li>
                 ))}
@@ -47,9 +55,11 @@ export function SkillsSection() {
           {portfolio.skillLevels.map((skill) => (
             <div
               key={skill.name}
-              className="flex items-center justify-between border border-neutral-800 px-4 py-3 text-sm"
+              className="flex items-center justify-between border border-neutral-800 px-4 py-3"
             >
-              <span className="text-neutral-300">{skill.name}</span>
+              <span className="text-xs font-light uppercase tracking-wider text-neutral-400">
+                {skill.name}
+              </span>
               <StarRating level={skill.level} />
             </div>
           ))}
