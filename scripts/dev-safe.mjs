@@ -67,7 +67,7 @@ async function main() {
   killDevPorts();
   await delay(800);
 
-  if (shouldClean) {
+  if (shouldClean || process.platform === "win32") {
     await cleanNextCache();
   }
 
