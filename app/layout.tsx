@@ -1,8 +1,8 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "@/components/providers/Providers";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildSiteMetadata } from "@/lib/seo";
-import { Inter, Oswald, Playfair_Display } from "next/font/google";
-import "./globals.css";
+import { Inter, Oswald, Playfair_Display } from "next/font/google";import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,6 +47,7 @@ export default function RootLayout({
       <body className="antialiased bg-background text-foreground">
         <JsonLd />
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );

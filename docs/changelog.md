@@ -51,3 +51,18 @@
 | 프로젝트 카드 요약 2줄 | 콘텐츠 | `summaryKr/En` line-clamp | 짧은 체류 방문자 스캔 |
 
 **영향 파일:** `app/page.tsx`, `components/sections/ContactSection.tsx`, `components/projects/ProjectGridCard.tsx`
+
+---
+
+## 2026-06-03 — Analytics·모바일 Nav (P2)
+
+### P2 — 측정·내비게이션
+
+| 항목 | 분류 | 개선 | 사유 |
+|------|------|------|------|
+| Vercel Web Analytics | 성능/운영 | `@vercel/analytics` + `layout` `<Analytics />` | ADR-006, KPI-01·02 유입·이탈 실측 |
+| 모바일 햄버거 드로어 | UX / 접근성 | `<1024px` 7링크 드로어, Esc·backdrop·focus trap | FR-02, R-05 |
+| Desktop Contact Ghost | UX | `lg+` Header Contact Ghost 버튼 | FR-06b |
+| Nav 링크 중앙화 | 유지보수 | `lib/nav-links.ts` | §17 순서·데스크톱 4링크 분리 |
+
+**영향 파일:** `app/layout.tsx`, `components/Header.tsx`, `lib/nav-links.ts`, `lib/content/ui-strings.ts`, `package.json`

@@ -8,6 +8,7 @@ export const uiStrings = {
     mobileNav: { kr: "모바일 내비게이션", en: "Mobile navigation" },
     langToggle: { kr: "언어 선택", en: "Language selection" },
     menuButton: { kr: "메뉴", en: "Menu" },
+    closeMenu: { kr: "메뉴 닫기", en: "Close menu" },
     heroKeywords: { kr: "관심 키워드", en: "Keywords" },
   },
   theme: {
@@ -56,6 +57,23 @@ export const uiStrings = {
     copyEmail: { kr: "이메일 복사", en: "Copy email" },
     copySuccess: { kr: "복사됨", en: "Copied" },
     instagramPending: { kr: "Instagram · 추가 예정", en: "Instagram · Coming soon" },
+    orEmail: { kr: "또는 이메일로", en: "Or email directly" },
+    form: {
+      ariaLabel: { kr: "문의 폼", en: "Contact form" },
+      name: { kr: "이름", en: "Name" },
+      email: { kr: "이메일", en: "Email" },
+      message: { kr: "메시지", en: "Message" },
+      submit: { kr: "보내기", en: "Send" },
+      sending: { kr: "전송 중…", en: "Sending…" },
+      success: {
+        kr: "메시지가 전송되었습니다. 곧 답변드리겠습니다.",
+        en: "Message sent. I'll get back to you soon.",
+      },
+      error: {
+        kr: "전송에 실패했습니다. 이메일로 직접 문의해 주세요.",
+        en: "Something went wrong. Please email us directly.",
+      },
+    },
   },
   profile: {
     fallbackCaption: { kr: "C-REQ-001 · 프로필", en: "C-REQ-001 · Profile" },
