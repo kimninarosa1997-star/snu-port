@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { siteContent } from "@/lib/content";
 
-export const runtime = "edge";
 export const alt = `${siteContent.meta.name} — ${siteContent.meta.oneLineEn}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

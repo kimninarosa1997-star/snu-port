@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { localized, uiStrings } from "@/lib/content";
 import type { Locale } from "@/lib/content/helpers";
 
 export function LangToggle() {
@@ -10,7 +11,7 @@ export function LangToggle() {
     <div
       className="flex items-center gap-2 text-label uppercase tracking-[var(--tracking-label)]"
       role="group"
-      aria-label="언어 선택"
+      aria-label={localized(locale, uiStrings.a11y.langToggle)}
     >
       {(["ko", "en"] as Locale[]).map((code) => (
         <button

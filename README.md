@@ -9,7 +9,8 @@
 - [Tailwind CSS 4](https://tailwindcss.com/)
 - [Vercel](https://vercel.com/) 배포
 
-상세 스택·ADR은 [`docs/tech-stack.md`](docs/tech-stack.md)를 참고하세요.
+상세 스택·ADR은 [`docs/tech-stack.md`](docs/tech-stack.md)를 참고하세요.  
+콘텐츠 수정 가이드는 [`docs/content-keys-guide.md`](docs/content-keys-guide.md)를 참고하세요.
 
 ## 로컬 실행
 
@@ -40,6 +41,9 @@ npm run content:sync
 
 3. 컴포넌트는 `@/lib/content`의 `siteContent`를 import합니다.
 
+**키 ↔ 화면 매핑:** [`docs/content-keys-guide.md`](docs/content-keys-guide.md)  
+**UI 버튼·라벨(크롬):** `lib/content/ui-strings.ts`
+
 ```
 docs/content.md
     ↓  npm run content:sync
@@ -55,14 +59,17 @@ components/
   sections/           # Hero, About, Projects, …
   ui/                 # SectionHeading, LangToggle, …
 lib/
-  content/            # siteContent (generated + types)
+  content/            # siteContent (generated + types + ui-strings)
 scripts/
   sync-content.ts     # content.md 파서
 docs/
   content.md          # ★ 콘텐츠 원본
   tech-stack.md
+  content-keys-guide.md
   ia-wireframe.md
   design-system.md
+  content-keys-guide.md  # ★ 키↔화면 편집 가이드
+  dev-plan.md
 public/images/        # 프로필·프로젝트 이미지
 ```
 

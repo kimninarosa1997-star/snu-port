@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProfileImage } from "@/components/ui/ProfileImage";
-import { siteContent } from "@/lib/content";
+import { siteContent, localized, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale, splitParagraphs } from "@/lib/content/helpers";
 
 export function AboutSection() {
@@ -17,11 +17,10 @@ export function AboutSection() {
 
   const fullBody = pickLocale(locale, about.bodyKr, about.bodyEn);
   const minimalBody = pickLocale(locale, about.minimalKr, about.minimalEn);
-  const profileAlt = pickLocale(
-    locale,
-    `${siteContent.meta.nameKr} 프로필 사진`,
-    `Portrait of ${siteContent.meta.name}`,
-  );
+  const profileAlt =
+    locale === "ko"
+      ? uiStrings.about.profileAlt.kr(siteContent.meta.nameKr)
+      : uiStrings.about.profileAlt.en(siteContent.meta.name);
 
   return (
     <section id="about" aria-labelledby="about-heading" className="section-py">
@@ -33,7 +32,10 @@ export function AboutSection() {
         />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16">
-          <ProfileImage alt={profileAlt} />
+          <ProfileImage
+            alt={profileAlt}
+            fallbackCaption={localized(locale, uiStrings.profile.fallbackCaption)}
+          />
 
           <div>
             <div className="space-y-4 text-[length:var(--text-body)] leading-relaxed text-neutral-100 md:hidden">
@@ -53,12 +55,8 @@ export function AboutSection() {
               onClick={() => setExpanded((value) => !value)}
             >
               {expanded
-                ? locale === "ko"
-                  ? "접기"
-                  : "Show less"
-                : locale === "ko"
-                  ? "더 보기"
-                  : "Read more"}
+                ? localized(locale, uiStrings.about.showLess)
+                : localized(locale, uiStrings.about.readMore)}
             </button>
           </div>
         </div>
@@ -81,7 +79,7 @@ export function AboutSection() {
 
         <div className="mt-16">
           <h3 className="text-label text-muted">
-            {locale === "ko" ? "연구 관심분야" : "Research Interests"}
+            {localized(locale, uiStrings.about.researchInterests)}
           </h3>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {interests.map((interest) => (
@@ -97,7 +95,7 @@ export function AboutSection() {
 
         <div className="mt-16 border-t border-border pt-12">
           <h3 className="text-label text-muted">
-            {locale === "ko" ? "학력" : "Education"}
+            {localized(locale, uiStrings.about.education)}
           </h3>
           <ol className="mt-8 space-y-8">
             {education.map((item) => (

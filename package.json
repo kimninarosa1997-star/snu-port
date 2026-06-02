@@ -2,6 +2,9 @@
   "name": "snu-port",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev",
     "content:sync": "tsx scripts/sync-content.ts",

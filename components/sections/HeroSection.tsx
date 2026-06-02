@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { siteContent } from "@/lib/content";
+import { siteContent, localized, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
 import { scrollToSection } from "@/lib/scroll";
 
@@ -52,7 +52,7 @@ export function HeroSection() {
         {keywords.length > 0 ? (
           <ul
             className="mt-8 flex max-w-full gap-2 overflow-x-auto pb-1 md:flex-wrap"
-            aria-label={locale === "ko" ? "관심 키워드" : "Keywords"}
+            aria-label={localized(locale, uiStrings.a11y.heroKeywords)}
           >
             {keywords.map((keyword) => (
               <li

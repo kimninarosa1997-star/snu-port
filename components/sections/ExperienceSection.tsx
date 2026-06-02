@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { siteContent } from "@/lib/content";
+import { siteContent, localized, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
 
 export function ExperienceSection() {
@@ -28,7 +28,7 @@ export function ExperienceSection() {
         <div className="mt-16 grid gap-16 lg:grid-cols-2">
           <div>
             <h3 className="text-label text-muted">
-              {locale === "ko" ? "경력" : "Experience"}
+              {localized(locale, uiStrings.experience.work)}
             </h3>
             <ol className="mt-8 space-y-10 border-l border-border pl-6">
               {experience.map((item) => (
@@ -50,7 +50,7 @@ export function ExperienceSection() {
           <div className="space-y-16">
             <div>
               <h3 className="text-label text-muted">
-                {locale === "ko" ? "수상" : "Awards"}
+                {localized(locale, uiStrings.experience.awards)}
               </h3>
               <ul className="mt-8 space-y-6">
                 {awards.map((award) => (
@@ -69,7 +69,7 @@ export function ExperienceSection() {
 
             <div>
               <h3 className="text-label text-muted">
-                {locale === "ko" ? "교육·수료" : "Courses"}
+                {localized(locale, uiStrings.experience.courses)}
               </h3>
               <ul className="mt-8 space-y-6">
                 {courses.map((course) => (

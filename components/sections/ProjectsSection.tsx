@@ -1,52 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { ProjectDetailBody } from "@/components/projects/ProjectDetailBody";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
 import { scrollToSection } from "@/lib/scroll";
-import type { Project } from "@/lib/content/types";
-
-function ProjectDetail({ project, locale }: { project: Project; locale: "ko" | "en" }) {
-  const { detail } = project;
-
-  return (
-    <div className="border-t border-border-strong pt-8">
-      <dl className="space-y-6 text-[length:var(--text-body)] leading-relaxed text-neutral-100">
-        {(
-          [
-            ["Problem", pickLocale(locale, detail.problemKr, detail.problemEn)],
-            ["Solution", pickLocale(locale, detail.solutionKr, detail.solutionEn)],
-            ["Result", pickLocale(locale, detail.resultKr, detail.resultEn)],
-          ] as const
-        ).map(([label, text]) =>
-          text ? (
-            <div key={label}>
-              <dt className="text-label text-muted">{label}</dt>
-              <dd className="mt-2">{text}</dd>
-            </div>
-          ) : null,
-        )}
-      </dl>
-      {project.tools.length > 0 ? (
-        <p className="mt-6 text-caption text-neutral-300">
-          {project.tools.join(" · ")}
-        </p>
-      ) : null}
-      <a
-        href="#contact"
-        onClick={(e) => {
-          e.preventDefault();
-          scrollToSection("#contact");
-        }}
-        className="mt-8 inline-flex items-center justify-center border border-border px-6 py-3 text-label uppercase tracking-[var(--tracking-label)] text-foreground transition-colors hover:border-foreground focus-visible:focus-ring"
-      >
-        Contact
-      </a>
-    </div>
-  );
-}
 
 export function ProjectsSection() {
   const { locale } = useLanguage();
@@ -108,8 +69,21 @@ export function ProjectsSection() {
                   </p>
                 </button>
                 {isExpanded ? (
-                  <div id={`project-detail-${project.id}`} className="pb-8">
-                    <ProjectDetail project={project} locale={locale} />
+                  <div id={`project-detail-${project.id}`} className="px-0 pb-8">
+                    <ProjectDetailBody
+                      project={project}
+                      locale={locale}
+                      onContactClick={(event) => {
+                        event.preventDefault();
+                        scrollToSection("#contact");
+                      }}
+                    />
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="mt-6 inline-flex min-h-11 items-center text-label uppercase tracking-[var(--tracking-label)] text-muted transition-colors hover:text-foreground focus-visible:focus-ring"
+                    >
+                      {locale === "ko" ? "전용 페이지 →" : "Open project page →"}
+                    </Link>
                   </div>
                 ) : null}
               </article>

@@ -1,6 +1,10 @@
-import { siteContent } from "@/lib/content";
+"use client";
+
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { localizedFn, siteContent, uiStrings } from "@/lib/content";
 
 export function Footer() {
+  const { locale } = useLanguage();
   const { footer, contact, meta } = siteContent;
 
   return (
@@ -12,7 +16,7 @@ export function Footer() {
         </p>
         <a
           href={`mailto:${contact.email}`}
-          aria-label={`이메일로 ${contact.name}에게 문의`}
+          aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
           className="mt-8 inline-block text-label text-foreground underline-offset-4 transition-opacity hover:underline focus-visible:focus-ring"
         >
           {contact.email}

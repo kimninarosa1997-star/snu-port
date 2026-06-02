@@ -1,0 +1,65 @@
+import type { LocalizedText } from "./types";
+
+/** UI 크롬 문구 — 컴포넌트 하드코딩 금지, 여기만 수정 */
+export const uiStrings = {
+  a11y: {
+    skipToMain: { kr: "본문으로 건너뛰기", en: "Skip to main content" },
+    primaryNav: { kr: "주 내비게이션", en: "Primary navigation" },
+    mobileNav: { kr: "모바일 내비게이션", en: "Mobile navigation" },
+    langToggle: { kr: "언어 선택", en: "Language selection" },
+    menuButton: { kr: "메뉴", en: "Menu" },
+    heroKeywords: { kr: "관심 키워드", en: "Keywords" },
+  },
+  about: {
+    readMore: { kr: "더 보기", en: "Read more" },
+    showLess: { kr: "접기", en: "Show less" },
+    researchInterests: { kr: "연구 관심분야", en: "Research Interests" },
+    education: { kr: "학력", en: "Education" },
+    profileAlt: {
+      kr: (nameKr: string) => `${nameKr} 프로필 사진`,
+      en: (name: string) => `Portrait of ${name}`,
+    },
+  },
+  projects: {
+    viewDetail: { kr: "상세 보기", en: "View detail" },
+    close: { kr: "접기", en: "Close" },
+    problem: { kr: "문제", en: "Problem" },
+    solution: { kr: "해결", en: "Solution" },
+    result: { kr: "결과", en: "Result" },
+    contactCta: { kr: "Contact", en: "Contact" },
+    allProjects: { kr: "프로젝트 목록", en: "All projects" },
+    keywords: { kr: "키워드", en: "Keywords" },
+    getInTouch: { kr: "협업 문의", en: "Get in touch" },
+    moreProjects: { kr: "다른 프로젝트", en: "More projects" },
+    role: { kr: "역할", en: "Role" },
+    contactLink: { kr: "문의하기", en: "Contact" },
+  },
+  experience: {
+    work: { kr: "경력", en: "Experience" },
+    awards: { kr: "수상", en: "Awards" },
+    courses: { kr: "교육·수료", en: "Courses" },
+  },
+  contact: {
+    emailAriaLabel: {
+      kr: (name: string) => `이메일로 ${name}에게 문의`,
+      en: (name: string) => `Contact ${name} by email`,
+    },
+  },
+  profile: {
+    fallbackCaption: { kr: "C-REQ-001 · 프로필", en: "C-REQ-001 · Profile" },
+  },
+} as const;
+
+export type UiStrings = typeof uiStrings;
+
+export function localized(locale: "ko" | "en", text: LocalizedText): string {
+  return locale === "ko" ? text.kr : text.en;
+}
+
+export function localizedFn(
+  locale: "ko" | "en",
+  fns: { kr: (name: string) => string; en: (name: string) => string },
+  name: string,
+): string {
+  return locale === "ko" ? fns.kr(name) : fns.en(name);
+}

@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import { LangToggle } from "@/components/ui/LangToggle";
-import { siteContent } from "@/lib/content";
+import { localized, siteContent, uiStrings } from "@/lib/content";
 import { scrollToSection } from "@/lib/scroll";
 
 export function Header() {
+  const { locale } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { navigation } = siteContent;
@@ -45,7 +47,7 @@ export function Header() {
           JK
         </a>
 
-        <nav className="hidden items-center gap-6 text-label text-muted lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 text-label text-muted lg:flex" aria-label={localized(locale, uiStrings.a11y.primaryNav)}>
           {navigation.map((item) => (
             <a
               key={item.href}
@@ -70,7 +72,7 @@ export function Header() {
           aria-controls="mobile-nav"
           onClick={() => setMenuOpen((open) => !open)}
           >
-            Menu
+            {localized(locale, uiStrings.a11y.menuButton)}
           </button>
         </div>
       </div>
@@ -80,7 +82,7 @@ export function Header() {
           id="mobile-nav"
           className="fixed inset-0 top-[var(--header-height)] z-40 bg-canvas px-6 py-8 shadow-[var(--shadow-elevated)] lg:hidden"
         >
-          <nav className="flex flex-col gap-8 text-label uppercase tracking-[var(--tracking-label)] text-muted" aria-label="Mobile">
+          <nav className="flex flex-col gap-8 text-label uppercase tracking-[var(--tracking-label)] text-muted" aria-label={localized(locale, uiStrings.a11y.mobileNav)}>
             {navigation.map((item) => (
               <a
                 key={item.href}

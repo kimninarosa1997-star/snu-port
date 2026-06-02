@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { siteContent } from "@/lib/content";
+import { siteContent, localizedFn, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale, splitParagraphs } from "@/lib/content/helpers";
 
 export function ContactSection() {
@@ -37,7 +37,7 @@ export function ContactSection() {
           <div className="lg:pt-16">
             <a
               href={`mailto:${contact.email}`}
-              aria-label={`이메일로 ${contact.name}에게 문의`}
+              aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
               className="inline-flex w-full items-center justify-center bg-primary px-8 py-4 text-label uppercase tracking-[var(--tracking-label)] text-on-primary transition-opacity hover:opacity-95 focus-visible:focus-ring sm:w-auto"
             >
               {contact.email}
