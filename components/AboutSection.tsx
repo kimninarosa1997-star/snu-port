@@ -40,17 +40,6 @@ export function AboutSection() {
             ))}
           </ul>
         </div>
-
-        <div className="mt-12 flex flex-wrap gap-6">
-          {portfolio.languages.map((lang) => (
-            <div key={lang.name} className="text-sm">
-              <span className="text-neutral-400">{lang.name}</span>
-              <span className="ml-2 text-neutral-600">
-                {"★".repeat(lang.level)}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

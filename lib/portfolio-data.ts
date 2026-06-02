@@ -113,10 +113,6 @@ export const portfolio = {
       period: "2013/03 - 2018/02",
     },
   ],
-  languages: [
-    { name: "Korean", level: 5 },
-    { name: "English", level: 4 },
-  ],
   aboutHighlight:
     "건축을 공부하고 도시를 연구하며, 공간이 사람과 도시에 남기는 가치를 전략으로 풀어내는 일을 하고 있습니다.",
   aboutStatement:
