@@ -1,7 +1,7 @@
 import { LanguageProvider } from "@/components/providers/LanguageProvider";
-import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildSiteMetadata } from "@/lib/seo";
 import { Inter, Playfair_Display } from "next/font/google";
-import { siteContent } from "@/lib/content";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,15 +17,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: `${siteContent.meta.name} | ${siteContent.meta.position}`,
-  description: siteContent.hero.supportingEn,
-  openGraph: {
-    title: `${siteContent.meta.name} | ${siteContent.meta.oneLineEn}`,
-    description: siteContent.hero.supportingEn,
-    type: "website",
-  },
-};
+export const metadata = buildSiteMetadata();
 
 export default function RootLayout({
   children,
@@ -39,6 +31,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable}`}
     >
       <body className="antialiased bg-background text-foreground">
+        <JsonLd />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

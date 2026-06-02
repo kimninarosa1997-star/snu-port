@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ProfileImage } from "@/components/ui/ProfileImage";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale, splitParagraphs } from "@/lib/content/helpers";
 
@@ -32,15 +33,7 @@ export function AboutSection() {
         />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16">
-          <div
-            className="mx-auto aspect-[3/4] w-full max-w-xs border border-border bg-neutral-900 grayscale lg:mx-0"
-            role="img"
-            aria-label={profileAlt}
-          >
-            <div className="flex h-full items-end p-4">
-              <p className="text-caption text-neutral-300">C-REQ-001 · Profile</p>
-            </div>
-          </div>
+          <ProfileImage alt={profileAlt} />
 
           <div>
             <div className="space-y-4 text-[length:var(--text-body)] leading-relaxed text-neutral-100 md:hidden">

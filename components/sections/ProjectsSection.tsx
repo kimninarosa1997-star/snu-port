@@ -82,6 +82,7 @@ export function ProjectsSection() {
                   type="button"
                   className="w-full pt-6 text-left focus-visible:focus-ring"
                   aria-expanded={isExpanded}
+                  aria-controls={`project-detail-${project.id}`}
                   onClick={() =>
                     setExpandedId(isExpanded ? null : project.id)
                   }
@@ -107,7 +108,7 @@ export function ProjectsSection() {
                   </p>
                 </button>
                 {isExpanded ? (
-                  <div className="pb-8">
+                  <div id={`project-detail-${project.id}`} className="pb-8">
                     <ProjectDetail project={project} locale={locale} />
                   </div>
                 ) : null}
