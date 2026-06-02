@@ -850,14 +850,23 @@ body {
   color: var(--color-on-primary);
 }
 
+.hero-fullbleed {
+  isolation: isolate;
+}
+
+.hero-keywords-overlay {
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 2.5rem;
+}
+
 .hero-keywords-marquee {
   font-family: var(--font-hero);
-  font-size: clamp(1.125rem, 3.2vw, 1.75rem);
+  font-size: clamp(1.25rem, 4vw, 2.25rem);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-on-primary);
-  opacity: 0.92;
+  color: oklch(1 0 0);
+  text-shadow: 0 2px 24px oklch(0 0 0 / 0.55);
 }
 
 .hero-keywords-marquee--reverse .marquee-track {

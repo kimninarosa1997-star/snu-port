@@ -36,35 +36,39 @@ export function HeroSection() {
 
   return (
     <section id="home" aria-labelledby="hero-heading" className="bg-background">
-      <div className="studio-hero-stage bg-primary pt-[var(--header-height)]">
-        <div className="mx-auto flex max-w-content flex-col items-center layout-gutter pb-10 pt-8 md:pb-14 md:pt-12">
-          <Marquee
-            items={HERO_KEYWORDS}
-            separator=" · "
-            className="hero-keywords-marquee mb-6 w-full max-w-4xl"
-            speed="slow"
-            ariaHidden
+      <div className="studio-hero-stage">
+        <div className="hero-fullbleed relative h-svh w-full overflow-hidden bg-neutral-950">
+          <Image
+            src={HERO_CITY_IMAGE}
+            alt=""
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-center"
           />
 
-          <div className="relative w-full max-w-4xl overflow-hidden bg-neutral-950 shadow-[0_24px_64px_oklch(0_0_0_/_0.25)] aspect-[16/10]">
-            <Image
-              src={HERO_CITY_IMAGE}
-              alt=""
-              fill
-              priority
-              unoptimized
-              sizes="(max-width: 1024px) 100vw, 896px"
-              className="object-cover object-center"
+          <div
+            className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-neutral-950/45 via-transparent to-neutral-950/50"
+            aria-hidden="true"
+          />
+
+          <div className="hero-keywords-overlay pointer-events-none absolute inset-0 z-10 flex flex-col justify-between py-10 md:py-14">
+            <Marquee
+              items={HERO_KEYWORDS}
+              separator=" · "
+              className="hero-keywords-marquee w-full"
+              speed="slow"
+              ariaHidden
+            />
+            <Marquee
+              items={HERO_KEYWORDS}
+              separator=" · "
+              className="hero-keywords-marquee hero-keywords-marquee--reverse w-full"
+              speed="slow"
+              ariaHidden
             />
           </div>
-
-          <Marquee
-            items={HERO_KEYWORDS}
-            separator=" · "
-            className="hero-keywords-marquee hero-keywords-marquee--reverse mt-6 w-full max-w-4xl"
-            speed="slow"
-            ariaHidden
-          />
         </div>
       </div>
 
