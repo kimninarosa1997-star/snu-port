@@ -20,11 +20,13 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-black/80 backdrop-blur-md border-b border-neutral-800" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-transparent transition-[background-color,border-color] duration-[var(--duration-base)] ease-[var(--ease-standard)] ${
+        scrolled
+          ? "border-border bg-surface-overlay"
+          : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
+      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5 md:px-10">
         <a
           href="#top"
           onClick={(e) => {
@@ -32,11 +34,11 @@ export function Header() {
             window.history.replaceState(null, "", window.location.pathname);
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="flex h-9 w-9 items-center justify-center border border-white text-xs font-bold tracking-widest"
+          className="flex h-9 w-9 items-center justify-center border border-border text-label text-foreground transition-colors hover:border-foreground focus-visible:focus-ring"
         >
           JK
         </a>
-        <nav className="flex gap-8 text-sm tracking-wide text-neutral-300">
+        <nav className="flex gap-8 text-label text-muted">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -49,7 +51,7 @@ export function Header() {
                 window.history.replaceState(null, "", item.href);
                 target.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
-              className="transition-colors hover:text-white"
+              className="transition-colors hover:text-foreground focus-visible:focus-ring"
             >
               {item.label}
             </a>

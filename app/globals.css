@@ -1,12 +1,161 @@
 @import "tailwindcss";
 
+/* ── NOIR/288 design tokens (docs/design-system.md) ── */
+:root {
+  color-scheme: dark;
+
+  --color-canvas: oklch(0.14 0.006 250);
+  --color-ink: oklch(0.97 0.004 250);
+  --color-ink-muted: oklch(0.74 0.005 250);
+  --color-ink-faint: oklch(0.55 0.006 250);
+
+  --color-neutral-950: var(--color-canvas);
+  --color-neutral-900: oklch(0.19 0.006 250);
+  --color-neutral-800: oklch(0.25 0.006 250);
+  --color-neutral-700: oklch(0.34 0.006 250);
+  --color-neutral-500: oklch(0.55 0.006 250);
+  --color-neutral-300: oklch(0.74 0.005 250);
+  --color-neutral-100: oklch(0.92 0.004 250);
+  --color-neutral-050: oklch(0.97 0.004 250);
+
+  --color-primary: oklch(0.78 0.14 75);
+  --color-primary-dim: oklch(0.78 0.14 75 / 0.16);
+  --color-on-primary: oklch(0.14 0.006 250);
+
+  --color-success: oklch(0.74 0.13 150);
+  --color-warning: oklch(0.8 0.14 85);
+  --color-error: oklch(0.66 0.18 25);
+
+  --color-surface-raised: var(--color-neutral-900);
+  --color-surface-overlay: oklch(0.14 0.006 250 / 0.92);
+  --color-border: var(--color-neutral-800);
+  --color-border-strong: var(--color-neutral-700);
+  --color-focus-ring: var(--color-neutral-050);
+
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-text: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", monospace;
+
+  --text-display-xl: clamp(4.5rem, 18vw, 18rem);
+  --text-display-xl-lh: 0.92;
+  --text-headline: 3rem;
+  --text-title: 1.75rem;
+  --text-body-l: 1.25rem;
+  --text-body: 1rem;
+  --text-caption: 0.8125rem;
+  --text-label: 0.75rem;
+  --tracking-label: 0.18em;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+  --space-16: 128px;
+  --space-24: 192px;
+
+  --layout-gutter: var(--space-3);
+  --layout-max-width: 1200px;
+  --header-height: 72px;
+  --scroll-margin-top: var(--header-height);
+  --section-padding-y: clamp(var(--space-16), 12vh, var(--space-24));
+
+  --radius-none: 0;
+  --radius-sm: 2px;
+
+  --shadow-elevated: 0 8px 32px oklch(0 0 0 / 0.45);
+  --shadow-focus: 0 0 0 2px var(--color-canvas),
+    0 0 0 4px var(--color-focus-ring);
+
+  --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.08, 0.82, 0.17, 1);
+
+  --duration-fast: 180ms;
+  --duration-base: 360ms;
+  --duration-slow: 720ms;
+  --duration-hero: 1200ms;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-canvas: oklch(0.98 0.004 250);
+  --color-ink: oklch(0.14 0.006 250);
+  --color-ink-muted: oklch(0.34 0.006 250);
+  --color-ink-faint: oklch(0.55 0.006 250);
+
+  --color-neutral-950: oklch(0.14 0.006 250);
+  --color-neutral-900: oklch(0.92 0.004 250);
+  --color-neutral-800: oklch(0.88 0.004 250);
+  --color-neutral-700: oklch(0.74 0.005 250);
+  --color-neutral-500: oklch(0.55 0.006 250);
+  --color-neutral-300: oklch(0.45 0.006 250);
+  --color-neutral-100: oklch(0.25 0.006 250);
+  --color-neutral-050: oklch(0.14 0.006 250);
+
+  --color-surface-raised: oklch(0.96 0.004 250);
+  --color-surface-overlay: oklch(0.98 0.004 250 / 0.92);
+  --color-border: oklch(0.88 0.004 250);
+  --color-border-strong: oklch(0.74 0.005 250);
+  --color-focus-ring: oklch(0.14 0.006 250);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --duration-hero: 0ms;
+  }
+}
+
+/* Tailwind v4 theme → semantic utilities */
 @theme {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-  --color-muted: #a3a3a3;
-  --color-border: #262626;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --color-background: var(--color-canvas);
+  --color-foreground: var(--color-ink);
+  --color-muted: var(--color-ink-muted);
+  --color-faint: var(--color-ink-faint);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-primary: var(--color-primary);
+  --color-on-primary: var(--color-on-primary);
+  --color-surface: var(--color-surface-raised);
+  --color-surface-overlay: var(--color-surface-overlay);
+
+  --color-neutral-050: var(--color-neutral-050);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-900: var(--color-neutral-900);
+  --color-neutral-950: var(--color-neutral-950);
+
+  --font-sans: var(--font-text);
+  --font-serif: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-3: var(--space-3);
+  --spacing-4: var(--space-4);
+  --spacing-6: var(--space-6);
+  --spacing-8: var(--space-8);
+  --spacing-12: var(--space-12);
+  --spacing-16: var(--space-16);
+  --spacing-24: var(--space-24);
+
+  --width-content: var(--layout-max-width);
+
+  --radius-sm: var(--radius-sm);
+
+  --ease-cinema: var(--ease-cinema);
+  --ease-emphasized: var(--ease-emphasized);
+
+  --default-transition-duration: var(--duration-base);
 }
 
 html {
@@ -20,9 +169,35 @@ body {
 }
 
 [id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: var(--scroll-margin-top);
 }
 
+/* Typography utilities */
+@utility text-label {
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility max-w-content {
+  max-width: var(--layout-max-width);
+}
+
+@utility section-py {
+  padding-block: var(--section-padding-y);
+}
+
+@utility focus-ring {
+  box-shadow: var(--shadow-focus);
+}
+
+/* Hero motion (design-system §2.6) */
 @keyframes hero-image-reveal {
   0% {
     clip-path: inset(10% 50% 10% 50%);
@@ -48,11 +223,11 @@ body {
 }
 
 .hero-image-reveal {
-  animation: hero-image-reveal 3s linear forwards;
+  animation: hero-image-reveal var(--duration-hero) linear forwards;
 }
 
 .hero-text-settle {
-  animation: hero-text-settle 5s cubic-bezier(0.08, 0.82, 0.17, 1) forwards;
+  animation: hero-text-settle var(--duration-hero) var(--ease-emphasized) forwards;
   will-change: transform;
 }
 
@@ -70,6 +245,6 @@ body {
 }
 
 ::selection {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-neutral-050);
+  color: var(--color-neutral-950);
 }

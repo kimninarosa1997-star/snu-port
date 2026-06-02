@@ -3,11 +3,11 @@ import { portfolio } from "@/lib/portfolio-data";
 
 export function WorkSection() {
   return (
-    <section id="work" className="border-t border-neutral-900 px-6 py-24 md:px-10 md:py-32">
-      <div className="mx-auto max-w-7xl">
+    <section id="work" className="section-py border-t border-border px-6 md:px-10">
+      <div className="mx-auto max-w-content">
         <h2 className="text-[clamp(2rem,6vw,4.5rem)] font-black uppercase tracking-tight">
           Recent Work
-          <span className="block text-neutral-600">&amp; Experience</span>
+          <span className="block text-faint">&amp; Experience</span>
         </h2>
 
         <div className="mt-16 grid gap-6 md:grid-cols-12 md:gap-8">
@@ -25,7 +25,7 @@ export function WorkSection() {
                 className={`group ${spans}`}
               >
                 <div
-                  className={`relative overflow-hidden bg-neutral-900 ${
+                  className={`relative overflow-hidden bg-surface ${
                     index === 0 ? "aspect-[4/3] md:aspect-auto md:h-full md:min-h-[480px]" : "aspect-[16/10]"
                   }`}
                 >
@@ -33,7 +33,7 @@ export function WorkSection() {
                     src={item.image}
                     alt={item.company}
                     fill
-                    className="object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                    className="object-cover grayscale transition-all duration-[var(--duration-slow)] group-hover:grayscale-0"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/0" />
@@ -41,14 +41,14 @@ export function WorkSection() {
                 <div className="mt-4 flex flex-wrap items-baseline justify-between gap-2">
                   <div>
                     <h3 className="text-lg font-semibold">{item.company}</h3>
-                    <p className="text-sm text-neutral-500">{item.role}</p>
+                    <p className="text-sm text-muted">{item.role}</p>
                   </div>
-                  <p className="text-xs tracking-wide text-neutral-600">{item.period}</p>
+                  <p className="text-label text-faint">{item.period}</p>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-400 line-clamp-2 md:line-clamp-none">
+                <p className="mt-2 text-sm leading-relaxed text-muted line-clamp-2 md:line-clamp-none">
                   {item.description}
                 </p>
-                <p className="mt-2 text-xs text-neutral-600">
+                <p className="mt-2 text-label text-faint">
                   {item.tags.join(" · ")}
                 </p>
               </article>

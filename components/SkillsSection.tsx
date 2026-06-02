@@ -11,37 +11,37 @@ function StarRating({ level }: { level: number }) {
 
 export function SkillsSection() {
   return (
-    <section className="border-t border-neutral-900 px-6 py-24 md:px-10 md:py-32">
-      <div className="mx-auto max-w-7xl">
+    <section className="section-py border-t border-border px-6 md:px-10">
+      <div className="mx-auto max-w-content">
         <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight">
           My Skills &{" "}
-          <span className="font-serif italic font-normal text-neutral-300">
+          <span className="font-display italic font-normal text-muted">
             things I&apos;m pretty great at
           </span>
         </h2>
 
-        <div className="mt-16 divide-y divide-neutral-800">
+        <div className="mt-16 divide-y divide-border">
           {portfolio.skills.map((skill, index) => (
             <div
               key={skill.title}
               className="grid gap-6 py-10 md:grid-cols-2 md:gap-16 md:py-12"
             >
               <div>
-                <p className="text-[0.65rem] font-medium uppercase tracking-[0.4em] text-neutral-600">
+                <p className="text-label text-faint">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-3 font-serif text-[clamp(1.35rem,3vw,2.125rem)] font-normal italic leading-tight tracking-wide text-white">
+                <h3 className="mt-3 font-display text-[clamp(1.35rem,3vw,2.125rem)] font-normal italic leading-tight tracking-wide text-foreground">
                   {skill.title}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-neutral-400 md:text-base">
+                <p className="mt-4 text-sm leading-relaxed text-muted md:text-base">
                   {skill.description}
                 </p>
               </div>
-              <ul className="flex flex-col gap-2 text-sm text-neutral-300 md:text-base md:pt-8">
+              <ul className="flex flex-col gap-2 text-sm text-muted md:text-base md:pt-8">
                 {skill.items.map((item) => (
                   <li
                     key={item}
-                    className="border-b border-neutral-900 pb-2 font-light tracking-wide last:border-0"
+                    className="border-b border-border pb-2 font-light tracking-wide last:border-0"
                   >
                     {item}
                   </li>
@@ -55,9 +55,9 @@ export function SkillsSection() {
           {portfolio.skillLevels.map((skill) => (
             <div
               key={skill.name}
-              className="flex items-center justify-between border border-neutral-800 px-4 py-3"
+              className="flex items-center justify-between border border-border px-4 py-3"
             >
-              <span className="text-xs font-light uppercase tracking-wider text-neutral-400">
+              <span className="text-label text-muted">
                 {skill.name}
               </span>
               <StarRating level={skill.level} />

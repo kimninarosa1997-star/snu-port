@@ -61,12 +61,12 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto mt-14 max-w-7xl px-6 pb-20 md:mt-16 md:px-10 md:pb-24">
+      <div className="relative z-10 mx-auto mt-14 max-w-content px-6 pb-20 md:mt-16 md:px-10 md:pb-24">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr] md:gap-16">
-          <p className="text-lg leading-relaxed text-neutral-200 md:text-xl">
+          <p className="text-lg leading-relaxed text-neutral-100 md:text-xl">
             {portfolio.intro}
           </p>
-          <p className="text-sm leading-relaxed text-neutral-500 md:text-base md:pt-2">
+          <p className="text-sm leading-relaxed text-muted md:text-base md:pt-2">
             {portfolio.philosophy}
           </p>
         </div>
