@@ -398,7 +398,7 @@ export const siteContent = {
       id: "C-EXP-003",
       organization: "CASE Architects / CASE 건축사무소",
       role: "Internship, Model Making, 3D Printer Support",
-      period: "2017/08 ~ 2017/09, 2019",
+      period: "2019",
       problem: "건축설계 과정에서 클라이언트와 팀이 공간을 직관적으로 이해할 수 있는 모형과 시각자료가 필요했습니다.",
       solution: "3D Printer를 활용한 모형 제작과 3D 모델링, 도면 작성 업무를 수행했습니다.",
       result: "설계안을 물리적·시각적으로 전달하는 제작 역량을 강화했습니다.",
