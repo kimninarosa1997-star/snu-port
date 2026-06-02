@@ -66,3 +66,13 @@
 | Nav 링크 중앙화 | 유지보수 | `lib/nav-links.ts` | §17 순서·데스크톱 4링크 분리 |
 
 **영향 파일:** `app/layout.tsx`, `components/Header.tsx`, `lib/nav-links.ts`, `lib/content/ui-strings.ts`, `package.json`
+
+---
+
+## 2026-06-03 — Contact 이메일 복사 (P2)
+
+| 항목 | 분류 | 개선 | 사유 |
+|------|------|------|------|
+| 이메일 클립보드 복사 | UX | `CopyEmailButton` — 모바일(`lg` 미만), `aria-live` 피드백 | FR-37, mailto 미지원 환경 대비 |
+
+**영향 파일:** `components/contact/CopyEmailButton.tsx`, `components/sections/ContactSection.tsx`, `lib/content/ui-strings.ts`

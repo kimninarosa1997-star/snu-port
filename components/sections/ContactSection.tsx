@@ -1,6 +1,7 @@
 "use client";
 
 import { ContactForm, hasContactForm } from "@/components/contact/ContactForm";
+import { CopyEmailButton } from "@/components/contact/CopyEmailButton";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { localized, localizedFn, siteContent, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale, splitParagraphs } from "@/lib/content/helpers";
@@ -43,15 +44,20 @@ export function ContactSection() {
               </p>
             ) : null}
 
-            <a
-              href={mailtoHref}
-              aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
-              className={`inline-flex min-h-11 items-center font-bold text-body-l text-foreground transition-opacity hover:opacity-80 focus-visible:focus-ring ${
-                showForm ? "" : "w-full justify-center bg-neutral-950 px-7 py-3 text-label uppercase tracking-[var(--tracking-label)] text-neutral-050 hover:bg-neutral-800 hover:opacity-100 sm:w-auto"
-              }`}
-            >
-              {contact.email}
-            </a>
+            <div className="flex flex-col gap-3">
+              <a
+                href={mailtoHref}
+                aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
+                className={`inline-flex min-h-11 items-center font-bold text-body-l text-foreground transition-opacity hover:opacity-80 focus-visible:focus-ring ${
+                  showForm
+                    ? ""
+                    : "w-full justify-center bg-neutral-950 px-7 py-3 text-label uppercase tracking-[var(--tracking-label)] text-neutral-050 hover:bg-neutral-800 hover:opacity-100 sm:w-auto"
+                }`}
+              >
+                {contact.email}
+              </a>
+              <CopyEmailButton email={contact.email} />
+            </div>
 
             {instagramField ? (
               <p className="mt-8 text-caption text-muted" aria-disabled="true">

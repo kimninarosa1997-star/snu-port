@@ -56,6 +56,7 @@ export const uiStrings = {
     },
     copyEmail: { kr: "이메일 복사", en: "Copy email" },
     copySuccess: { kr: "복사됨", en: "Copied" },
+    copyError: { kr: "복사에 실패했습니다", en: "Could not copy" },
     instagramPending: { kr: "Instagram · 추가 예정", en: "Instagram · Coming soon" },
     orEmail: { kr: "또는 이메일로", en: "Or email directly" },
     form: {
