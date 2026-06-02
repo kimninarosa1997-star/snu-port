@@ -111,11 +111,11 @@ export const siteContent = {
   education: [
     {
       id: "C-EDU-001",
-      institution: "KIRA · Korean Institute of Registered Architects / 대한건축사협회",
-      major: "Registered Architect / 건축사",
-      degree: "License / 자격",
+      institution: "대한건축사협회 (KIRA)",
+      major: "건축사 / Registered Architect",
+      degree: "자격 / License",
       period: "—",
-      note: "Professional architect registration, Republic of Korea",
+      note: "대한민국 건축사 등록 · Professional architect registration, Republic of Korea",
     },
     {
       id: "C-EDU-002",
