@@ -715,16 +715,14 @@ body {
   position: absolute;
   inset: 0;
   z-index: 0;
-  display: flex;
-  align-items: flex-start;
-  padding-top: clamp(1rem, 4vw, 3rem);
-  overflow: hidden;
+  overflow: visible;
   pointer-events: none;
 }
 
-.projects-float-bg p {
+.projects-float-bg-text {
   max-width: 110%;
   margin-left: -0.5rem;
+  padding-top: clamp(1rem, 4vw, 3rem);
   font-family: var(--font-hero);
   font-size: clamp(2.75rem, 13vw, 9.5rem);
   font-weight: 700;
@@ -733,6 +731,8 @@ body {
   text-transform: uppercase;
   color: oklch(1 0 0 / 0.07);
   white-space: nowrap;
+  transform: translate3d(0, var(--projects-bg-y, 0), 0);
+  will-change: transform;
 }
 
 .projects-float-canvas {
@@ -793,6 +793,11 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .projects-float-bg-text {
+    transform: none;
+    will-change: auto;
   }
 }
 

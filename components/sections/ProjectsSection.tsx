@@ -2,8 +2,8 @@
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { ProjectFloatCard } from "@/components/projects/ProjectFloatCard";
+import { ProjectsFloatBg } from "@/components/projects/ProjectsFloatBg";
 import { Marquee } from "@/components/ui/Marquee";
-import { ScrollParallax } from "@/components/ui/ScrollParallax";
 import { siteContent, uiStrings } from "@/lib/content";
 import { getSectionMeta } from "@/lib/content/helpers";
 
@@ -83,7 +83,7 @@ export function ProjectsSection() {
   const bgLabel = uiStrings.marquee.projects.en.join(" · ").toUpperCase();
 
   return (
-    <section id="projects" aria-labelledby="projects-heading" className="band-dark section-py overflow-hidden">
+    <section id="projects" aria-labelledby="projects-heading" className="band-dark section-py overflow-x-hidden">
       <div className="mx-auto max-w-content layout-gutter">
         <header>
           <Marquee
@@ -97,14 +97,7 @@ export function ProjectsSection() {
         </header>
 
         <div className="projects-float relative mt-4 pb-8 md:mt-8 md:pb-20">
-          <ScrollParallax
-            anchor="parent"
-            speed={0.38}
-            speedX={0.12}
-            className="projects-float-bg pointer-events-none select-none"
-          >
-            <p aria-hidden="true">{bgLabel}</p>
-          </ScrollParallax>
+          <ProjectsFloatBg>{bgLabel}</ProjectsFloatBg>
 
           <div className="projects-float-canvas relative z-10 flex flex-col gap-16 md:gap-0">
             {featuredProjects.map((project, index) => {
