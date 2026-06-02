@@ -33,8 +33,8 @@ export function Hero() {
         </div>
 
         <div className="relative z-10 flex h-full min-h-[inherit] w-full flex-col items-stretch justify-between pt-20 pb-10 md:pt-24 md:pb-14">
-          <div className="hero-stage flex w-full flex-1 items-center overflow-hidden">
-            <div className="hero-text-settle flex flex-col items-end gap-1 md:gap-2">
+          <div className="hero-stage relative w-full flex-1 overflow-hidden">
+            <div className="hero-text-settle absolute top-1/2 right-6 flex flex-col items-end gap-1 md:right-10 md:gap-2">
               <p
                 className="pointer-events-none whitespace-nowrap font-serif text-[clamp(2.25rem,10vw,6rem)] font-normal italic leading-none tracking-tight text-white/95 drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
                 aria-hidden
