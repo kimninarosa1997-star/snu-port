@@ -46,7 +46,7 @@ export function ExperienceSection() {
     .sort((a, b) => b.sortKey - a.sortKey);
 
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="studio-section border-t border-border bg-background section-py">
+    <section id="experience" aria-labelledby="experience-heading" className="studio-section border-t border-border bg-section-alt section-py">
       <div className="mx-auto max-w-content layout-gutter">
         <header className="pb-8 md:pb-10">
           <h2 id="experience-heading" className="text-studio-section-title">

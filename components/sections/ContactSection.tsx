@@ -17,7 +17,7 @@ export function ContactSection() {
   const mailtoHref = `mailto:${contact.email}?subject=${encodeURIComponent(emailSubject)}`;
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="studio-section border-t border-border bg-background">
+    <section id="contact" aria-labelledby="contact-heading" className="studio-section border-t border-border bg-section-alt">
       <div className="mx-auto max-w-content layout-gutter section-py">
         <header className="pb-8 md:pb-10">
           <h2 id="contact-heading" className="text-studio-section-title">
