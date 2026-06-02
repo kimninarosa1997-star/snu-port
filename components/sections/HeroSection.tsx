@@ -6,9 +6,9 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
 
-/** Replace with `/images/hero-city.jpg` after adding a local asset */
+/** Replace with `/images/hero-city.jpg` — urban skyline / streetscape preferred */
 const HERO_CITY_SRC =
-  "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=2400&q=85";
+  "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=2400&q=85";
 
 export function HeroSection() {
   const { locale } = useLanguage();
