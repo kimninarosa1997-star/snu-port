@@ -850,6 +850,20 @@ body {
   color: var(--color-on-primary);
 }
 
+.hero-keywords-marquee {
+  font-family: var(--font-hero);
+  font-size: clamp(1.125rem, 3.2vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-on-primary);
+  opacity: 0.92;
+}
+
+.hero-keywords-marquee--reverse .marquee-track {
+  animation-direction: reverse;
+}
+
 .text-studio-nav-link {
   font-family: var(--font-hero);
   font-size: clamp(2rem, 6vw, 4.5rem);

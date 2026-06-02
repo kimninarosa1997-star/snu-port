@@ -3,9 +3,14 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { Marquee } from "@/components/ui/Marquee";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
 import { scrollToSection } from "@/lib/scroll";
+
+const HERO_CITY_IMAGE = "/images/hero-city.jpg";
+
+const HERO_KEYWORDS = ["Architecture", "Urban", "Real Estate"] as const;
 
 const HERO_NAV = [
   { href: "#projects", labelKr: "Work", labelEn: "Work" },
@@ -16,9 +21,8 @@ const HERO_NAV = [
 
 export function HeroSection() {
   const { locale } = useLanguage();
-  const { hero, meta, projects } = siteContent;
+  const { hero, meta } = siteContent;
   const sectionMeta = getSectionMeta(siteContent, "home");
-  const featuredCover = projects.find((p) => (p.scale ?? "featured") === "featured")?.coverImage;
 
   useEffect(() => {
     history.scrollRestoration = "manual";
@@ -34,21 +38,33 @@ export function HeroSection() {
     <section id="home" aria-labelledby="hero-heading" className="bg-background">
       <div className="studio-hero-stage bg-primary pt-[var(--header-height)]">
         <div className="mx-auto flex max-w-content flex-col items-center layout-gutter pb-10 pt-8 md:pb-14 md:pt-12">
+          <Marquee
+            items={HERO_KEYWORDS}
+            separator=" · "
+            className="hero-keywords-marquee mb-6 w-full max-w-4xl"
+            speed="slow"
+            ariaHidden
+          />
+
           <div className="relative w-full max-w-4xl overflow-hidden bg-neutral-950 shadow-[0_24px_64px_oklch(0_0_0_/_0.25)] aspect-[16/10]">
-            {featuredCover ? (
-              <Image
-                src={featuredCover}
-                alt=""
-                fill
-                priority
-                unoptimized={featuredCover.startsWith("/")}
-                sizes="(max-width: 1024px) 100vw, 896px"
-                className="object-cover object-center"
-              />
-            ) : (
-              <div className="absolute inset-0 bg-neutral-900" aria-hidden="true" />
-            )}
+            <Image
+              src={HERO_CITY_IMAGE}
+              alt=""
+              fill
+              priority
+              unoptimized
+              sizes="(max-width: 1024px) 100vw, 896px"
+              className="object-cover object-center"
+            />
           </div>
+
+          <Marquee
+            items={HERO_KEYWORDS}
+            separator=" · "
+            className="hero-keywords-marquee hero-keywords-marquee--reverse mt-6 w-full max-w-4xl"
+            speed="slow"
+            ariaHidden
+          />
         </div>
       </div>
 
