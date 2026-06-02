@@ -31,15 +31,16 @@ export function HeroSection() {
       aria-labelledby="hero-heading"
       className="relative min-h-svh w-full overflow-hidden bg-neutral-950"
     >
-      <Image
-        src={HERO_CITY_SRC}
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <Image
+          src={HERO_CITY_SRC}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-bg-spread object-cover object-center"
+        />
+      </div>
 
       <div
         className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/85"
