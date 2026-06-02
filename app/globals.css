@@ -44,21 +44,25 @@ body {
 @keyframes hero-pan-left {
   0%,
   100% {
-    transform: translateX(clamp(1.5rem, 14vw, 9rem));
+    transform: translateX(calc(50vw - 50% - 1rem));
   }
   50% {
-    transform: translateX(calc(-1 * clamp(1.5rem, 14vw, 9rem)));
+    transform: translateX(calc(-50vw + 50% + 1rem));
   }
 }
 
 @keyframes hero-pan-right {
   0%,
   100% {
-    transform: translateX(calc(-1 * clamp(1.5rem, 14vw, 9rem)));
+    transform: translateX(calc(-50vw + 50% + 1rem));
   }
   50% {
-    transform: translateX(clamp(1.5rem, 14vw, 9rem));
+    transform: translateX(calc(50vw - 50% - 1rem));
   }
+}
+
+.hero-stage {
+  width: 100%;
 }
 
 .hero-image-reveal {
