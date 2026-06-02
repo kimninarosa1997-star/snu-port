@@ -32,7 +32,7 @@ export function SkillsSection() {
                 {group.skills.map((skill) => (
                   <li
                     key={skill.id}
-                    className="border border-border bg-surface-tag px-3 py-2 text-label text-[var(--color-band-light-muted)] backdrop-blur-sm"
+                    className="border border-border px-3 py-2 text-label text-neutral-700"
                     title={pickLocale(locale, skill.descriptionKr, skill.descriptionEn)}
                   >
                     {skill.name}
@@ -53,7 +53,7 @@ export function SkillsSection() {
                 {group.skills.map((skill) => (
                   <li
                     key={skill.id}
-                    className="border border-border bg-surface-tag px-3 py-2 text-label text-[var(--color-band-light-muted)] backdrop-blur-sm"
+                    className="border border-border px-3 py-2 text-label text-neutral-700"
                   >
                     {skill.name}
                   </li>
@@ -82,7 +82,7 @@ export function SkillsSection() {
                     {group.skills.map((skill) => (
                       <li
                         key={skill.id}
-                        className="border border-border bg-surface-tag px-3 py-2 text-label text-[var(--color-band-light-muted)] backdrop-blur-sm"
+                        className="border border-border px-3 py-2 text-label text-neutral-700"
                       >
                         {skill.name}
                       </li>
