@@ -88,7 +88,10 @@ export function AboutSection() {
 
           <div className="grid gap-8 md:grid-cols-3">
             {strengths.map((strength) => (
-              <article key={strength.id}>
+              <article
+                key={strength.id}
+                className="border border-border bg-white/85 p-5 backdrop-blur-sm"
+              >
                 <h4 className="text-subhead font-bold text-foreground">
                   {strength.title}
                 </h4>
