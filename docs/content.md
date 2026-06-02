@@ -66,7 +66,7 @@
 | Hero | §4 One-line·Supporting Copy, C-REQ-001 | 정체성·첫인상 | Oswald 스택 + 중앙 프로필 + Playfair tagline |
 | Projects | C-REC-005, C-PROJ-001~004 | 대표 산출물 | masonry 4카드 → `/projects/[slug]` |
 | Skills | C-SKL-* | 역량 | band-light 4열 |
-| About | C-REQ-001, C-REC-001~002, C-STR-*, C-INT-*, C-EDU-* | 신뢰·배경 | band-muted editorial + 상세 |
+| About | C-REQ-001, C-REC-001~002, C-STR-*, C-INT-*, C-EDU-001 | 신뢰·배경 | band-muted editorial + KIRA 자격 |
 | Experience | C-REC-003, C-REC-004, C-EXP-001~003, C-AWD-001~005, C-CERT-001~003 | 경력과 검증 이력 제시 | 실무·연구 타임라인, 수상, 교육 |
 | Archive | §14 Introduction, C-ARC-001~007 | 사고의 확장·지속 학습 기록 | 아카이브 타임라인 7건 |
 | Contact | C-REQ-002, C-CON-001~006, C-OPT-001 | 협업과 네트워킹 유도 | Contact Copy, 이메일(mailto), SNS(준비 중) |
@@ -157,12 +157,11 @@ This archive records the possibilities of space, environment, and everyday life.
 
 ---
 
-## 8. Education / 학력
+## 8. Credentials / 자격
 
 | ID | Institution | Major | Degree | Period | Note |
 |---|---|---|---|---|---|
-| C-EDU-001 | Dankook University / 단국대학교 | Architecture / 건축학 | Bachelor | 2016/03 ~ 2021/02 | Graduated with highest honors (C-AWD-005) |
-| C-EDU-002 | Seoul National University Graduate School of Environmental Studies | Environmental Design | Master’s Program | 2025/03 ~ Present | Interest: Urban Environmental Design |
+| C-EDU-001 | KIRA · Korean Institute of Registered Architects / 대한건축사협회 | Registered Architect / 건축사 | License / 자격 | — | Professional architect registration, Republic of Korea |
 
 ---
 

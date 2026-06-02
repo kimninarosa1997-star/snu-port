@@ -111,19 +111,11 @@ export const siteContent = {
   education: [
     {
       id: "C-EDU-001",
-      institution: "Dankook University / 단국대학교",
-      major: "Architecture / 건축학",
-      degree: "Bachelor",
-      period: "2016/03 ~ 2021/02",
-      note: "Graduated with highest honors (C-AWD-005)",
-    },
-    {
-      id: "C-EDU-002",
-      institution: "Seoul National University Graduate School of Environmental Studies",
-      major: "Environmental Design",
-      degree: "Master’s Program",
-      period: "2025/03 ~ Present",
-      note: "Interest: Urban Environmental Design",
+      institution: "KIRA · Korean Institute of Registered Architects / 대한건축사협회",
+      major: "Registered Architect / 건축사",
+      degree: "License / 자격",
+      period: "—",
+      note: "Professional architect registration, Republic of Korea",
     },
   ],
   projects: [

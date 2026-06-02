@@ -22,6 +22,7 @@ export const uiStrings = {
     readMore: { kr: "더 보기", en: "Read more" },
     showLess: { kr: "접기", en: "Show less" },
     researchInterests: { kr: "연구 관심분야", en: "Research Interests" },
+    credentials: { kr: "자격", en: "Credentials" },
     education: { kr: "학력", en: "Education" },
     profileAlt: {
       kr: (nameKr: string) => `${nameKr} 프로필 사진`,
