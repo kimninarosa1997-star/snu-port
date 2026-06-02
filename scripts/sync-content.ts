@@ -179,6 +179,112 @@ function parseContentInventoryOptional(section2: string): string[] {
   return [];
 }
 
+function parseHeroCtas(heroSection: string): {
+  primary: SiteContent["hero"]["ctaPrimary"];
+  secondary: SiteContent["hero"]["ctaSecondary"];
+} {
+  const ctaBlock = heroSection.match(
+    /### CTA Button Candidates[\s\S]*?(?=\n>|\n---|\n<!--|$)/,
+  )?.[0];
+  const rows = parseTable(ctaBlock ?? "").filter((row) => /^\d+$/.test(row[0]));
+  const primaryLabel = rows.find((row) => row[0] === "1")?.[1] ?? "Projects";
+  const secondaryLabel = rows.find((row) => row[0] === "3")?.[1] ?? "Contact";
+
+  const hrefByLabel: Record<string, string> = {
+    Projects: "#projects",
+    Archive: "#archive",
+    Contact: "#contact",
+  };
+
+  return {
+    primary: {
+      label: primaryLabel,
+      href: hrefByLabel[primaryLabel] ?? `#${primaryLabel.toLowerCase()}`,
+    },
+    secondary: {
+      label: secondaryLabel,
+      href: hrefByLabel[secondaryLabel] ?? `#${secondaryLabel.toLowerCase()}`,
+    },
+  };
+}
+
+const EXPECTED_COUNTS = {
+  projects: 4,
+  strengths: 3,
+  education: 2,
+  experience: 3,
+  skillGroups: 4,
+  skills: 15,
+  awards: 5,
+  courses: 3,
+  archive: 7,
+  interests: 4,
+  navigation: 7,
+  sections: 7,
+  contactFields: 6,
+} as const;
+
+function assertContentIdPrefix(id: string, prefix: string, label: string): void {
+  if (!id.startsWith(prefix)) {
+    throw new Error(`${label}: expected ID prefix ${prefix}, got ${id}`);
+  }
+}
+
+function validateSiteContent(content: SiteContent): void {
+  const checks: Array<[string, number, number]> = [
+    ["projects", content.projects.length, EXPECTED_COUNTS.projects],
+    ["strengths", content.strengths.length, EXPECTED_COUNTS.strengths],
+    ["education", content.education.length, EXPECTED_COUNTS.education],
+    ["experience", content.experience.length, EXPECTED_COUNTS.experience],
+    ["skillGroups", content.skillGroups.length, EXPECTED_COUNTS.skillGroups],
+    ["awards", content.awards.length, EXPECTED_COUNTS.awards],
+    ["courses", content.courses.length, EXPECTED_COUNTS.courses],
+    ["archive", content.archive.length, EXPECTED_COUNTS.archive],
+    ["interests", content.interests.length, EXPECTED_COUNTS.interests],
+    ["navigation", content.navigation.length, EXPECTED_COUNTS.navigation],
+    ["sections", content.sections.length, EXPECTED_COUNTS.sections],
+    ["contact.fields", content.contact.fields.length, EXPECTED_COUNTS.contactFields],
+  ];
+
+  for (const [name, actual, expected] of checks) {
+    if (actual !== expected) {
+      throw new Error(`Content integrity: ${name} expected ${expected}, got ${actual}`);
+    }
+  }
+
+  const skillCount = content.skillGroups.reduce((sum, g) => sum + g.skills.length, 0);
+  if (skillCount !== EXPECTED_COUNTS.skills) {
+    throw new Error(`Content integrity: skills expected ${EXPECTED_COUNTS.skills}, got ${skillCount}`);
+  }
+
+  if (!content.contact.email) {
+    throw new Error("Contact email missing (C-REQ-002)");
+  }
+
+  content.projects.forEach((p, i) => {
+    assertContentIdPrefix(p.id, "C-PROJ-", `projects[${i}]`);
+    if (!p.slug) throw new Error(`projects[${i}] missing slug`);
+    if (!p.detail.problemKr || !p.detail.problemEn) {
+      throw new Error(`projects[${i}] missing Problem/Solution/Result detail`);
+    }
+  });
+
+  content.strengths.forEach((s, i) => assertContentIdPrefix(s.id, "C-STR-", `strengths[${i}]`));
+  content.education.forEach((e, i) => assertContentIdPrefix(e.id, "C-EDU-", `education[${i}]`));
+  content.experience.forEach((e, i) => assertContentIdPrefix(e.id, "C-EXP-", `experience[${i}]`));
+  content.awards.forEach((a, i) => assertContentIdPrefix(a.id, "C-AWD-", `awards[${i}]`));
+  content.courses.forEach((c, i) => assertContentIdPrefix(c.id, "C-CERT-", `courses[${i}]`));
+  content.archive.forEach((a, i) => assertContentIdPrefix(a.id, "C-ARC-", `archive[${i}]`));
+  content.interests.forEach((item, i) => assertContentIdPrefix(item.id, "C-INT-", `interests[${i}]`));
+
+  const sectionIds = new Set(content.sections.map((s) => s.sectionId));
+  for (const id of ["home", "about", "projects", "skills", "experience", "archive", "contact"]) {
+    if (!sectionIds.has(id)) {
+      throw new Error(`Missing section title for #${id} (§18)`);
+    }
+  }
+}
+
 function parseStrengths(section: string): SiteContent["strengths"] {
   return parseTable(section)
     .slice(1)
@@ -281,7 +387,8 @@ function parseSiteContent(markdown: string): SiteContent {
   const contactTablePart = contactSection.includes("| ID | Item |")
     ? contactSection.slice(contactSection.indexOf("| ID | Item |"))
     : "";
-  const interests = parseContentInventoryOptional(section2);
+  const interestKeywordsKr = parseContentInventoryOptional(section2);
+  const heroCtas = parseHeroCtas(heroSection);
 
   const contact: SiteContent["contact"] = {
     copyKr: extractSubsection(contactSection, "Contact Copy KR"),
@@ -307,8 +414,7 @@ function parseSiteContent(markdown: string): SiteContent {
   const footerSection = sections.get("19") ?? "";
   const footerMatch = footerSection.match(/### Footer\s*\n+(.+)/);
 
-  return {
-    meta: {
+  const meta = {
       name: metaMap.get("Name") ?? "",
       nameKr: metaMap.get("이름") ?? "",
       position: metaMap.get("Position") ?? "",
@@ -323,16 +429,22 @@ function parseSiteContent(markdown: string): SiteContent {
       toneKr: metaMap.get("톤앤매너") ?? "",
       oneLineKr: metaMap.get("One-line Identity") ?? "",
       oneLineEn: metaMap.get("One-line Identity EN") ?? "",
+    };
+
+  return {
+    meta,
+    assets: {
+      profileImage: "/images/profile.jpg",
     },
     hero: {
       oneLineKr: extractSubsection(heroSection, "One-line Introduction / 한 줄 소개"),
       oneLineEn: extractSubsection(heroSection, "One-line Introduction EN"),
       supportingKr: extractSubsection(heroSection, "Supporting Copy / 보조 문구"),
       supportingEn: extractSubsection(heroSection, "Supporting Copy EN"),
-      ctaPrimary: { label: "Projects", href: "#projects" },
-      ctaSecondary: { label: "Contact", href: "#contact" },
-      interestKeywords: interests,
-      interestKeywordsKr: interests,
+      ctaPrimary: heroCtas.primary,
+      ctaSecondary: heroCtas.secondary,
+      interestKeywords: meta.keywords.slice(0, 6),
+      interestKeywordsKr,
     },
     about: {
       bodyKr: extractSubsection(aboutSection, "About KR"),
@@ -410,15 +522,7 @@ function main(): void {
   const markdown = readFileSync(CONTENT_PATH, "utf8");
   const siteContent = parseSiteContent(markdown);
 
-  if (siteContent.projects.length !== 4) {
-    throw new Error(`Expected 4 projects, got ${siteContent.projects.length}`);
-  }
-  if (siteContent.navigation.length !== 7) {
-    throw new Error(`Expected 7 nav items, got ${siteContent.navigation.length}`);
-  }
-  if (!siteContent.contact.email) {
-    throw new Error("Contact email missing (C-REQ-002)");
-  }
+  validateSiteContent(siteContent);
 
   const output = `// Auto-generated by scripts/sync-content.ts — do not edit manually.
 // Source: docs/content.md
@@ -429,7 +533,11 @@ export const siteContent = ${serialize(siteContent)} as const satisfies SiteCont
 `;
 
   writeFileSync(OUTPUT_PATH, output, "utf8");
-  console.log(`✓ content:sync → lib/content/generated.ts (${siteContent.projects.length} projects)`);
+  console.log(
+    `✓ content:sync → lib/content/generated.ts\n` +
+      `  projects=${siteContent.projects.length} skills=${siteContent.skillGroups.reduce((n, g) => n + g.skills.length, 0)} ` +
+      `archive=${siteContent.archive.length} sections=${siteContent.sections.length}`,
+  );
 }
 
 main();

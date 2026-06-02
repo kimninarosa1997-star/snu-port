@@ -183,8 +183,14 @@ export interface SectionTitle {
   descriptionEn: string;
 }
 
+export interface SiteAssets {
+  /** C-REQ-001 — public/images/profile.jpg */
+  profileImage: string;
+}
+
 export interface SiteContent {
   meta: SiteMeta;
+  assets: SiteAssets;
   hero: HeroContent;
   about: AboutContent;
   brand: BrandContent;

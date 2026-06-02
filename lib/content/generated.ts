@@ -35,6 +35,9 @@ export const siteContent = {
     oneLineKr: "도시를 읽는 설계자",
     oneLineEn: "A Designer Who Reads Cities",
   },
+  assets: {
+    profileImage: "/images/profile.jpg",
+  },
   hero: {
     oneLineKr: "도시를 읽는 설계자",
     oneLineEn: "A Designer Who Reads Cities",
@@ -49,12 +52,12 @@ export const siteContent = {
       href: "#contact",
     },
     interestKeywords: [
-      "도시환경설계",
-      "유휴부지 재생",
-      "도시 빅데이터",
-      "기후재난 예측",
-      "공공공간",
-      "도시 안전 가이드라인",
+      "Urban Environmental Design",
+      "Architecture",
+      "Masterplan",
+      "Urban Data",
+      "Public Space",
+      "Climate Resilience",
     ],
     interestKeywordsKr: [
       "도시환경설계",
