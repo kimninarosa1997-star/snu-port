@@ -31,15 +31,17 @@ export function HeroSection() {
       aria-labelledby="hero-heading"
       className="relative min-h-svh w-full overflow-hidden bg-neutral-950"
     >
-      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-        <Image
-          src={HERO_CITY_SRC}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="hero-bg-spread object-cover object-center"
-        />
+      <div className="hero-bg-stage absolute inset-0 overflow-hidden bg-neutral-950" aria-hidden="true">
+        <div className="hero-bg-reveal">
+          <Image
+            src={HERO_CITY_SRC}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="hero-bg-reveal__img object-center"
+          />
+        </div>
       </div>
 
       <div
