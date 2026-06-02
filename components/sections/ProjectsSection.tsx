@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Marquee } from "@/components/ui/Marquee";
 import { ProjectCoverImage } from "@/components/ui/ProjectCoverImage";
+import { ScrollParallax } from "@/components/ui/ScrollParallax";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { siteContent, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
@@ -30,6 +31,8 @@ const PROJECT_FLOAT_LAYOUT = [
     delay: 340,
   },
 ] as const;
+
+const PROJECT_PARALLAX = [0.18, -0.12, 0.14, -0.1] as const;
 
 export function ProjectsSection() {
   const { locale } = useLanguage();
@@ -58,13 +61,14 @@ export function ProjectsSection() {
         </header>
 
         <div className="projects-float relative mt-4 pb-8 md:mt-8 md:pb-20">
-          <p className="projects-float-bg pointer-events-none select-none" aria-hidden="true">
-            {bgLabel}
-          </p>
+          <ScrollParallax speed={0.07} className="projects-float-bg pointer-events-none select-none">
+            <p aria-hidden="true">{bgLabel}</p>
+          </ScrollParallax>
 
           <div className="projects-float-canvas relative z-10 flex flex-col gap-16 md:gap-0">
             {projects.map((project, index) => {
               const layout = PROJECT_FLOAT_LAYOUT[index] ?? PROJECT_FLOAT_LAYOUT[0];
+              const parallaxSpeed = PROJECT_PARALLAX[index] ?? PROJECT_PARALLAX[0];
               const projectTitle = pickLocale(locale, project.titleKr, project.titleEn);
               const summary = pickLocale(locale, project.summaryKr, project.summaryEn);
 
@@ -74,7 +78,8 @@ export function ProjectsSection() {
                   className={`projects-float-item ${layout.item}`}
                   delayMs={layout.delay}
                 >
-                  <article className="group">
+                  <ScrollParallax speed={parallaxSpeed}>
+                    <article className="group">
                     <Link
                       href={`/projects/${project.slug}`}
                       className="block focus-visible:focus-ring"
@@ -101,6 +106,7 @@ export function ProjectsSection() {
                       </div>
                     </Link>
                   </article>
+                  </ScrollParallax>
                 </ScrollReveal>
               );
             })}

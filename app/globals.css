@@ -682,6 +682,16 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
+.scroll-parallax {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-parallax {
+    transform: none !important;
+  }
+}
+
 .projects-float-bg {
   position: absolute;
   top: clamp(1rem, 4vw, 3rem);
