@@ -8,7 +8,7 @@ function AboutStatement({ copyId }: { copyId: string }) {
   const words = portfolio.aboutStatement.split(" ");
 
   return (
-    <p className="inline-flex shrink-0 items-center whitespace-nowrap text-[clamp(1.25rem,3.5vw,2.25rem)] font-light leading-snug text-neutral-300">
+    <p className="inline-flex shrink-0 items-center whitespace-nowrap pr-16 text-[clamp(1.25rem,3.5vw,2.25rem)] font-light leading-snug text-neutral-300">
       <span className="mr-3 text-neutral-600">…</span>
       {words.map((word, i) => {
         const isEmphasis = EMPHASIS.some((e) => word.includes(e));
@@ -26,9 +26,6 @@ function AboutStatement({ copyId }: { copyId: string }) {
           </span>
         );
       })}
-      <span className="mx-10 text-neutral-700" aria-hidden>
-        ◆
-      </span>
     </p>
   );
 }
