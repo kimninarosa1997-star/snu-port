@@ -470,7 +470,7 @@ It traces how competitions, workshops, conferences, exchange programs, and resea
 | C-ARC-008 | Course | BIM 4차산업 혁신선도 대학 특강 | 2019 | Revit, Navisworks, Tekla, T5D 등 BIM 프로그램 및 현장 활용 교육 | BIM practical training covering Revit, Navisworks, Tekla, T5D and on-site application |
 | C-ARC-009 | Course | 3D Printer 교육 및 실습 | 2019 | 3D Printer 산업, 제작 과정, 전용 3D 툴 실습 | Training on 3D printer industry, fabrication process, and dedicated 3D tools |
 | C-ARC-006 | Volunteer | Habitat 활동 | 2016 ~ 2021 | 해비타트 동아리 활동과 정기 후원을 통해 건축의 사회적 역할을 고민했습니다. | Reflected on the social role of architecture through Habitat volunteer activities and regular support. |
-| C-ARC-007 | Mentoring | Archi-Tree 고등학생 멘토링 | 2019 | 건축학과 생활과 설계 과정을 멘티에게 소개하고 조언했습니다. | Mentored high school students by introducing architectural education and design studio processes. |
+| C-ARC-007 | Mentoring | Archi-Tree 고등학생 멘토링 | 2017 ~ 2018 | 건축학과 생활과 설계 과정을 멘티에게 소개하고 조언했습니다. | Mentored high school students by introducing architectural education and design studio processes. |
 
 ---
 

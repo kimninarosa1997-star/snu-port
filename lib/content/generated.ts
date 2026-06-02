@@ -599,7 +599,7 @@ export const siteContent = {
       id: "C-ARC-007",
       type: "Mentoring",
       title: "Archi-Tree 고등학생 멘토링",
-      period: "2019",
+      period: "2017 ~ 2018",
       descriptionKr: "건축학과 생활과 설계 과정을 멘티에게 소개하고 조언했습니다.",
       descriptionEn: "Mentored high school students by introducing architectural education and design studio processes.",
     },
