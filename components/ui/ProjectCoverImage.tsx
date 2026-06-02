@@ -24,12 +24,15 @@ export function ProjectCoverImage({
     );
   }
 
+  const isLocalAsset = src.startsWith("/");
+
   return (
     <Image
       src={src}
       alt={alt}
       fill
       priority={priority}
+      unoptimized={isLocalAsset}
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
       className={`object-cover object-center grayscale transition-[filter,transform] duration-500 group-hover:grayscale-0 group-hover:scale-[1.03] ${className}`}
     />

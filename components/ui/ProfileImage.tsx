@@ -33,6 +33,7 @@ export function ProfileImage({
         src={src}
         alt={alt}
         fill
+        unoptimized={profileSrc.startsWith("/")}
         className={`object-cover ${isFallback ? "opacity-80" : "grayscale"}`}
         sizes="(max-width: 768px) 320px, 320px"
         onError={() => {

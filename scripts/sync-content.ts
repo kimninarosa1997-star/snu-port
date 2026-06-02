@@ -435,7 +435,7 @@ function parseSiteContent(markdown: string): SiteContent {
   return {
     meta,
     assets: {
-      profileImage: "/images/profile.jpg",
+      profileImage: "/images/projects/c-proj-005.png",
     },
     hero: {
       oneLineKr: extractSubsection(heroSection, "One-line Introduction / 한 줄 소개"),
