@@ -50,15 +50,15 @@ export function HeroSection() {
       />
 
       <div className="relative z-10 flex min-h-svh flex-col layout-gutter">
-        <div className="hero-title-stage flex flex-1 w-full flex-col items-end justify-center overflow-hidden pt-[var(--header-height)] text-right">
+        <div className="hero-title-stage pointer-events-none flex flex-1 w-full flex-col items-center justify-center overflow-hidden pt-[var(--header-height)] text-center">
           <p
-            className="hero-text-travel-left text-hero-role whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
+            className="hero-stack-spread-left text-hero-cover-role whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.75)]"
             aria-hidden="true"
           >
             Architect
           </p>
           <p
-            className="hero-text-travel-right mt-1 whitespace-nowrap text-hero-name text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.85)] sm:mt-2"
+            className="hero-stack-spread-right -mt-2 whitespace-nowrap text-hero-cover-name text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)] sm:-mt-3"
             aria-hidden="true"
           >
             Jinkyung Kim
