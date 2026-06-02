@@ -161,7 +161,7 @@ This archive records the possibilities of space, environment, and everyday life.
 
 | ID | Institution | Major | Degree | Period | Note |
 |---|---|---|---|---|---|
-| C-EDU-001 | 대한건축사협회 (KIRA) | 건축사 / Registered Architect | 자격 / License | — | 대한민국 건축사 등록 · Professional architect registration, Republic of Korea |
+| C-EDU-001 | 대한건축사협회 (KIRA) | 건축사 / Registered Architect | 자격 / License | — | |
 
 ---
 

@@ -115,7 +115,7 @@ export const siteContent = {
       major: "건축사 / Registered Architect",
       degree: "자격 / License",
       period: "—",
-      note: "대한민국 건축사 등록 · Professional architect registration, Republic of Korea",
+      note: "",
     },
   ],
   projects: [
