@@ -69,7 +69,7 @@ export const siteContent = {
     bodyKr: "김진경은 건축설계 실무와 도시환경 연구를 연결하는 도시·건축설계 디자이너입니다.\n간삼종합건축사사무소에서 삼성전자 캠퍼스 마스터플랜과 사옥 프로젝트를 수행하며, 건축이 도시, 교통, 조경, 동선, 공공환경과 분리될 수 없다는 점을 경험했습니다.\n현재는 유휴부지 재생, 기후재난 대응, 도시 안전, 공공공간 개선을 주제로 도시를 더 넓은 시선에서 읽고 기록하고 있습니다.",
     bodyEn: "Jinkyung Kim is an architectural and urban designer working between design practice and urban environmental research.\nThrough large-scale campus masterplans and headquarters projects, she experienced how architecture is deeply connected to mobility, landscape, circulation, and public environments.\nHer current interests focus on urban regeneration, climate resilience, urban safety, and public space strategies.",
     minimalKr: "건축을 기반으로 도시를 연구합니다.\n사람의 삶을 바꾸는 환경과 공간의 가능성을 기록합니다.",
-    minimalEn: "I study cities through architecture.\nThis archive records the possibilities of space, environment, and everyday life.\n---\n<!-- @section:brand -->",
+    minimalEn: "I study cities through architecture.\nThis archive records the possibilities of space, environment, and everyday life.",
   },
   brand: {
     coreMessageKr: "건축을 통해 도시를 보고, 도시를 통해 삶의 환경을 다시 생각합니다.",
@@ -476,7 +476,7 @@ export const siteContent = {
   ],
   archiveIntro: {
     kr: "Archive는 완성된 결과물만이 아니라, 도시와 건축을 이해하기 위해 지나온 경험을 기록하는 공간입니다.\n공모전, 워크숍, 학회, 교환학생, 연구 경험을 통해 공간을 바라보는 관점이 어떻게 확장되었는지 정리합니다.",
-    en: "This archive records not only completed projects, but also the experiences that shaped my way of reading cities and architecture.\nIt traces how competitions, workshops, conferences, exchange programs, and research expanded my perspective on space and environment.\n| ID | Type | Title | Period | Description KR | Description EN |\n|---|---|---|---|---|---|\n| C-ARC-001 | Academic Research | 도시·건축 데이터 연구 | 2018/12 ~ 2020/01 | 도시 및 건축 데이터를 기반으로 설계 평가와 시각화 방법론을 탐구했습니다. | Explored design evaluation and visualization methods based on urban and architectural data. |\n| C-ARC-002 | Conference | INTE 2018 International Conference | 2018 | 프랑스 파리에서 Crowdsourced Design Evaluation Methodology 관련 주제로 발표했습니다. | Presented research on crowdsourced design evaluation methodology in Paris, France. |\n| C-ARC-003 | Workshop | DIAS International Winter Workshop | 2020 | 이탈리아 제노아에서 How we will live together를 주제로 국제 워크숍에 참여했습니다. | Participated in an international workshop in Genoa, Italy, under the theme “How we will live together.” |\n| C-ARC-004 | Exchange | Chu Hai College, Hong Kong | 2017 ~ 2018 | 홍콩에서 건축학과 교환학생으로 생활하며 고밀도 도시와 생활환경의 관계를 경험했습니다. | Studied architecture in Hong Kong and experienced the relationship between high-density urban form and everyday life. |\n| C-ARC-005 | Exchange | University of Victoria | 2020 | 캐나다 어학연수 과정에 참여했으나 코로나로 인해 조기 귀국했습니다. | Participated in an English language program in Canada, which ended early due to COVID-19. |\n| C-ARC-006 | Volunteer | Habitat 활동 | 2016 ~ 2021 | 해비타트 동아리 활동과 정기 후원을 통해 건축의 사회적 역할을 고민했습니다. | Reflected on the social role of architecture through Habitat volunteer activities and regular support. |\n| C-ARC-007 | Mentoring | Archi-Tree 고등학생 멘토링 | 2019 | 건축학과 생활과 설계 과정을 멘티에게 소개하고 조언했습니다. | Mentored high school students by introducing architectural education and design studio processes. |",
+    en: "This archive records not only completed projects, but also the experiences that shaped my way of reading cities and architecture.\nIt traces how competitions, workshops, conferences, exchange programs, and research expanded my perspective on space and environment.",
   },
   archive: [
     {
@@ -568,7 +568,7 @@ export const siteContent = {
   ],
   contact: {
     copyKr: "도시, 건축, 환경, 데이터, 공간 아카이브에 관한 협업과 대화를 환영합니다.\n프로젝트 문의나 네트워킹은 아래 이메일로 연락해 주세요.",
-    copyEn: "I welcome conversations and collaborations around cities, architecture, environment, data, and spatial archives.\nFor project inquiries or networking, please contact me by email.\n| ID | Item | Content |\n|---|---|---|\n| C-CON-001 | Name | Jinkyung Kim |\n| C-CON-002 | Email | kimninarosa97@naver.com |\n| C-CON-003 | Phone | Private |\n| C-CON-004 | GitHub | Private |\n| C-CON-005 | LinkedIn | Private |\n| C-CON-006 | Instagram | To be added later |\n---\n<!-- @section:navigation -->",
+    copyEn: "I welcome conversations and collaborations around cities, architecture, environment, data, and spatial archives.\nFor project inquiries or networking, please contact me by email.",
     name: "Jinkyung Kim",
     email: "kimninarosa97@naver.com",
     fields: [

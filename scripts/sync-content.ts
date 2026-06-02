@@ -61,7 +61,13 @@ function extractSubsection(body: string, heading: string): string {
   );
   const match = body.match(pattern);
   if (!match) return "";
-  return normalizeParagraph(match[1].trim());
+
+  let text = match[1].trim();
+  text = text.split(/\n---\s*\n/)[0] ?? text;
+  text = text.split(/\n<!-- @section:/)[0] ?? text;
+  text = text.split(/\n\| /)[0] ?? text;
+
+  return normalizeParagraph(text.trim());
 }
 
 function escapeRegex(value: string): string {

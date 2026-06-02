@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { LangToggle } from "@/components/ui/LangToggle";
 import { siteContent } from "@/lib/content";
 
 function scrollToSection(href: string) {
@@ -67,15 +68,18 @@ export function Header() {
           ))}
         </nav>
 
-        <button
+        <div className="flex items-center gap-4">
+          <LangToggle />
+          <button
           type="button"
           className="border border-border px-3 py-2 text-label uppercase tracking-[var(--tracking-label)] text-foreground lg:hidden focus-visible:focus-ring"
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
           onClick={() => setMenuOpen((open) => !open)}
-        >
-          Menu
-        </button>
+          >
+            Menu
+          </button>
+        </div>
       </div>
 
       {menuOpen ? (
@@ -99,6 +103,9 @@ export function Header() {
               </a>
             ))}
           </nav>
+          <div className="mt-10 border-t border-border pt-8">
+            <LangToggle />
+          </div>
         </div>
       ) : null}
     </header>

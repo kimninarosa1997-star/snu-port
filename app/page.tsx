@@ -1,8 +1,8 @@
-import { AboutSection } from "@/components/AboutSection";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { CTABanner } from "@/components/CTABanner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { SkillsSection } from "@/components/SkillsSection";
 import { WorkSection } from "@/components/WorkSection";
@@ -13,11 +13,11 @@ export default function Home() {
       <SkipLink />
       <Header />
       <main id="main-content">
-        <Hero />
+        <HeroSection />
+        <AboutSection />
         <WorkSection />
         <SkillsSection />
         <CTABanner />
-        <AboutSection />
       </main>
       <Footer />
     </>
