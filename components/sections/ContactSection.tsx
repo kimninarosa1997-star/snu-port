@@ -51,7 +51,7 @@ export function ContactSection() {
               <a
                 href={`mailto:${contact.email}`}
                 aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
-                className="inline-flex min-h-11 w-full items-center justify-center bg-neutral-050 px-8 py-4 text-label uppercase tracking-[var(--tracking-label)] text-neutral-950 transition-opacity hover:opacity-90 focus-visible:focus-ring sm:w-auto"
+                className="inline-flex min-h-11 items-center font-bold text-body-l text-foreground transition-opacity hover:opacity-80 focus-visible:focus-ring"
               >
                 {contact.email}
               </a>
