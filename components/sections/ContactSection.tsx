@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { localized, localizedFn, siteContent, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale, splitParagraphs } from "@/lib/content/helpers";
 
 export function ContactSection() {
   const { locale } = useLanguage();
-  const [copied, setCopied] = useState(false);
   const sectionMeta = getSectionMeta(siteContent, "contact");
   const { contact } = siteContent;
 
@@ -15,16 +13,8 @@ export function ContactSection() {
 
   const copy = pickLocale(locale, contact.copyKr, contact.copyEn);
   const instagramField = contact.fields.find((field) => field.id === "C-CON-006");
-
-  async function handleCopyEmail() {
-    try {
-      await navigator.clipboard.writeText(contact.email);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  }
+  const emailSubject = locale === "ko" ? "포트폴리오 문의" : "Portfolio Inquiry";
+  const mailtoHref = `mailto:${contact.email}?subject=${encodeURIComponent(emailSubject)}`;
 
   return (
     <section id="contact" aria-labelledby="contact-heading" className="studio-section border-t border-border bg-background">
@@ -43,25 +33,13 @@ export function ContactSection() {
           </div>
 
           <div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-              <a
-                href={`mailto:${contact.email}`}
-                aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
-                className="inline-flex min-h-11 items-center font-bold text-body-l text-foreground transition-opacity hover:opacity-80 focus-visible:focus-ring"
-              >
-                {contact.email}
-              </a>
-              <button
-                type="button"
-                onClick={handleCopyEmail}
-                className="inline-flex min-h-11 items-center border border-border px-6 py-3 text-label uppercase tracking-[var(--tracking-label)] text-muted transition-colors hover:border-foreground hover:text-foreground focus-visible:focus-ring"
-                aria-live="polite"
-              >
-                {copied
-                  ? localized(locale, uiStrings.contact.copySuccess)
-                  : localized(locale, uiStrings.contact.copyEmail)}
-              </button>
-            </div>
+            <a
+              href={mailtoHref}
+              aria-label={localizedFn(locale, uiStrings.contact.emailAriaLabel, contact.name)}
+              className="inline-flex min-h-11 items-center font-bold text-body-l text-foreground transition-opacity hover:opacity-80 focus-visible:focus-ring"
+            >
+              {contact.email}
+            </a>
 
             {instagramField ? (
               <p className="mt-8 text-caption text-muted" aria-disabled="true">
