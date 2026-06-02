@@ -95,6 +95,14 @@ function parseBulletField(text: string, prefix: string): string {
   return text.match(pattern)?.[1]?.trim() ?? "";
 }
 
+/** Period end date for newest-first ordering (e.g. "2025/11 ~ 2026/08" → 202608). */
+function parsePeriodSortKey(period: string): number {
+  const endPart = period.split("~").pop()?.trim() ?? period.trim();
+  const match = endPart.match(/(\d{4})\/(\d{1,2})/);
+  if (!match) return 0;
+  return Number(match[1]) * 100 + Number(match[2]);
+}
+
 function parseProjectBlocks(section: string): SiteContent["projects"] {
   const blocks = section.split(/^## Project /m).slice(1);
   const projects: SiteContent["projects"] = [];
@@ -134,7 +142,7 @@ function parseProjectBlocks(section: string): SiteContent["projects"] {
     });
   }
 
-  return projects;
+  return projects.sort((a, b) => parsePeriodSortKey(b.period) - parsePeriodSortKey(a.period));
 }
 
 function parseSkillGroups(section: string): SiteContent["skillGroups"] {
