@@ -512,34 +512,44 @@ body {
   animation: hero-image-enter var(--duration-hero) var(--ease-cinema) forwards;
 }
 
-@keyframes hero-drift-lr {
+@keyframes hero-spread-left {
   0%,
   100% {
-    transform: translateX(-5vw);
+    transform: translateX(0) scale(1);
+    letter-spacing: 0.02em;
+    opacity: 0.92;
   }
   50% {
-    transform: translateX(5vw);
+    transform: translateX(-12vw) scale(1.05);
+    letter-spacing: 0.14em;
+    opacity: 1;
   }
 }
 
-@keyframes hero-drift-rl {
+@keyframes hero-spread-right {
   0%,
   100% {
-    transform: translateX(5vw);
+    transform: translateX(0) scale(1);
+    letter-spacing: 0.02em;
+    opacity: 0.92;
   }
   50% {
-    transform: translateX(-5vw);
+    transform: translateX(12vw) scale(1.05);
+    letter-spacing: 0.14em;
+    opacity: 1;
   }
 }
 
-.hero-text-drift-lr {
-  animation: hero-drift-lr 10s var(--ease-standard) infinite;
-  will-change: transform;
+.hero-text-spread-left {
+  animation: hero-spread-left 9s var(--ease-cinema) infinite;
+  transform-origin: center center;
+  will-change: transform, letter-spacing;
 }
 
-.hero-text-drift-rl {
-  animation: hero-drift-rl 10s var(--ease-standard) infinite;
-  will-change: transform;
+.hero-text-spread-right {
+  animation: hero-spread-right 9s var(--ease-cinema) infinite;
+  transform-origin: center center;
+  will-change: transform, letter-spacing;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -550,10 +560,12 @@ body {
     transform: none;
   }
 
-  .hero-text-drift-lr,
-  .hero-text-drift-rl {
+  .hero-text-spread-left,
+  .hero-text-spread-right {
     animation: none;
     transform: none;
+    letter-spacing: 0.02em;
+    opacity: 1;
   }
 }
 

@@ -46,26 +46,23 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex min-h-svh flex-col justify-end pb-[clamp(2rem,8vh,5rem)] pt-[calc(var(--header-height)+2rem)] layout-gutter">
-        <div className="w-full overflow-hidden">
+      <div className="relative z-10 flex min-h-svh flex-col layout-gutter">
+        <div className="flex flex-1 flex-col items-center justify-center overflow-hidden pt-[var(--header-height)]">
           <p
-            className="hero-text-drift-lr text-hero-title whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
+            className="hero-text-spread-left text-hero-title whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
             aria-hidden="true"
           >
             Architect
           </p>
-        </div>
-
-        <div className="mt-2 w-full overflow-hidden sm:mt-4">
           <p
-            className="hero-text-drift-rl text-hero-title whitespace-nowrap text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)]"
+            className="hero-text-spread-right mt-2 whitespace-nowrap text-hero-title text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.8)] sm:mt-3"
             aria-hidden="true"
           >
             Jinkyung Kim
           </p>
         </div>
 
-        <div className="hero-enter mx-auto mt-10 w-full max-w-prose lg:mt-14">
+        <div className="hero-enter mx-auto w-full max-w-prose pb-[clamp(2rem,8vh,5rem)]">
           <h1 id="hero-heading" className="sr-only">
             Architect Jinkyung Kim — {tagline}
           </h1>
