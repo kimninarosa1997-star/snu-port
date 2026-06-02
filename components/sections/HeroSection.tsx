@@ -73,7 +73,7 @@ export function HeroSection() {
             <p className="text-label text-muted">
               {locale === "ko" ? `Hey, ${meta.nameKr} here.` : `Hey, ${meta.name} here.`}
             </p>
-            <p className="mt-4 text-body-l leading-relaxed text-foreground">{supporting}</p>
+            <p className="mt-4 font-display text-body-l leading-relaxed text-foreground">{supporting}</p>
             <p className="mt-3 text-body font-medium text-muted">{tagline}</p>
           </div>
         </div>
