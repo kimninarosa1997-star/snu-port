@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
-import { PageEntryScroll } from "@/components/PageEntryScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,10 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased">
-        <PageEntryScroll />
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
