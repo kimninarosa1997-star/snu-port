@@ -117,6 +117,14 @@ export const siteContent = {
       period: "—",
       note: "Professional architect registration, Republic of Korea",
     },
+    {
+      id: "C-EDU-002",
+      institution: "Seoul National University Graduate School of Environmental Studies / 서울대학교 환경대학원",
+      major: "Environmental Design / 환경디자인",
+      degree: "Master's (in progress) / 석사 재학",
+      period: "2025/03 ~ Present",
+      note: "Currently pursuing a master's degree in environmental design",
+    },
   ],
   projects: [
     {
