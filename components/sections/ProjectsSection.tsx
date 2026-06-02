@@ -28,7 +28,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" aria-labelledby="projects-heading" className="studio-section bg-background">
       <div className="mx-auto max-w-content layout-gutter section-py">
-        <header className="border-b border-border pb-8 md:pb-10">
+        <header className="pb-8 md:pb-10">
           <h2 id="projects-heading" className="text-studio-section-title">
             {pickLocale(locale, sectionMeta.titleKr, sectionMeta.titleEn)}
           </h2>
