@@ -34,24 +34,29 @@ export function ExperienceSection() {
 
   if (!sectionMeta) return null;
 
-  const timelineItems = [
-    ...experience.map((item) => ({
+  const workItems = experience
+    .map((item) => ({
       id: item.id,
       period: item.period,
       organization: item.organization,
       role: item.role,
       result: item.result,
       sortKey: timelineSortKey(item.period),
-    })),
-    ...courses.map((course) => ({
+    }))
+    .sort((a, b) => b.sortKey - a.sortKey);
+
+  const courseItems = courses
+    .map((course) => ({
       id: course.id,
       period: course.year,
       organization: pickLocale(locale, course.titleKr, course.titleEn),
       role: course.institution,
       result: course.description,
       sortKey: timelineSortKey(course.year),
-    })),
-  ].sort((a, b) => b.sortKey - a.sortKey);
+    }))
+    .sort((a, b) => b.sortKey - a.sortKey);
+
+  const timelineItems = [...workItems, ...courseItems];
 
   return (
     <section id="experience" aria-labelledby="experience-heading" className="studio-section border-t border-border bg-background section-py">
