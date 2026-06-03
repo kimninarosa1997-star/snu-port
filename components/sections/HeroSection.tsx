@@ -6,7 +6,6 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Marquee } from "@/components/ui/Marquee";
 import { siteContent } from "@/lib/content";
 import { getSectionMeta, pickLocale } from "@/lib/content/helpers";
-import { scrollToSection } from "@/lib/scroll";
 
 const HERO_CITY_IMAGE = "/images/hero-city.jpg";
 
@@ -26,7 +25,6 @@ export function HeroSection() {
 
   const supporting = pickLocale(locale, hero.supportingKr, hero.supportingEn);
   const tagline = pickLocale(locale, hero.oneLineKr, hero.oneLineEn);
-  const { ctaPrimary, ctaSecondary } = hero;
 
   return (
     <section
@@ -79,29 +77,6 @@ export function HeroSection() {
             </h1>
             <p className="mt-4 font-display text-body-l leading-relaxed text-foreground">{supporting}</p>
             <p className="mt-3 text-body font-medium text-muted">{tagline}</p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <a
-              href={ctaPrimary.href}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(ctaPrimary.href);
-              }}
-              className="inline-flex min-h-11 w-full items-center justify-center bg-neutral-950 px-7 py-3 text-label uppercase tracking-[var(--tracking-label)] text-neutral-050 transition-colors hover:bg-neutral-800 focus-visible:focus-ring sm:w-auto"
-            >
-              {ctaPrimary.label}
-            </a>
-            <a
-              href={ctaSecondary.href}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection(ctaSecondary.href);
-              }}
-              className="inline-flex min-h-11 w-full items-center justify-center border border-border px-7 py-3 text-label uppercase tracking-[var(--tracking-label)] text-foreground transition-colors hover:border-foreground focus-visible:focus-ring sm:w-auto"
-            >
-              {ctaSecondary.label}
-            </a>
           </div>
         </div>
 
