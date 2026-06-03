@@ -12,7 +12,7 @@ export function CtaMarqueeBand() {
   const items = Array.from({ length: 6 }, () => label);
 
   return (
-    <section aria-label={localized(locale, uiStrings.ctaBand.sectionAria)} className="band-dark">
+    <section aria-label={localized(locale, uiStrings.ctaBand.sectionAria)} className="band-cta">
       <Link
         href={`mailto:${contact.email}`}
         className="block border-y border-neutral-800 py-4 transition-opacity hover:opacity-80 focus-visible:focus-ring"

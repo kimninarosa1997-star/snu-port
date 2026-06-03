@@ -273,6 +273,11 @@ body {
   color: var(--color-ink);
 }
 
+.band-cta {
+  background-color: var(--color-section-alt);
+  color: var(--color-ink);
+}
+
 .band-dark .text-neutral-100,
 .band-dark .text-body-l,
 .band-dark .text-body {
