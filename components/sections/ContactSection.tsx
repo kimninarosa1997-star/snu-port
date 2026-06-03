@@ -1,7 +1,6 @@
 "use client";
 
 import { ContactForm, hasContactForm } from "@/components/contact/ContactForm";
-import { CopyEmailButton } from "@/components/contact/CopyEmailButton";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { localized, localizedFn, siteContent, uiStrings } from "@/lib/content";
 import { getSectionMeta, pickLocale, splitParagraphs } from "@/lib/content/helpers";
@@ -56,7 +55,6 @@ export function ContactSection() {
               >
                 {contact.email}
               </a>
-              <CopyEmailButton email={contact.email} />
             </div>
 
             {instagramField ? (
