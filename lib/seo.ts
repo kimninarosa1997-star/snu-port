@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { siteContent } from "@/lib/content";
 import type { Project } from "@/lib/content/types";
 
-const DEFAULT_SITE_URL = "https://snu-port.vercel.app";
+const DEFAULT_SITE_URL = "https://snu-portfoilo-last.vercel.app";
 
 export function getSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");

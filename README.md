@@ -5,7 +5,7 @@
 
 | 항목 | 내용 |
 |------|------|
-| 프로덕션 | https://snu-port.vercel.app |
+| 프로덕션 | https://snu-portfoilo-last.vercel.app |
 | 저장소 | https://github.com/kimninarosa1997-star/snu-port |
 | Node | **20 LTS** (`.nvmrc`, `package.json` `engines`) |
 
