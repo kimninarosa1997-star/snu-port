@@ -103,9 +103,9 @@ export function AboutSection() {
           </div>
 
           <div className="mt-16">
-            <h4 className="text-label text-muted">
+            <h3 className="text-subhead font-bold text-foreground">
               {localized(locale, uiStrings.about.researchInterests)}
-            </h4>
+            </h3>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {interests.map((interest) => (
                 <li
