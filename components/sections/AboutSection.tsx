@@ -103,7 +103,7 @@ export function AboutSection() {
           </div>
 
           <div className="mt-16">
-            <h3 className="text-subhead font-bold text-foreground">
+            <h3 className="text-studio-subsection-title">
               {localized(locale, uiStrings.about.researchInterests)}
             </h3>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">

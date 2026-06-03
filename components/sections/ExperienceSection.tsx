@@ -55,7 +55,7 @@ export function ExperienceSection() {
         </header>
 
         <div className="mt-12 max-w-3xl">
-          <h3 className="text-subhead font-bold text-foreground">
+          <h3 className="text-studio-subsection-title">
             {localized(locale, uiStrings.experience.work)}
           </h3>
           <ol className="timeline-list mt-8 space-y-10">
